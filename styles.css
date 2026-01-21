@@ -956,6 +956,14 @@ section {
     gap: 50px;
 }
 
+.contact-info {
+    order: 2;
+}
+
+.contact-form {
+    order: 1;
+}
+
 .contact-lead {
     font-size: 1.75rem;
     font-weight: 300;
