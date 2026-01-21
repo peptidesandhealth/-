@@ -1084,6 +1084,21 @@ section {
     color: var(--text-secondary);
 }
 
+.footer-disclaimer {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--chrome-light);
+    text-align: center;
+}
+
+.footer-disclaimer p {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* ========================================
    Responsive Design
    ======================================== */
