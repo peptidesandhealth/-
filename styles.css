@@ -540,6 +540,11 @@ section {
     background: var(--snow-white-pure);
 }
 
+/* Skills carousel - arrows hidden on desktop */
+.carousel-arrow {
+    display: none;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1302,6 +1307,34 @@ section {
     }
 
     /* Skills carousel on mobile */
+    .skills-carousel {
+        position: relative;
+    }
+
+    .carousel-arrow {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: var(--ice-flow);
+        opacity: 0.6;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    .carousel-arrow-left {
+        left: 0;
+    }
+
+    .carousel-arrow-right {
+        right: 0;
+    }
+
     .skills-grid,
     .skills-grid.six-cards {
         display: flex;
@@ -1310,9 +1343,9 @@ section {
         -webkit-overflow-scrolling: touch;
         gap: 16px;
         padding-bottom: 16px;
-        margin: 0 -24px;
-        padding-left: 24px;
-        padding-right: 24px;
+        margin: 0;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .skills-grid::-webkit-scrollbar {
@@ -1320,8 +1353,8 @@ section {
     }
 
     .skill-card {
-        flex: 0 0 280px;
-        scroll-snap-align: start;
+        flex: 0 0 calc(100vw - 64px);
+        scroll-snap-align: center;
     }
 
     .portfolio-grid {
@@ -1388,16 +1421,16 @@ section {
         font-size: 2.5rem;
     }
 
-    /* Skills carousel smaller cards */
+    /* Skills carousel full width cards */
     .skills-grid,
     .skills-grid.six-cards {
-        margin: 0 -16px;
+        margin: 0;
         padding-left: 16px;
         padding-right: 16px;
     }
 
     .skill-card {
-        flex: 0 0 260px;
+        flex: 0 0 calc(100vw - 64px);
         padding: 24px 20px;
     }
 }
