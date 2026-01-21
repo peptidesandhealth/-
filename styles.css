@@ -860,6 +860,38 @@ section {
 }
 
 /* ========================================
+   Shop Section
+   ======================================== */
+.shop {
+    background: linear-gradient(180deg, var(--snow-white) 0%, var(--snow-white-pure) 100%);
+}
+
+.shop-content {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.shop-lead {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.shop-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.shop-cta {
+    margin-top: 35px;
+}
+
+/* ========================================
    FAQ Section
    ======================================== */
 .faq {
