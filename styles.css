@@ -986,13 +986,11 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
+    align-items: center;
 }
 
 .contact-info {
     order: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .contact-form {
