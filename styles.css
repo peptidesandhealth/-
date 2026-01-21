@@ -719,6 +719,138 @@ section {
 }
 
 /* ========================================
+   Consultation Timeline Section
+   ======================================== */
+.consultation {
+    background: var(--snow-white);
+    padding: var(--section-padding);
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--chrome-light), var(--ice-flow), var(--chrome-light));
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    flex: 1;
+    max-width: 180px;
+}
+
+.timeline-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--ice-flow);
+    background: var(--snow-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: all var(--transition-normal);
+    color: var(--ice-flow-dark);
+}
+
+.timeline-circle svg {
+    width: 36px;
+    height: 36px;
+}
+
+.timeline-item:hover .timeline-circle {
+    background: var(--gradient-mixed);
+    border-color: var(--chrome);
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(165, 196, 212, 0.3);
+}
+
+.timeline-content {
+    margin-top: 24px;
+}
+
+.timeline-step {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ice-flow-dark);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.timeline-content p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Timeline responsive */
+@media (max-width: 900px) {
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 50px;
+        right: auto;
+        width: 2px;
+        height: auto;
+    }
+
+    .timeline-item {
+        flex-direction: row;
+        text-align: left;
+        max-width: 100%;
+        gap: 24px;
+    }
+
+    .timeline-circle {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+    }
+
+    .timeline-circle svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .timeline-content {
+        margin-top: 0;
+    }
+}
+
+/* ========================================
    Contact Section
    ======================================== */
 .contact {
