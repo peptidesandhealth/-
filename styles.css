@@ -222,10 +222,19 @@ img {
     background-clip: text;
 }
 
+.hero-tagline {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    max-width: 520px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
 .hero-description {
     font-size: 1.125rem;
     color: var(--text-secondary);
-    max-width: 480px;
+    max-width: 520px;
     margin-bottom: 40px;
     line-height: 1.8;
 }
