@@ -810,6 +810,11 @@ section {
     line-height: 1.5;
 }
 
+.timeline-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
 /* Timeline responsive */
 @media (max-width: 900px) {
     .timeline {
