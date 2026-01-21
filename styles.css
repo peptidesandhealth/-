@@ -471,6 +471,20 @@ section {
     font-size: 1rem;
 }
 
+.about-quote {
+    font-style: italic;
+    border-left: 3px solid var(--ice-flow);
+    padding-left: 20px;
+    margin: 24px 0;
+}
+
+.about-quote p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
 .about-stats {
     display: flex;
     flex-direction: column;
