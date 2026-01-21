@@ -212,14 +212,21 @@ img {
 }
 
 .hero-title .name-line {
-    display: block;
+    display: inline;
 }
 
 .hero-title .accent {
-    background: var(--gradient-mixed);
+    background: linear-gradient(135deg, #C8D4DC 0%, #A8B8C8 25%, #E0E8EC 50%, #B0C0CC 75%, #C8D4DC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    background-size: 200% 200%;
+    animation: iceFlow 4s ease infinite;
+}
+
+@keyframes iceFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .hero-tagline {
