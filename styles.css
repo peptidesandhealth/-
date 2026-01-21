@@ -531,6 +531,11 @@ section {
     margin-bottom: 60px;
 }
 
+.skills-grid.six-cards {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 0;
+}
+
 .skill-card {
     padding: 40px 30px;
     background: var(--snow-white);
@@ -900,6 +905,10 @@ section {
     }
 
     .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid.six-cards {
         grid-template-columns: repeat(2, 1fr);
     }
 
