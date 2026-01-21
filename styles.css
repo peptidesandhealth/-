@@ -192,10 +192,7 @@ img {
     max-width: var(--container-width);
     margin: 0 auto;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    text-align: center;
 }
 
 .hero-subtitle {
@@ -233,16 +230,16 @@ img {
     font-size: 1.5rem;
     font-weight: 300;
     color: var(--text-primary);
-    max-width: 520px;
-    margin-bottom: 20px;
+    max-width: 700px;
+    margin: 0 auto 20px;
     line-height: 1.5;
 }
 
 .hero-description {
     font-size: 1.125rem;
     color: var(--text-secondary);
-    max-width: 520px;
-    margin-bottom: 30px;
+    max-width: 650px;
+    margin: 0 auto 30px;
     line-height: 1.8;
 }
 
@@ -250,6 +247,7 @@ img {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Buttons */
