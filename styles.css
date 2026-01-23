@@ -818,6 +818,16 @@ section {
     height: 28px;
 }
 
+.skill-card-text {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-top: 8px;
+}
+
 .skill-card h3 {
     font-size: 1.125rem;
     margin-bottom: 12px;
@@ -1765,6 +1775,12 @@ section {
         line-height: 1.4;
     }
 
+    .skill-card-text {
+        padding: 10px 12px;
+        margin-top: 6px;
+        border-radius: 10px;
+    }
+
     .skill-icon {
         width: 44px;
         height: 44px;
@@ -1888,6 +1904,12 @@ section {
 
     .skill-card p {
         font-size: 0.7rem;
+    }
+
+    .skill-card-text {
+        padding: 8px 10px;
+        margin-top: 4px;
+        border-radius: 8px;
     }
 
     .skill-icon {
