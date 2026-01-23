@@ -589,11 +589,6 @@ section {
     font-style: italic;
 }
 
-@keyframes aboutShimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
 .about-text p {
     color: var(--text-secondary);
     margin-bottom: 20px;
