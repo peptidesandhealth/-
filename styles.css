@@ -210,6 +210,53 @@ img {
     text-align: center;
     position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-card {
+    background: linear-gradient(145deg,
+        rgba(232, 232, 232, 0.95) 0%,
+        rgba(192, 192, 192, 0.9) 25%,
+        rgba(212, 212, 212, 0.95) 50%,
+        rgba(192, 192, 192, 0.9) 75%,
+        rgba(232, 232, 232, 0.95) 100%);
+    border-radius: 30px;
+    padding: 60px 80px;
+    max-width: 800px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-card .hero-title {
+    color: #7a8a94;
+}
+
+.hero-card .hero-title .accent {
+    background: linear-gradient(135deg, #8fa4b0 0%, #a8bcc8 25%, #c8d8e0 50%, #a8bcc8 75%, #8fa4b0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: iceFlow 4s ease infinite;
+}
+
+.hero-card .hero-subtitle {
+    color: #8898a4;
+    font-weight: 500;
+}
+
+.hero-card .hero-tagline {
+    color: #5a6a74;
+    font-weight: 400;
+}
+
+.hero-card .hero-description {
+    color: #6a7a84;
 }
 
 .hero-subtitle {
