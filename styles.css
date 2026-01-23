@@ -1349,32 +1349,33 @@ section {
     }
 
     .hero-card {
-        padding: 40px 30px;
+        padding: 35px 25px;
         margin: 0 16px;
         border-radius: 24px;
+        backdrop-filter: blur(15px);
     }
 
     .hero-card .hero-title {
-        font-size: 2.5rem;
-        margin-bottom: 16px;
+        font-size: 2.2rem;
+        margin-bottom: 12px;
     }
 
     .hero-card .hero-subtitle {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         letter-spacing: 2px;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
 
     .hero-card .hero-tagline {
-        font-size: 1.1rem;
-        line-height: 1.5;
-        margin-bottom: 16px;
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
     }
 
     .hero-card .hero-description {
-        font-size: 0.9rem;
-        line-height: 1.6;
-        margin-bottom: 24px;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
     }
 
     .hero-visual {
@@ -1484,14 +1485,15 @@ section {
     }
 
     .hero-card {
-        padding: 32px 24px;
+        padding: 28px 20px;
         margin: 0 8px;
-        border-radius: 20px;
+        border-radius: 18px;
+        backdrop-filter: blur(15px);
     }
 
     .hero-card .hero-title {
-        font-size: 2rem;
-        margin-bottom: 12px;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
     }
 
     .hero-card .hero-subtitle {
