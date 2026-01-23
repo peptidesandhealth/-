@@ -846,8 +846,8 @@ section {
     }
 
     .timeline::before {
-        top: 0;
-        bottom: 0;
+        top: 30px;
+        bottom: 30px;
         left: 30px;
         right: auto;
         width: 2px;
