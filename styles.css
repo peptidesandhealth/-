@@ -186,7 +186,7 @@ img {
     padding: 120px 24px 60px;
     position: relative;
     background-color: var(--snow-white);
-    background-image: url('images/hero-bg.jpeg');
+    background-image: url('./images/hero-bg.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
