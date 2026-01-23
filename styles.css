@@ -1475,6 +1475,32 @@ section {
     color: var(--ice-flow-dark);
 }
 
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--ice-flow-dark);
+}
+
+.checkbox-group label {
+    position: static;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    line-height: 1.4;
+    pointer-events: auto;
+}
+
 /* ========================================
    Footer
    ======================================== */
