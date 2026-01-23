@@ -760,7 +760,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(245,248,250,0.9) 50%, rgba(255,255,255,0.85) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.4) 100%);
     z-index: 1;
     border-radius: 20px;
 }
@@ -778,27 +778,27 @@ section {
 
 /* Background images for skill cards */
 .skill-card-1 {
-    background-image: url('images/Восстановление и регенерация.jpeg');
+    background-image: url('images/card-1.jpeg');
 }
 
 .skill-card-2 {
-    background-image: url('images/Опорно-двигательный аппарат.jpeg');
+    background-image: url('images/card-2.jpeg');
 }
 
 .skill-card-3 {
-    background-image: url('images/Кожа и дермальные структуры.jpeg');
+    background-image: url('images/card-3.jpeg');
 }
 
 .skill-card-4 {
-    background-image: url('images/Стресс-нагрузка и сон.jpeg');
+    background-image: url('images/card-4.jpeg');
 }
 
 .skill-card-5 {
-    background-image: url('images/Иммунная поддержка.jpeg');
+    background-image: url('images/card-5.jpeg');
 }
 
 .skill-card-6 {
-    background-image: url('images/Метаболический профиль.jpeg');
+    background-image: url('images/card-6.jpeg');
 }
 
 .skill-icon {
@@ -825,17 +825,18 @@ section {
     font-weight: 600;
     background: linear-gradient(
         90deg,
-        #3a4a54 0%,
-        #5a6a74 25%,
-        #7a8a94 50%,
-        #5a6a74 75%,
-        #3a4a54 100%
+        #2a3a44 0%,
+        #4a5a64 25%,
+        #5a6a74 50%,
+        #4a5a64 75%,
+        #2a3a44 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: cardTitleShimmer 3s ease-in-out infinite;
+    filter: drop-shadow(0 1px 1px rgba(255,255,255,0.7));
 }
 
 @keyframes cardTitleShimmer {
@@ -845,8 +846,9 @@ section {
 
 .skill-card p {
     font-size: 0.875rem;
-    color: var(--text-secondary);
+    color: #3a4a54;
     line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8);
 }
 
 .tech-stack {
