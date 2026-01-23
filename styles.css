@@ -198,8 +198,9 @@ img {
     width: 100%;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-left: 60px;
 }
 
 .hero-card {
@@ -1346,6 +1347,11 @@ section {
 
     .mobile-menu-btn.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .hero-content {
+        justify-content: center;
+        padding-left: 0;
     }
 
     .hero-card {
