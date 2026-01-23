@@ -219,25 +219,13 @@ img {
 }
 
 .hero-card {
-    background: linear-gradient(145deg,
-        rgba(255, 255, 255, 0.2) 0%,
-        rgba(245, 248, 250, 0.2) 20%,
-        rgba(235, 240, 245, 0.2) 40%,
-        rgba(245, 248, 252, 0.2) 60%,
-        rgba(240, 245, 250, 0.2) 80%,
-        rgba(255, 255, 255, 0.2) 100%);
-    background-size: 400% 400%;
-    animation: pearlShimmer 8s ease infinite;
+    background: rgba(255, 255, 255, 0.92);
     border-radius: 24px;
     padding: 40px 55px;
     max-width: 620px;
-    box-shadow:
-        0 20px 60px rgba(165, 196, 212, 0.1),
-        0 8px 25px rgba(165, 196, 212, 0.08),
-        inset 0 2px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(165, 196, 212, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(6px);
 }
 
 @keyframes pearlShimmer {
@@ -248,11 +236,11 @@ img {
 }
 
 .hero-card .hero-title {
-    color: #7a8a94;
+    color: #4a5a64;
 }
 
 .hero-card .hero-title .accent {
-    background: linear-gradient(135deg, #8fa4b0 0%, #a8bcc8 25%, #c8d8e0 50%, #a8bcc8 75%, #8fa4b0 100%);
+    background: linear-gradient(135deg, #4a5a64 0%, #5a6a74 25%, #6a7a84 50%, #5a6a74 75%, #4a5a64 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -283,7 +271,8 @@ img {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.75rem, 5vw, 3.5rem);
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
@@ -306,12 +295,12 @@ img {
 }
 
 .hero-tagline {
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-size: 1.125rem;
+    font-weight: 400;
     color: var(--text-primary);
     max-width: 700px;
     margin: 0 auto 20px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .hero-description {
@@ -1650,7 +1639,7 @@ section {
     }
 
     .hero-card .hero-title {
-        font-size: 3rem;
+        font-size: 2.125rem;
         margin-bottom: 12px;
     }
 
@@ -1662,7 +1651,7 @@ section {
 
     .hero-card .hero-tagline {
         font-size: 1rem;
-        line-height: 1.4;
+        line-height: 1.6;
         margin-bottom: 12px;
     }
 
@@ -1816,7 +1805,7 @@ section {
     }
 
     .hero-card .hero-title {
-        font-size: 2.5rem;
+        font-size: 1.875rem;
         margin-bottom: 10px;
     }
 
@@ -1828,7 +1817,7 @@ section {
 
     .hero-card .hero-tagline {
         font-size: 1rem;
-        line-height: 1.4;
+        line-height: 1.6;
         margin-bottom: 14px;
     }
 
