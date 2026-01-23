@@ -742,15 +742,16 @@ section {
 
 .skill-card {
     padding: 30px 24px;
-    background: var(--snow-white);
+    background-color: var(--snow-white);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border: 1px solid var(--chrome-light);
     border-radius: 20px;
     text-align: center;
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
 }
 
 .skill-card::before {
