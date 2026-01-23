@@ -494,7 +494,7 @@ section {
 }
 
 .section-title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
     position: relative;
     display: inline-block;
     background: linear-gradient(
