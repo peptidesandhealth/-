@@ -760,7 +760,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.4) 100%);
+    background: rgba(255, 255, 255, 0.85);
     z-index: 1;
     border-radius: 20px;
 }
@@ -849,6 +849,14 @@ section {
     color: #3a4a54;
     line-height: 1.6;
     text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+
+.skill-card .desc-desktop {
+    display: block;
+}
+
+.skill-card .desc-mobile {
+    display: none;
 }
 
 .tech-stack {
@@ -1719,64 +1727,54 @@ section {
         line-height: 1.4;
     }
 
-    /* Skills carousel on mobile */
+    /* Skills grid on mobile - 2 cards per row */
     .skills-carousel {
         position: relative;
     }
 
     .carousel-arrow {
-        display: flex;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 32px;
-        height: 32px;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        color: var(--ice-flow-dark);
-        background: rgba(255,255,255,0.95);
-        border-radius: 50%;
-        opacity: 0.9;
-        z-index: 10;
-        cursor: pointer;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        transition: all 0.2s ease;
-    }
-
-    .carousel-arrow:active {
-        transform: translateY(-50%) scale(0.95);
-        opacity: 1;
-    }
-
-    .carousel-arrow-left {
-        left: 4px;
-    }
-
-    .carousel-arrow-right {
-        right: 4px;
+        display: none;
     }
 
     .skills-grid,
     .skills-grid.six-cards {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        gap: 16px;
-        padding-bottom: 16px;
-        margin: 0 32px;
-        padding-left: 8px;
-        padding-right: 8px;
-    }
-
-    .skills-grid::-webkit-scrollbar {
-        display: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
     .skill-card {
-        flex: 0 0 calc(100vw - 64px);
-        scroll-snap-align: center;
+        padding: 20px 14px;
+    }
+
+    .skill-card .desc-desktop {
+        display: none;
+    }
+
+    .skill-card .desc-mobile {
+        display: block;
+    }
+
+    .skill-card h3 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .skill-card p {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .skill-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+    }
+
+    .skill-icon svg {
+        width: 22px;
+        height: 22px;
     }
 
     .portfolio-grid {
@@ -1873,17 +1871,34 @@ section {
         font-size: 2.5rem;
     }
 
-    /* Skills carousel full width cards */
+    /* Skills grid - keep 2 columns on small screens */
     .skills-grid,
     .skills-grid.six-cards {
-        margin: 0;
-        padding-left: 16px;
-        padding-right: 16px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .skill-card {
-        flex: 0 0 calc(100vw - 64px);
-        padding: 24px 20px;
+        padding: 16px 12px;
+    }
+
+    .skill-card h3 {
+        font-size: 0.85rem;
+    }
+
+    .skill-card p {
+        font-size: 0.7rem;
+    }
+
+    .skill-icon {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 10px;
+    }
+
+    .skill-icon svg {
+        width: 18px;
+        height: 18px;
     }
 }
 
