@@ -582,19 +582,7 @@ section {
     margin-bottom: 0;
     line-height: 1.7;
     max-width: 800px;
-    background: linear-gradient(
-        90deg,
-        #7a8a94 0%,
-        #a8bcc8 25%,
-        #e8f4fc 50%,
-        #a8bcc8 75%,
-        #7a8a94 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: aboutShimmer 4s ease-in-out infinite;
+    color: var(--text-secondary);
 }
 
 .about-lead.italic {
