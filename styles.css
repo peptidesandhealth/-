@@ -1515,6 +1515,10 @@ section {
         --section-padding: 50px 0;
     }
 
+    .desktop-only {
+        display: none;
+    }
+
     .nav-links {
         display: none;
         position: absolute;
