@@ -217,19 +217,31 @@ img {
 
 .hero-card {
     background: linear-gradient(145deg,
-        rgba(232, 232, 232, 0.95) 0%,
-        rgba(192, 192, 192, 0.9) 25%,
-        rgba(212, 212, 212, 0.95) 50%,
-        rgba(192, 192, 192, 0.9) 75%,
-        rgba(232, 232, 232, 0.95) 100%);
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(245, 248, 250, 0.98) 20%,
+        rgba(235, 240, 245, 0.95) 40%,
+        rgba(245, 248, 252, 0.98) 60%,
+        rgba(240, 245, 250, 0.95) 80%,
+        rgba(255, 255, 255, 0.95) 100%);
+    background-size: 400% 400%;
+    animation: pearlShimmer 8s ease infinite;
     border-radius: 30px;
     padding: 60px 80px;
     max-width: 800px;
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+        0 20px 60px rgba(165, 196, 212, 0.15),
+        0 8px 25px rgba(165, 196, 212, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -1px 0 rgba(165, 196, 212, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+@keyframes pearlShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
 }
 
 .hero-card .hero-title {
@@ -1349,6 +1361,35 @@ section {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
+    .hero-card {
+        padding: 40px 30px;
+        margin: 0 16px;
+        border-radius: 24px;
+    }
+
+    .hero-card .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+    }
+
+    .hero-card .hero-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+    }
+
+    .hero-card .hero-tagline {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+
+    .hero-card .hero-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
     .hero-visual {
         height: 280px;
     }
@@ -1448,11 +1489,40 @@ section {
 
 @media (max-width: 480px) {
     .hero {
-        padding: 100px 16px 40px;
+        padding: 100px 12px 40px;
     }
 
     .container {
         padding: 0 16px;
+    }
+
+    .hero-card {
+        padding: 32px 24px;
+        margin: 0 8px;
+        border-radius: 20px;
+    }
+
+    .hero-card .hero-title {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+
+    .hero-card .hero-subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 14px;
+    }
+
+    .hero-card .hero-tagline {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 14px;
+    }
+
+    .hero-card .hero-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
     }
 
     .hero-buttons {
