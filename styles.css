@@ -119,10 +119,27 @@ img {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
-    background: var(--gradient-chrome);
+    background: linear-gradient(
+        90deg,
+        #a8a8a8 0%,
+        #d4d4d4 20%,
+        #ffffff 40%,
+        #e8e8e8 50%,
+        #ffffff 60%,
+        #d4d4d4 80%,
+        #a8a8a8 100%
+    );
+    background-size: 300% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: logoShimmer 3s ease-in-out infinite;
+}
+
+@keyframes logoShimmer {
+    0% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
 .nav-links {
@@ -480,6 +497,29 @@ section {
     font-size: clamp(2rem, 4vw, 3rem);
     position: relative;
     display: inline-block;
+    background: linear-gradient(
+        90deg,
+        #8a9ba8 0%,
+        #b8c8d4 15%,
+        #e8f0f4 30%,
+        #ffffff 40%,
+        #e8f0f4 50%,
+        #b8c8d4 65%,
+        #8a9ba8 80%,
+        #b8c8d4 90%,
+        #e8f0f4 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleShimmer 4s ease-in-out infinite;
+}
+
+@keyframes titleShimmer {
+    0% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
 .section-title::after {
@@ -489,8 +529,15 @@ section {
     left: 0;
     width: 60px;
     height: 3px;
-    background: var(--gradient-mixed);
+    background: linear-gradient(90deg, var(--ice-flow), var(--chrome-light), var(--ice-flow));
+    background-size: 200% 100%;
+    animation: lineShimmer 2s ease-in-out infinite;
     border-radius: 2px;
+}
+
+@keyframes lineShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .section-title.ice-flow {
@@ -519,9 +566,26 @@ section {
 .about-lead {
     font-size: 1.4rem;
     font-weight: 300;
-    color: var(--text-primary);
     margin-bottom: 24px;
     line-height: 1.7;
+    background: linear-gradient(
+        90deg,
+        #5a6a74 0%,
+        #8a9ba8 25%,
+        #d8e8f0 50%,
+        #8a9ba8 75%,
+        #5a6a74 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: aboutShimmer 4s ease-in-out infinite;
+}
+
+@keyframes aboutShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .about-text p {
@@ -582,10 +646,27 @@ section {
     font-size: 1.1rem;
     font-weight: 600;
     display: block;
-    color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    background: linear-gradient(
+        90deg,
+        #4a5a64 0%,
+        #7a8a94 25%,
+        #c8d8e4 50%,
+        #7a8a94 75%,
+        #4a5a64 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: statShimmer 3s ease-in-out infinite;
+}
+
+@keyframes statShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .stat-label {
@@ -656,6 +737,24 @@ section {
     margin-bottom: 12px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
+    background: linear-gradient(
+        90deg,
+        #5a6a74 0%,
+        #8a9ba8 25%,
+        #c8d8e4 50%,
+        #8a9ba8 75%,
+        #5a6a74 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: cardTitleShimmer 3s ease-in-out infinite;
+}
+
+@keyframes cardTitleShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .skill-card p {
@@ -881,10 +980,27 @@ section {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--text-primary);
     margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    background: linear-gradient(
+        90deg,
+        #5a6a74 0%,
+        #8a9ba8 30%,
+        #d0e0ec 50%,
+        #8a9ba8 70%,
+        #5a6a74 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: timelineShimmer 3.5s ease-in-out infinite;
+}
+
+@keyframes timelineShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .timeline-content p {
@@ -969,9 +1085,26 @@ section {
 .shop-lead {
     font-size: 1.4rem;
     font-weight: 300;
-    color: var(--text-primary);
     margin-bottom: 24px;
     line-height: 1.6;
+    background: linear-gradient(
+        90deg,
+        #5a6a74 0%,
+        #8a9ba8 25%,
+        #d8e8f0 50%,
+        #8a9ba8 75%,
+        #5a6a74 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shopShimmer 4s ease-in-out infinite;
+}
+
+@keyframes shopShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .shop-text {
@@ -1024,10 +1157,27 @@ section {
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--text-primary);
     margin: 0;
     padding-right: 20px;
-    transition: color var(--transition-normal);
+    transition: all var(--transition-normal);
+    background: linear-gradient(
+        90deg,
+        #4a5a64 0%,
+        #7a8a94 30%,
+        #b8c8d4 50%,
+        #7a8a94 70%,
+        #4a5a64 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: faqShimmer 4s ease-in-out infinite;
+}
+
+@keyframes faqShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .faq-question:hover h3 {
@@ -1096,6 +1246,27 @@ section {
     font-weight: 300;
     line-height: 1.5;
     margin-bottom: 30px;
+    background: linear-gradient(
+        90deg,
+        #5a6a74 0%,
+        #8a9ba8 20%,
+        #d8e8f0 40%,
+        #ffffff 50%,
+        #d8e8f0 60%,
+        #8a9ba8 80%,
+        #5a6a74 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: contactShimmer 5s ease-in-out infinite;
+}
+
+@keyframes contactShimmer {
+    0% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
 .contact-details {
