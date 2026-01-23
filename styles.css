@@ -185,7 +185,7 @@ img {
     justify-content: center;
     padding: 120px 24px 60px;
     position: relative;
-    background: var(--snow-white);
+    background-color: var(--snow-white);
     background-image: url('images/фон.jpeg');
     background-size: cover;
     background-position: center;
