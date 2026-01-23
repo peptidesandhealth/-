@@ -215,7 +215,7 @@ img {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 60px;
+    padding-left: 24px;
 }
 
 .hero-card {
