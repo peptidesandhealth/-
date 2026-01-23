@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initParallaxEffects();
     initFAQ();
+    initSkillsCarousel();
 });
 
 // ========================================
@@ -427,3 +428,44 @@ const throttledScroll = throttle(() => {
 }, 100);
 
 window.addEventListener('scroll', throttledScroll);
+
+// ========================================
+// Skills Carousel
+// ========================================
+function initSkillsCarousel() {
+    const carousel = document.querySelector('.skills-carousel');
+    if (!carousel) return;
+
+    const grid = carousel.querySelector('.skills-grid');
+    const leftArrow = carousel.querySelector('.carousel-arrow-left');
+    const rightArrow = carousel.querySelector('.carousel-arrow-right');
+
+    if (!grid || !leftArrow || !rightArrow) return;
+
+    // Get card width for scrolling
+    const getScrollAmount = () => {
+        const card = grid.querySelector('.skill-card');
+        if (card) {
+            return card.offsetWidth + 16; // card width + gap
+        }
+        return 300;
+    };
+
+    // Scroll left
+    leftArrow.addEventListener('click', () => {
+        grid.scrollBy({
+            left: -getScrollAmount(),
+            behavior: 'smooth'
+        });
+    });
+
+    // Scroll right
+    rightArrow.addEventListener('click', () => {
+        grid.scrollBy({
+            left: getScrollAmount(),
+            behavior: 'smooth'
+        });
+    });
+
+    // Touch/swipe is already handled by CSS scroll-snap
+}
