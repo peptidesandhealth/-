@@ -583,6 +583,10 @@ section {
     animation: aboutShimmer 4s ease-in-out infinite;
 }
 
+.about-lead.italic {
+    font-style: italic;
+}
+
 @keyframes aboutShimmer {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -674,6 +678,28 @@ section {
     color: var(--text-secondary);
     letter-spacing: 0.5px;
     line-height: 1.5;
+}
+
+.about-note {
+    margin-top: 30px;
+    padding: 20px 28px;
+    background: linear-gradient(145deg,
+        rgba(232, 240, 248, 0.6) 0%,
+        rgba(220, 232, 244, 0.4) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(165, 196, 212, 0.2);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-note p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+    text-align: center;
 }
 
 /* ========================================
