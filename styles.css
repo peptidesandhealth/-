@@ -121,13 +121,13 @@ img {
     font-weight: 600;
     background: linear-gradient(
         90deg,
-        #b8c8d4 0%,
-        #e0e8f0 20%,
-        #ffffff 40%,
-        #f0f8fc 50%,
-        #ffffff 60%,
-        #e0e8f0 80%,
-        #b8c8d4 100%
+        #5a6a74 0%,
+        #7a8a94 20%,
+        #9aaab4 40%,
+        #a8b8c4 50%,
+        #9aaab4 60%,
+        #7a8a94 80%,
+        #5a6a74 100%
     );
     background-size: 300% 100%;
     -webkit-background-clip: text;
@@ -499,15 +499,15 @@ section {
     display: inline-block;
     background: linear-gradient(
         90deg,
-        #a8bcc8 0%,
-        #c8dce8 15%,
-        #f0f8fc 30%,
-        #ffffff 40%,
-        #f0f8fc 50%,
-        #c8dce8 65%,
-        #a8bcc8 80%,
-        #c8dce8 90%,
-        #f0f8fc 100%
+        #4a6070 0%,
+        #6a8494 15%,
+        #8aa4b4 30%,
+        #a8c0d0 40%,
+        #8aa4b4 50%,
+        #6a8494 65%,
+        #4a6070 80%,
+        #6a8494 90%,
+        #8aa4b4 100%
     );
     background-size: 300% 100%;
     -webkit-background-clip: text;
@@ -541,7 +541,7 @@ section {
 }
 
 .section-title.ice-flow {
-    background: linear-gradient(135deg, #C8D4DC 0%, #A8B8C8 25%, #E0E8EC 50%, #B0C0CC 75%, #C8D4DC 100%);
+    background: linear-gradient(135deg, #5a7080 0%, #6a8494 25%, #8aa4b4 50%, #6a8494 75%, #5a7080 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -665,11 +665,11 @@ section {
     margin-bottom: 10px;
     background: linear-gradient(
         90deg,
-        #6a7a84 0%,
-        #98acb8 25%,
-        #d8ecf8 50%,
-        #98acb8 75%,
-        #6a7a84 100%
+        #3a4a54 0%,
+        #5a6a74 25%,
+        #7a8a94 50%,
+        #5a6a74 75%,
+        #3a4a54 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -772,11 +772,11 @@ section {
     font-weight: 600;
     background: linear-gradient(
         90deg,
-        #7a8a94 0%,
-        #a8bcc8 25%,
-        #d8ecf8 50%,
-        #a8bcc8 75%,
-        #7a8a94 100%
+        #3a4a54 0%,
+        #5a6a74 25%,
+        #7a8a94 50%,
+        #5a6a74 75%,
+        #3a4a54 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -1018,11 +1018,11 @@ section {
     letter-spacing: 0.5px;
     background: linear-gradient(
         90deg,
-        #7a8a94 0%,
-        #a8bcc8 30%,
-        #e0f0fc 50%,
-        #a8bcc8 70%,
-        #7a8a94 100%
+        #3a4a54 0%,
+        #5a6a74 30%,
+        #7a8a94 50%,
+        #5a6a74 70%,
+        #3a4a54 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -1122,11 +1122,11 @@ section {
     line-height: 1.6;
     background: linear-gradient(
         90deg,
-        #7a8a94 0%,
-        #a8bcc8 25%,
-        #e8f4fc 50%,
-        #a8bcc8 75%,
-        #7a8a94 100%
+        #4a5a64 0%,
+        #5a6a74 25%,
+        #7a8a94 50%,
+        #5a6a74 75%,
+        #4a5a64 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -1195,11 +1195,11 @@ section {
     transition: all var(--transition-normal);
     background: linear-gradient(
         90deg,
-        #6a7a84 0%,
-        #98acb8 30%,
-        #c8dce8 50%,
-        #98acb8 70%,
-        #6a7a84 100%
+        #3a4a54 0%,
+        #5a6a74 30%,
+        #7a8a94 50%,
+        #5a6a74 70%,
+        #3a4a54 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -1281,13 +1281,13 @@ section {
     margin-bottom: 30px;
     background: linear-gradient(
         90deg,
-        #7a8a94 0%,
-        #a8bcc8 20%,
-        #e8f4fc 40%,
-        #ffffff 50%,
-        #e8f4fc 60%,
-        #a8bcc8 80%,
-        #7a8a94 100%
+        #4a5a64 0%,
+        #5a6a74 20%,
+        #7a8a94 40%,
+        #8a9aa4 50%,
+        #7a8a94 60%,
+        #5a6a74 80%,
+        #4a5a64 100%
     );
     background-size: 300% 100%;
     -webkit-background-clip: text;
