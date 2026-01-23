@@ -630,12 +630,13 @@ section {
 
 .stat-item {
     padding: 28px 32px;
-    background: linear-gradient(135deg, #C5D6DE 0%, #B8C9D1 50%, #C5D6DE 100%);
-    border-radius: 16px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FA 30%, #DDE8ED 70%, #C8D8E0 100%);
+    border-radius: 30px;
     text-align: center;
     transition: all var(--transition-normal);
-    border: 1px solid #D0E1E9;
-    box-shadow: 0 4px 20px rgba(184, 201, 209, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(180, 200, 210, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .about-stats.horizontal .stat-item {
@@ -646,7 +647,8 @@ section {
 
 .stat-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(184, 201, 209, 0.4);
+    box-shadow: 0 12px 40px rgba(180, 200, 210, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .stat-number {
