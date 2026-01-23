@@ -557,17 +557,31 @@ section {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 40px;
+}
+
+.about-content.centered {
+    text-align: center;
+}
+
+.section-header.centered {
+    text-align: center;
+}
+
+.section-header.centered .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .about-lead {
     font-size: 1.4rem;
     font-weight: 300;
-    margin-bottom: 24px;
+    margin-bottom: 0;
     line-height: 1.7;
+    max-width: 800px;
     background: linear-gradient(
         90deg,
         #7a8a94 0%,
@@ -619,6 +633,13 @@ section {
     gap: 24px;
 }
 
+.about-stats.horizontal {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
 .stat-item {
     padding: 28px 32px;
     background: var(--gradient-chrome);
@@ -627,6 +648,12 @@ section {
     transition: all var(--transition-normal);
     border: 1px solid var(--chrome-light);
     box-shadow: 0 4px 20px rgba(165, 196, 212, 0.15);
+}
+
+.about-stats.horizontal .stat-item {
+    flex: 1;
+    max-width: 280px;
+    padding: 24px 20px;
 }
 
 .stat-item:hover {
@@ -681,16 +708,13 @@ section {
 }
 
 .about-note {
-    margin-top: 30px;
     padding: 20px 28px;
     background: linear-gradient(145deg,
         rgba(232, 240, 248, 0.6) 0%,
         rgba(220, 232, 244, 0.4) 100%);
     border-radius: 16px;
     border: 1px solid rgba(165, 196, 212, 0.2);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 700px;
 }
 
 .about-note p {
@@ -1466,19 +1490,11 @@ section {
         justify-content: center;
     }
 
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .about-stats {
-        flex-direction: row;
-        justify-content: center;
+    .about-stats.horizontal {
         flex-wrap: wrap;
-        gap: 16px;
     }
 
-    .stat-item {
+    .about-stats.horizontal .stat-item {
         flex: 1 1 45%;
         max-width: none;
     }
@@ -1588,12 +1604,14 @@ section {
         height: 220px;
     }
 
-    .about-stats {
+    .about-stats,
+    .about-stats.horizontal {
         flex-direction: column;
         gap: 12px;
     }
 
-    .stat-item {
+    .stat-item,
+    .about-stats.horizontal .stat-item {
         flex: none;
         max-width: 100%;
         width: 100%;
