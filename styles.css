@@ -993,8 +993,8 @@ section {
    Consultation Timeline Section
    ======================================== */
 .consultation {
-    background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.85) 100%),
-                url('images/consultation-bg.jpeg');
+    background-color: var(--snow-white);
+    background-image: url('images/consultation-bg2.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
