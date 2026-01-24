@@ -592,12 +592,70 @@ function initCatalogModal() {
         });
     });
 
-    // Card buttons - redirect to contact or Telegram
+    // Card buttons - open product detail modal
     const cardButtons = document.querySelectorAll('.btn-card');
     cardButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Close modal and scroll to contact
-            closeModal();
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const card = btn.closest('.catalog-card');
+            if (card) {
+                openProductModal(card);
+            }
+        });
+    });
+
+    // Initialize product modal
+    initProductModal();
+}
+
+// ========================================
+// Product Detail Modal
+// ========================================
+function initProductModal() {
+    const productModal = document.getElementById('productModal');
+    const closeProductBtn = document.getElementById('closeProductBtn');
+    const productOverlay = productModal?.querySelector('.product-overlay');
+    const consultBtn = document.getElementById('productConsultBtn');
+    const catalogModal = document.getElementById('catalogModal');
+
+    if (!productModal) return;
+
+    // Close product modal
+    function closeProductModal() {
+        productModal.classList.remove('active');
+        // Don't remove modal-open if catalog is still open
+        if (!catalogModal?.classList.contains('active')) {
+            document.body.classList.remove('modal-open');
+        }
+    }
+
+    // Close button
+    if (closeProductBtn) {
+        closeProductBtn.addEventListener('click', closeProductModal);
+    }
+
+    // Overlay click
+    if (productOverlay) {
+        productOverlay.addEventListener('click', closeProductModal);
+    }
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && productModal.classList.contains('active')) {
+            closeProductModal();
+        }
+    });
+
+    // Consultation button - close modals and scroll to contact
+    if (consultBtn) {
+        consultBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeProductModal();
+            if (catalogModal) {
+                catalogModal.classList.remove('active');
+            }
+            document.body.classList.remove('modal-open');
+
             setTimeout(() => {
                 const contactSection = document.getElementById('contact');
                 if (contactSection) {
@@ -610,5 +668,37 @@ function initCatalogModal() {
                 }
             }, 300);
         });
-    });
+    }
+}
+
+// Open product modal with card data
+function openProductModal(card) {
+    const productModal = document.getElementById('productModal');
+    const productTitle = document.getElementById('productTitle');
+    const productBadge = document.getElementById('productBadge');
+    const productDose = document.getElementById('productDose');
+    const productFull = document.getElementById('productFull');
+
+    if (!productModal || !card) return;
+
+    // Get data from card
+    const name = card.dataset.name || '';
+    const dose = card.dataset.dose || '';
+    const fullDesc = card.dataset.full || '';
+    const badge = card.querySelector('.card-badge')?.textContent || '';
+
+    // Populate modal
+    if (productTitle) productTitle.textContent = name;
+    if (productBadge) productBadge.textContent = badge;
+    if (productDose) productDose.textContent = dose;
+
+    // Format full description with paragraphs
+    if (productFull) {
+        const paragraphs = fullDesc.split('\n\n').filter(p => p.trim());
+        productFull.innerHTML = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+    }
+
+    // Show modal
+    productModal.classList.add('active');
+    document.body.classList.add('modal-open');
 }

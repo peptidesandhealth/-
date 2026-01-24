@@ -1654,6 +1654,231 @@ body.modal-open {
     overflow: hidden;
 }
 
+/* Card Dose Style */
+.card-dose {
+    font-size: 0.7rem;
+    color: var(--ice-flow-dark);
+    font-weight: 500;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+}
+
+/* ========================================
+   Product Detail Modal
+   ======================================== */
+.product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.product-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(45, 52, 54, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.product-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    max-height: 85vh;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    border-radius: 24px;
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+    transform: scale(0.9) translateY(30px);
+    transition: transform 0.3s ease;
+}
+
+.product-modal.active .product-container {
+    transform: scale(1) translateY(0);
+}
+
+.product-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(165, 196, 212, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    color: var(--text-secondary);
+    z-index: 10;
+}
+
+.product-close:hover {
+    background: rgba(165, 196, 212, 0.2);
+    color: var(--text-primary);
+    transform: rotate(90deg);
+}
+
+.product-close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.product-content {
+    padding: 40px 36px;
+    overflow-y: auto;
+    max-height: 85vh;
+}
+
+.product-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    background: linear-gradient(135deg, var(--ice-flow) 0%, var(--ice-flow-dark) 100%);
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.product-dose {
+    font-size: 1rem;
+    color: var(--ice-flow-dark);
+    font-weight: 500;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(165, 196, 212, 0.2);
+}
+
+.product-full {
+    margin-bottom: 28px;
+}
+
+.product-full p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.product-full p:last-child {
+    margin-bottom: 0;
+}
+
+.btn-consultation {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 18px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Product Modal Mobile */
+@media (max-width: 768px) {
+    .product-container {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100vh;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .product-content {
+        padding: 30px 24px;
+        max-height: 100vh;
+    }
+
+    .product-close {
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .product-title {
+        font-size: 1.6rem;
+        padding-right: 50px;
+    }
+
+    .product-dose {
+        font-size: 0.9rem;
+    }
+
+    .product-full p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .btn-consultation {
+        padding: 16px 28px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-content {
+        padding: 24px 20px;
+    }
+
+    .product-badge {
+        font-size: 0.65rem;
+        padding: 5px 12px;
+    }
+
+    .product-title {
+        font-size: 1.4rem;
+    }
+
+    .product-dose {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+    }
+
+    .product-full p {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+
+    .btn-consultation {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+    }
+}
+
 /* ========================================
    FAQ Section
    ======================================== */
