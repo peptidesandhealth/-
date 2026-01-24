@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallaxEffects();
     initFAQ();
     initSkillsCarousel();
+    initCatalogModal();
 });
 
 // ========================================
@@ -468,4 +469,146 @@ function initSkillsCarousel() {
     });
 
     // Touch/swipe is already handled by CSS scroll-snap
+}
+
+// ========================================
+// Catalog Modal
+// ========================================
+function initCatalogModal() {
+    const modal = document.getElementById('catalogModal');
+    const openBtn = document.getElementById('openCatalogBtn');
+    const closeBtn = document.getElementById('closeCatalogBtn');
+    const overlay = modal?.querySelector('.catalog-overlay');
+    const searchInput = document.getElementById('catalogSearch');
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const catalogCards = document.querySelectorAll('.catalog-card');
+    const catalogEmpty = document.getElementById('catalogEmpty');
+    const catalogGrid = document.getElementById('catalogGrid');
+    const showcaseButtons = document.querySelectorAll('.btn-showcase');
+
+    if (!modal || !openBtn) return;
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    // Open modal
+    function openModal() {
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+    }
+
+    // Close modal
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+
+    // Filter cards
+    function filterCards() {
+        let visibleCount = 0;
+
+        catalogCards.forEach(card => {
+            const category = card.dataset.category;
+            const name = card.dataset.name.toLowerCase();
+
+            const matchesFilter = currentFilter === 'all' || category === currentFilter;
+            const matchesSearch = currentSearch === '' || name.includes(currentSearch.toLowerCase());
+
+            if (matchesFilter && matchesSearch) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+
+        // Show/hide empty state
+        if (catalogEmpty && catalogGrid) {
+            if (visibleCount === 0) {
+                catalogEmpty.style.display = 'block';
+                catalogGrid.style.display = 'none';
+            } else {
+                catalogEmpty.style.display = 'none';
+                catalogGrid.style.display = 'grid';
+            }
+        }
+    }
+
+    // Open button click
+    openBtn.addEventListener('click', openModal);
+
+    // Close button click
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Overlay click
+    if (overlay) {
+        overlay.addEventListener('click', closeModal);
+    }
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // Search input
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value.trim();
+            filterCards();
+        });
+    }
+
+    // Filter chips
+    filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            // Update active state
+            filterChips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+
+            // Update filter
+            currentFilter = chip.dataset.filter;
+            filterCards();
+        });
+    });
+
+    // Showcase buttons - open modal with filter
+    showcaseButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const productName = btn.dataset.product;
+
+            // Open modal
+            openModal();
+
+            // Set search to product name
+            if (searchInput && productName) {
+                searchInput.value = productName.toUpperCase();
+                currentSearch = productName;
+                filterCards();
+            }
+        });
+    });
+
+    // Card buttons - redirect to contact or Telegram
+    const cardButtons = document.querySelectorAll('.btn-card');
+    cardButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Close modal and scroll to contact
+            closeModal();
+            setTimeout(() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = contactSection.offsetTop - navbarHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 300);
+        });
+    });
 }

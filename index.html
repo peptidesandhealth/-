@@ -267,17 +267,181 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title ice-flow">Магазин iPeptides</h2>
+                <p class="shop-subtitle"><em>Подбор и оформление заказа — в рамках консультационного сопровождения.</em></p>
             </div>
-            <div class="shop-content">
-                <p class="shop-lead">Оформление заказа доступно онлайн.<br>Подбор по запросу — через консультацию.</p>
-                <p class="shop-text">В магазине iPeptides представлены позиции, отобранные с акцентом на стандарты качества, чистоту состава и понятную структуру применения.</p>
-                <p class="shop-text">Вы можете ознакомиться с ассортиментом и оформить заказ онлайн. При необходимости мы поможем выбрать оптимальное направление в рамках консультационного сопровождения.</p>
-                <div class="shop-cta">
-                    <a href="https://t.me/ipeptides" target="_blank" class="btn btn-primary">Перейти в магазин</a>
+
+            <!-- Mini Showcase - 3 Featured Products -->
+            <div class="shop-showcase">
+                <div class="showcase-card">
+                    <div class="showcase-badge">Восстановление</div>
+                    <h3 class="showcase-title">BPC-157</h3>
+                    <p class="showcase-desc">Поддержка регенеративных процессов</p>
+                    <button class="btn-showcase" data-product="bpc-157">Подробнее</button>
                 </div>
+                <div class="showcase-card">
+                    <div class="showcase-badge">Кожа</div>
+                    <h3 class="showcase-title">GHK-Cu</h3>
+                    <p class="showcase-desc">Качество и плотность кожи</p>
+                    <button class="btn-showcase" data-product="ghk-cu">Подробнее</button>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-badge">Метаболизм</div>
+                    <h3 class="showcase-title">MOTS-C</h3>
+                    <p class="showcase-desc">Метаболический профиль и энергия</p>
+                    <button class="btn-showcase" data-product="mots-c">Подробнее</button>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="shop-cta">
+                <button class="btn btn-primary" id="openCatalogBtn">Открыть каталог</button>
+                <a href="#contact" class="btn btn-secondary">Получить консультацию</a>
             </div>
         </div>
     </section>
+
+    <!-- Catalog Modal -->
+    <div class="catalog-modal" id="catalogModal">
+        <div class="catalog-overlay"></div>
+        <div class="catalog-container">
+            <!-- Modal Header -->
+            <div class="catalog-header">
+                <h2 class="catalog-title">Каталог iPeptides</h2>
+                <button class="catalog-close" id="closeCatalogBtn" aria-label="Закрыть">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="catalog-filters">
+                <div class="catalog-search">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="catalogSearch" placeholder="Поиск по названию...">
+                </div>
+                <div class="catalog-chips">
+                    <button class="filter-chip active" data-filter="all">Все</button>
+                    <button class="filter-chip" data-filter="recovery">Восстановление</button>
+                    <button class="filter-chip" data-filter="skin">Кожа</button>
+                    <button class="filter-chip" data-filter="sleep">Сон / стресс</button>
+                    <button class="filter-chip" data-filter="metabolism">Метаболизм</button>
+                    <button class="filter-chip" data-filter="immunity">Иммунитет</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="catalog-grid" id="catalogGrid">
+                <!-- Recovery -->
+                <div class="catalog-card" data-category="recovery" data-name="BPC-157">
+                    <div class="card-badge">Восстановление</div>
+                    <h3 class="card-title">BPC-157</h3>
+                    <p class="card-desc">Поддержка регенеративных процессов тканей</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+                <div class="catalog-card" data-category="recovery" data-name="TB-500">
+                    <div class="card-badge">Восстановление</div>
+                    <h3 class="card-title">TB-500</h3>
+                    <p class="card-desc">Поддержка восстановления мышц и связок</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+                <div class="catalog-card" data-category="recovery" data-name="Thymosin Beta-4">
+                    <div class="card-badge">Восстановление</div>
+                    <h3 class="card-title">Thymosin Beta-4</h3>
+                    <p class="card-desc">Комплексная регенеративная поддержка</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+
+                <!-- Skin -->
+                <div class="catalog-card" data-category="skin" data-name="GHK-Cu">
+                    <div class="card-badge">Кожа</div>
+                    <h3 class="card-title">GHK-Cu</h3>
+                    <p class="card-desc">Качество и плотность кожи</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+                <div class="catalog-card" data-category="skin" data-name="Copper Peptide">
+                    <div class="card-badge">Кожа</div>
+                    <h3 class="card-title">Copper Peptide</h3>
+                    <p class="card-desc">Поддержка синтеза коллагена</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+                <div class="catalog-card" data-category="skin" data-name="Matrixyl">
+                    <div class="card-badge">Кожа</div>
+                    <h3 class="card-title">Matrixyl</h3>
+                    <p class="card-desc">Визуальное качество кожи</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+
+                <!-- Sleep / Stress -->
+                <div class="catalog-card" data-category="sleep" data-name="DSIP">
+                    <div class="card-badge">Сон / стресс</div>
+                    <h3 class="card-title">DSIP</h3>
+                    <p class="card-desc">Поддержка качества сна</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+                <div class="catalog-card" data-category="sleep" data-name="Selank">
+                    <div class="card-badge">Сон / стресс</div>
+                    <h3 class="card-title">Selank</h3>
+                    <p class="card-desc">Адаптация к стрессовым нагрузкам</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+                <div class="catalog-card" data-category="sleep" data-name="Semax">
+                    <div class="card-badge">Сон / стресс</div>
+                    <h3 class="card-title">Semax</h3>
+                    <p class="card-desc">Когнитивная поддержка и ресурс</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+
+                <!-- Metabolism -->
+                <div class="catalog-card" data-category="metabolism" data-name="MOTS-C">
+                    <div class="card-badge">Метаболизм</div>
+                    <h3 class="card-title">MOTS-C</h3>
+                    <p class="card-desc">Метаболический профиль и энергия</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+                <div class="catalog-card" data-category="metabolism" data-name="AOD-9604">
+                    <div class="card-badge">Метаболизм</div>
+                    <h3 class="card-title">AOD-9604</h3>
+                    <p class="card-desc">Поддержка контроля веса</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+                <div class="catalog-card" data-category="metabolism" data-name="Tesamorelin">
+                    <div class="card-badge">Метаболизм</div>
+                    <h3 class="card-title">Tesamorelin</h3>
+                    <p class="card-desc">Метаболические показатели</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+
+                <!-- Immunity -->
+                <div class="catalog-card" data-category="immunity" data-name="Thymalin">
+                    <div class="card-badge">Иммунитет</div>
+                    <h3 class="card-title">Thymalin</h3>
+                    <p class="card-desc">Поддержка иммунной функции</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+                <div class="catalog-card" data-category="immunity" data-name="Thymulin">
+                    <div class="card-badge">Иммунитет</div>
+                    <h3 class="card-title">Thymulin</h3>
+                    <p class="card-desc">Иммунный баланс организма</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+                <div class="catalog-card" data-category="immunity" data-name="LL-37">
+                    <div class="card-badge">Иммунитет</div>
+                    <h3 class="card-title">LL-37</h3>
+                    <p class="card-desc">Защитные функции организма</p>
+                    <button class="btn-card">Открыть</button>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="catalog-empty" id="catalogEmpty" style="display: none;">
+                <p>По вашему запросу ничего не найдено</p>
+            </div>
+        </div>
+    </div>
 
     <!-- FAQ Section -->
     <section class="faq" id="faq">
