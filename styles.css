@@ -1408,6 +1408,19 @@ section {
     margin-top: 20px;
 }
 
+.shop-cta .btn-secondary {
+    background: var(--gradient-mixed);
+    color: var(--text-primary);
+    border: none;
+    box-shadow: 0 4px 20px rgba(165, 196, 212, 0.3);
+}
+
+.shop-cta .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(165, 196, 212, 0.4);
+    background: var(--gradient-mixed);
+}
+
 /* ========================================
    Catalog Modal
    ======================================== */
