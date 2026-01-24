@@ -1880,6 +1880,220 @@ body.modal-open {
 }
 
 /* ========================================
+   Consultation Modal
+   ======================================== */
+.consultation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.consultation-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.consultation-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(45, 52, 54, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.consultation-modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    background: linear-gradient(180deg, #E8EEF4 0%, #D8E4EC 50%, #E8EEF4 100%);
+    border-radius: 24px;
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(165, 196, 212, 0.3);
+    overflow: hidden;
+    transform: scale(0.9) translateY(30px);
+    transition: transform 0.3s ease;
+}
+
+.consultation-modal.active .consultation-modal-container {
+    transform: scale(1) translateY(0);
+}
+
+.consultation-modal-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse 70% 50% at 30% 20%, rgba(165, 196, 212, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 70% 80%, rgba(165, 196, 212, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.consultation-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(165, 196, 212, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    color: var(--text-secondary);
+    z-index: 10;
+}
+
+.consultation-modal-close:hover {
+    background: rgba(165, 196, 212, 0.2);
+    color: var(--text-primary);
+    transform: rotate(90deg);
+}
+
+.consultation-modal-close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.consultation-modal-content {
+    padding: 50px 40px;
+    overflow-y: auto;
+    max-height: 90vh;
+    position: relative;
+    z-index: 1;
+}
+
+.consultation-modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #4a6070 0%, #6a8494 50%, #4a6070 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.consultation-modal-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.consultation-modal-form .form-group {
+    margin-bottom: 24px;
+}
+
+.consultation-modal-form .form-group input {
+    color: #2a3a44;
+    border-bottom-color: rgba(42, 58, 68, 0.3);
+}
+
+.consultation-modal-form .form-group input::placeholder {
+    color: rgba(42, 58, 68, 0.4);
+}
+
+.consultation-modal-form .form-group label {
+    color: var(--text-secondary);
+}
+
+.consultation-modal-form .form-group input:focus {
+    border-bottom-color: #2a3a44;
+}
+
+.consultation-modal-form .form-group input:focus + label,
+.consultation-modal-form .form-group input:not(:placeholder-shown) + label {
+    color: #2a3a44;
+}
+
+.consultation-modal-form .checkbox-group {
+    margin-bottom: 24px;
+}
+
+.consultation-modal-form .checkbox-group label {
+    color: var(--text-secondary);
+}
+
+.consultation-modal-form .checkbox-group input[type="checkbox"] {
+    accent-color: #2a3a44;
+}
+
+/* Consultation Modal Mobile */
+@media (max-width: 768px) {
+    .consultation-modal-container {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100vh;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .consultation-modal-content {
+        padding: 40px 24px;
+        max-height: 100vh;
+    }
+
+    .consultation-modal-close {
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .consultation-modal-title {
+        font-size: 1.5rem;
+        padding-right: 50px;
+    }
+
+    .consultation-modal-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .consultation-modal-content {
+        padding: 30px 20px;
+    }
+
+    .consultation-modal-title {
+        font-size: 1.35rem;
+    }
+
+    .consultation-modal-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .consultation-modal-form .form-group {
+        margin-bottom: 20px;
+    }
+}
+
+/* ========================================
    FAQ Section
    ======================================== */
 .faq {

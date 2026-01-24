@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFAQ();
     initSkillsCarousel();
     initCatalogModal();
+    initConsultationModal();
 });
 
 // ========================================
@@ -615,7 +616,6 @@ function initProductModal() {
     const productModal = document.getElementById('productModal');
     const closeProductBtn = document.getElementById('closeProductBtn');
     const productOverlay = productModal?.querySelector('.product-overlay');
-    const consultBtn = document.getElementById('productConsultBtn');
     const catalogModal = document.getElementById('catalogModal');
 
     if (!productModal) return;
@@ -645,30 +645,6 @@ function initProductModal() {
             closeProductModal();
         }
     });
-
-    // Consultation button - close modals and scroll to contact
-    if (consultBtn) {
-        consultBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            closeProductModal();
-            if (catalogModal) {
-                catalogModal.classList.remove('active');
-            }
-            document.body.classList.remove('modal-open');
-
-            setTimeout(() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                    const targetPosition = contactSection.offsetTop - navbarHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 300);
-        });
-    }
 }
 
 // Open product modal with card data
@@ -701,4 +677,114 @@ function openProductModal(card) {
     // Show modal
     productModal.classList.add('active');
     document.body.classList.add('modal-open');
+}
+
+// ========================================
+// Consultation Modal
+// ========================================
+function initConsultationModal() {
+    const modal = document.getElementById('consultationModal');
+    const closeBtn = document.getElementById('closeConsultationBtn');
+    const overlay = modal?.querySelector('.consultation-modal-overlay');
+    const form = document.getElementById('consultationModalForm');
+    const triggers = document.querySelectorAll('.consultation-modal-trigger');
+    const productModal = document.getElementById('productModal');
+    const catalogModal = document.getElementById('catalogModal');
+
+    if (!modal) return;
+
+    // Open modal function
+    function openConsultationModal() {
+        // Close other modals first
+        if (productModal?.classList.contains('active')) {
+            productModal.classList.remove('active');
+        }
+        if (catalogModal?.classList.contains('active')) {
+            catalogModal.classList.remove('active');
+        }
+
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+    }
+
+    // Close modal function
+    function closeConsultationModal() {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+
+    // Add click handlers to all trigger buttons
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            openConsultationModal();
+        });
+    });
+
+    // Close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeConsultationModal);
+    }
+
+    // Overlay click
+    if (overlay) {
+        overlay.addEventListener('click', closeConsultationModal);
+    }
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeConsultationModal();
+        }
+    });
+
+    // Form submission
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+
+            // Get form data
+            const formData = {
+                name: form.querySelector('#modalName').value,
+                phone: form.querySelector('#modalPhone').value,
+                email: form.querySelector('#modalEmail').value
+            };
+
+            // Show loading state
+            submitBtn.textContent = 'Отправка...';
+            submitBtn.disabled = true;
+
+            // Simulate form submission
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Success
+                submitBtn.textContent = 'Заявка отправлена!';
+                submitBtn.style.background = 'var(--ice-flow)';
+                form.reset();
+
+                // Close modal and reset button after delay
+                setTimeout(() => {
+                    closeConsultationModal();
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 2000);
+
+            } catch (error) {
+                // Error
+                submitBtn.textContent = 'Ошибка! Попробуйте снова';
+                submitBtn.style.background = '#ff6b6b';
+
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }
+        });
+    }
 }
