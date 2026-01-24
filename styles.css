@@ -1486,10 +1486,6 @@ section {
     order: 2;
 }
 
-.contact-form {
-    order: 1;
-}
-
 .contact-lead {
     font-size: 1.75rem;
     font-weight: 300;
@@ -1576,6 +1572,7 @@ section {
 
 /* Contact Form */
 .contact-form {
+    order: 1;
     background: linear-gradient(180deg, #E8EEF4 0%, #D8E4EC 50%, #E8EEF4 100%);
     padding: 50px;
     border-radius: 24px;
