@@ -1605,6 +1605,42 @@ section {
     z-index: 1;
 }
 
+/* White text and lines for contact form */
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form .form-group input::placeholder,
+.contact-form .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form .form-group label {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+    border-bottom-color: #ffffff;
+}
+
+.contact-form .form-group input:focus + label,
+.contact-form .form-group input:not(:placeholder-shown) + label,
+.contact-form .form-group textarea:focus + label,
+.contact-form .form-group textarea:not(:placeholder-shown) + label {
+    color: #ffffff;
+}
+
+.contact-form .checkbox-group label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-form .checkbox-group input[type="checkbox"] {
+    accent-color: #ffffff;
+}
+
 .form-group {
     position: relative;
     margin-bottom: 30px;
