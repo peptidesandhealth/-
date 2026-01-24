@@ -266,8 +266,13 @@ img {
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: var(--ice-flow-dark);
     margin-bottom: 20px;
+    background: linear-gradient(135deg, #6a8494 0%, #8aa4b4 25%, #a5c4d4 50%, #8aa4b4 75%, #6a8494 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: iceFlow 4s ease infinite;
 }
 
 .hero-title {
@@ -2705,7 +2710,7 @@ body.modal-open {
     }
 
     .hero-card .hero-title {
-        font-size: 2.125rem;
+        font-size: 2.5rem;
         margin-bottom: 12px;
     }
 
