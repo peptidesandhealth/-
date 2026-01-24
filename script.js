@@ -14,7 +14,265 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillsCarousel();
     initCatalogModal();
     initConsultationModal();
+    initLanguageSwitcher();
 });
+
+// ========================================
+// Language Translations
+// ========================================
+const translations = {
+    ru: {
+        // Navigation
+        'nav.standards': 'Стандарты',
+        'nav.directions': 'Направления',
+        'nav.consultation': 'Консультация',
+        'nav.shop': 'Магазин',
+        'nav.contacts': 'Контакты',
+
+        // Hero
+        'hero.subtitle': 'КЛЮЧ К СОВРЕМЕННОМУ ОЗДОРОВЛЕНИЮ',
+        'hero.tagline': 'Инновационные решения в рамках комплексного подхода к здоровью и восстановлению',
+        'hero.shopBtn': 'Перейти в магазин',
+        'hero.consultBtn': 'Получить консультацию',
+
+        // About
+        'about.title': 'Стандарты iPeptides',
+        'about.lead': 'Консультация и сопровождение по вопросам выбора и применения пептидов — под вашу цель и задачу.',
+        'about.stat1.title': 'Стандарты<br class="desktop-only"> качества',
+        'about.stat1.label': 'чистота состава • контроль качества',
+        'about.stat2.title': 'Комплексный подход',
+        'about.stat2.label': 'сон • стресс • восстановление • метаболизм',
+        'about.stat3.title': 'Полное сопровождение',
+        'about.stat3.label': 'рекомендации • поддержка • обратная связь',
+
+        // Skills
+        'skills.title': 'Направления iPeptides',
+        'skills.card1.title': 'Восстановление и регенерация',
+        'skills.card1.descDesktop': 'Поддержка восстановительных процессов тканей после нагрузок, травм и функциональных перегрузок',
+        'skills.card1.descMobile': 'Поддержка восстановления после нагрузок и перегрузок.',
+        'skills.card2.title': 'Опорно-двигательный аппарат',
+        'skills.card2.descDesktop': 'Сопровождение программ для связок, сухожилий и мышечной ткани при адаптации к тренировкам и активному образу жизни',
+        'skills.card2.descMobile': 'Программы для связок, сухожилий и мышц.',
+        'skills.card3.title': 'Кожа и дермальные структуры',
+        'skills.card3.descDesktop': 'Поддержка качества кожи: тонус, плотность, восстановление и улучшение визуальных характеристик',
+        'skills.card3.descMobile': 'Тонус, плотность и визуальное качество кожи.',
+        'skills.card4.title': 'Стресс-нагрузка и сон',
+        'skills.card4.descDesktop': 'Поддержка адаптационных механизмов организма при перегрузке, снижении ресурса и нарушениях сна',
+        'skills.card4.descMobile': 'Поддержка ресурса и нормализации сна.',
+        'skills.card5.title': 'Иммунная поддержка',
+        'skills.card5.descDesktop': 'Комплексная поддержка защитных функций организма в периоды повышенной нагрузки и сезонных заболеваний',
+        'skills.card5.descMobile': 'Поддержка защитных функций в период нагрузок.',
+        'skills.card6.title': 'Метаболический профиль',
+        'skills.card6.descDesktop': 'Сопровождение программ, направленных на контроль веса и улучшение метаболических показателей',
+        'skills.card6.descMobile': 'Контроль веса и поддержка метаболизма.',
+
+        // Consultation
+        'consultation.title': 'Консультация iPeptides',
+        'consultation.step1.title': 'Заявка',
+        'consultation.step1.desc': 'Оставляете обращение',
+        'consultation.step2.title': 'Сбор данных',
+        'consultation.step2.desc': 'Цель и особенности',
+        'consultation.step3.title': 'Подбор',
+        'consultation.step3.desc': 'Выбор направления',
+        'consultation.step4.title': 'Рекомендации',
+        'consultation.step4.desc': 'Структура курса',
+        'consultation.step5.title': 'Сопровождение',
+        'consultation.step5.desc': 'Ответы и поддержка',
+        'consultation.ctaBtn': 'Получить консультацию',
+
+        // Shop
+        'shop.title': 'Магазин iPeptides',
+        'shop.subtitle': 'Подбор и оформление заказа — в рамках консультационного сопровождения.',
+        'shop.badge.recovery': 'Восстановление',
+        'shop.badge.skin': 'Кожа',
+        'shop.badge.metabolism': 'Метаболизм',
+        'shop.bpc157.desc': 'Поддержка регенеративных процессов',
+        'shop.ghkcu.desc': 'Комплексное омоложение и качество кожи',
+        'shop.motsc.desc': 'Метаболический профиль и энергия',
+        'shop.detailsBtn': 'Подробнее',
+        'shop.catalogBtn': 'Открыть каталог',
+        'shop.consultBtn': 'Получить консультацию',
+
+        // FAQ
+        'faq.q1.question': 'Что такое пептиды?',
+        'faq.q1.answer': 'Пептиды — биологически активные соединения (короткие цепочки аминокислот), участвующие в регуляции клеточных процессов. В рамках консультации мы объясняем, какие направления поддержки могут быть актуальны под вашу задачу.',
+        'faq.q2.question': 'Нужна ли консультация перед применением?',
+        'faq.q2.answer': 'Да. Консультация позволяет корректно определить цель, учесть индивидуальные особенности и подобрать оптимальное направление в рамках комплексного подхода.',
+        'faq.q3.question': 'Какие задачи можно рассмотреть в рамках сопровождения iPeptides?',
+        'faq.q3.answer': 'Наиболее частые запросы: восстановление, качество кожи, стресс-нагрузка и сон, поддержка иммунитета, метаболический профиль и общий ресурс.',
+        'faq.q4.question': 'Когда можно ожидать результат?',
+        'faq.q4.answer': 'Сроки зависят от исходного состояния, выбранного направления и длительности курса. Мы ориентируемся на постепенную динамику и понятные критерии оценки.',
+        'faq.q5.question': 'Можно ли совмещать пептидные решения с другими средствами?',
+        'faq.q5.answer': 'Совместимость зависит от индивидуальных факторов. На консультации мы уточняем текущие препараты и подбираем корректный формат сопровождения.',
+        'faq.q6.question': 'Как получить консультацию?',
+        'faq.q6.answer': 'Оставьте заявку на сайте или напишите в мессенджер. Мы уточним ваш запрос и предложим подходящий формат консультации.',
+        'faq.ctaBtn': 'Получить консультацию',
+
+        // Contact
+        'contact.title': 'Контакты iPeptides',
+        'contact.telegram': 'TELEGRAM-КАНАЛ',
+        'contact.youtube': 'YOUTUBE-КАНАЛ',
+        'contact.hours': 'РЕЖИМ СВЯЗИ',
+        'contact.hoursValue': 'Ежедневно 10:00–20:00',
+        'contact.form.name': 'Имя и Фамилия',
+        'contact.form.phone': 'Номер телефона',
+        'contact.form.consent': 'Я согласен на обработку моих персональных данных',
+        'contact.form.submit': 'Записаться на консультацию',
+
+        // Footer
+        'footer.copyright': '© 2024 iPeptides. Все права защищены.',
+        'footer.disclaimer': 'Информация на сайте носит ознакомительный характер и не является медицинской рекомендацией. Решения принимаются индивидуально по итогам консультации.'
+    },
+    en: {
+        // Navigation
+        'nav.standards': 'Standards',
+        'nav.directions': 'Directions',
+        'nav.consultation': 'Consultation',
+        'nav.shop': 'Shop',
+        'nav.contacts': 'Contacts',
+
+        // Hero
+        'hero.subtitle': 'THE KEY TO MODERN WELLNESS',
+        'hero.tagline': 'Innovative solutions within a comprehensive approach to health and recovery',
+        'hero.shopBtn': 'Go to Shop',
+        'hero.consultBtn': 'Get Consultation',
+
+        // About
+        'about.title': 'iPeptides Standards',
+        'about.lead': 'Consultation and support on peptide selection and application — tailored to your goals and needs.',
+        'about.stat1.title': 'Quality<br class="desktop-only"> Standards',
+        'about.stat1.label': 'purity of composition • quality control',
+        'about.stat2.title': 'Comprehensive Approach',
+        'about.stat2.label': 'sleep • stress • recovery • metabolism',
+        'about.stat3.title': 'Full Support',
+        'about.stat3.label': 'recommendations • support • feedback',
+
+        // Skills
+        'skills.title': 'iPeptides Directions',
+        'skills.card1.title': 'Recovery & Regeneration',
+        'skills.card1.descDesktop': 'Supporting tissue recovery processes after physical stress, injuries and functional overloads',
+        'skills.card1.descMobile': 'Recovery support after stress and overloads.',
+        'skills.card2.title': 'Musculoskeletal System',
+        'skills.card2.descDesktop': 'Program support for ligaments, tendons and muscle tissue adapting to training and active lifestyle',
+        'skills.card2.descMobile': 'Programs for ligaments, tendons and muscles.',
+        'skills.card3.title': 'Skin & Dermal Structures',
+        'skills.card3.descDesktop': 'Skin quality support: tone, density, recovery and visual improvement',
+        'skills.card3.descMobile': 'Tone, density and visual skin quality.',
+        'skills.card4.title': 'Stress Load & Sleep',
+        'skills.card4.descDesktop': 'Supporting body adaptation mechanisms during overload, resource depletion and sleep disorders',
+        'skills.card4.descMobile': 'Resource support and sleep normalization.',
+        'skills.card5.title': 'Immune Support',
+        'skills.card5.descDesktop': 'Comprehensive support of body defense functions during high load and seasonal illness periods',
+        'skills.card5.descMobile': 'Defense function support during stress.',
+        'skills.card6.title': 'Metabolic Profile',
+        'skills.card6.descDesktop': 'Program support aimed at weight control and metabolic improvement',
+        'skills.card6.descMobile': 'Weight control and metabolism support.',
+
+        // Consultation
+        'consultation.title': 'iPeptides Consultation',
+        'consultation.step1.title': 'Request',
+        'consultation.step1.desc': 'Submit your inquiry',
+        'consultation.step2.title': 'Data Collection',
+        'consultation.step2.desc': 'Goals and specifics',
+        'consultation.step3.title': 'Selection',
+        'consultation.step3.desc': 'Direction choice',
+        'consultation.step4.title': 'Recommendations',
+        'consultation.step4.desc': 'Course structure',
+        'consultation.step5.title': 'Support',
+        'consultation.step5.desc': 'Answers and assistance',
+        'consultation.ctaBtn': 'Get Consultation',
+
+        // Shop
+        'shop.title': 'iPeptides Shop',
+        'shop.subtitle': 'Product selection and ordering — as part of consultation support.',
+        'shop.badge.recovery': 'Recovery',
+        'shop.badge.skin': 'Skin',
+        'shop.badge.metabolism': 'Metabolism',
+        'shop.bpc157.desc': 'Regenerative process support',
+        'shop.ghkcu.desc': 'Comprehensive rejuvenation and skin quality',
+        'shop.motsc.desc': 'Metabolic profile and energy',
+        'shop.detailsBtn': 'Learn More',
+        'shop.catalogBtn': 'Open Catalog',
+        'shop.consultBtn': 'Get Consultation',
+
+        // FAQ
+        'faq.q1.question': 'What are peptides?',
+        'faq.q1.answer': 'Peptides are biologically active compounds (short amino acid chains) involved in cellular process regulation. During consultation, we explain which support directions may be relevant to your needs.',
+        'faq.q2.question': 'Is consultation required before use?',
+        'faq.q2.answer': 'Yes. Consultation allows correct goal definition, considering individual characteristics and selecting the optimal direction within a comprehensive approach.',
+        'faq.q3.question': 'What tasks can be addressed with iPeptides support?',
+        'faq.q3.answer': 'Most common requests: recovery, skin quality, stress load and sleep, immune support, metabolic profile and overall resources.',
+        'faq.q4.question': 'When can results be expected?',
+        'faq.q4.answer': 'Timing depends on initial condition, chosen direction and course duration. We focus on gradual progress and clear evaluation criteria.',
+        'faq.q5.question': 'Can peptide solutions be combined with other products?',
+        'faq.q5.answer': 'Compatibility depends on individual factors. During consultation, we review current medications and select the appropriate support format.',
+        'faq.q6.question': 'How to get a consultation?',
+        'faq.q6.answer': 'Submit a request on the website or message us. We will clarify your inquiry and suggest the appropriate consultation format.',
+        'faq.ctaBtn': 'Get Consultation',
+
+        // Contact
+        'contact.title': 'iPeptides Contacts',
+        'contact.telegram': 'TELEGRAM CHANNEL',
+        'contact.youtube': 'YOUTUBE CHANNEL',
+        'contact.hours': 'CONTACT HOURS',
+        'contact.hoursValue': 'Daily 10:00–20:00',
+        'contact.form.name': 'Full Name',
+        'contact.form.phone': 'Phone Number',
+        'contact.form.consent': 'I consent to the processing of my personal data',
+        'contact.form.submit': 'Book a Consultation',
+
+        // Footer
+        'footer.copyright': '© 2024 iPeptides. All rights reserved.',
+        'footer.disclaimer': 'Information on this website is for informational purposes only and does not constitute medical advice. Decisions are made individually based on consultation results.'
+    }
+};
+
+// Current language state
+let currentLanguage = localStorage.getItem('ipeptides-lang') || 'ru';
+
+// ========================================
+// Language Switcher
+// ========================================
+function initLanguageSwitcher() {
+    const switcher = document.getElementById('langSwitcher');
+    if (!switcher) return;
+
+    // Set initial state
+    updateLanguageUI(currentLanguage);
+    applyTranslations(currentLanguage);
+
+    // Handle click
+    switcher.addEventListener('click', () => {
+        currentLanguage = currentLanguage === 'ru' ? 'en' : 'ru';
+        localStorage.setItem('ipeptides-lang', currentLanguage);
+        updateLanguageUI(currentLanguage);
+        applyTranslations(currentLanguage);
+
+        // Update html lang attribute
+        document.documentElement.lang = currentLanguage;
+    });
+}
+
+function updateLanguageUI(lang) {
+    const options = document.querySelectorAll('.lang-option');
+    options.forEach(option => {
+        if (option.dataset.lang === lang) {
+            option.classList.add('active');
+        } else {
+            option.classList.remove('active');
+        }
+    });
+}
+
+function applyTranslations(lang) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+}
 
 // ========================================
 // Navbar Scroll Effect

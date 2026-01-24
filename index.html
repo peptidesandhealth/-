@@ -13,13 +13,18 @@
         <div class="nav-container">
             <a href="#" class="logo">iPeptides</a>
             <ul class="nav-links">
-                <li><a href="#about">Стандарты</a></li>
-                <li><a href="#skills">Направления</a></li>
-                <li><a href="#portfolio">Консультация</a></li>
-                <li><a href="#shop">Магазин</a></li>
+                <li><a href="#about" data-i18n="nav.standards">Стандарты</a></li>
+                <li><a href="#skills" data-i18n="nav.directions">Направления</a></li>
+                <li><a href="#portfolio" data-i18n="nav.consultation">Консультация</a></li>
+                <li><a href="#shop" data-i18n="nav.shop">Магазин</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#contact" data-i18n="nav.contacts">Контакты</a></li>
             </ul>
+            <button class="lang-switcher" id="langSwitcher" aria-label="Switch language">
+                <span class="lang-option active" data-lang="ru">RU</span>
+                <span class="lang-divider">/</span>
+                <span class="lang-option" data-lang="en">EN</span>
+            </button>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -35,13 +40,13 @@
                 <h1 class="hero-title">
                     <span class="name-line accent">iPeptides</span>
                 </h1>
-                <p class="hero-subtitle">КЛЮЧ К СОВРЕМЕННОМУ ОЗДОРОВЛЕНИЮ</p>
-                <p class="hero-tagline">
+                <p class="hero-subtitle" data-i18n="hero.subtitle">КЛЮЧ К СОВРЕМЕННОМУ ОЗДОРОВЛЕНИЮ</p>
+                <p class="hero-tagline" data-i18n="hero.tagline">
                     Инновационные решения в рамках комплексного подхода к здоровью и восстановлению
                 </p>
                 <div class="hero-buttons">
-                    <a href="#shop" class="btn btn-primary">Перейти в магазин</a>
-                    <button class="btn btn-primary consultation-modal-trigger">Получить консультацию</button>
+                    <a href="#shop" class="btn btn-primary" data-i18n="hero.shopBtn">Перейти в магазин</a>
+                    <button class="btn btn-primary consultation-modal-trigger" data-i18n="hero.consultBtn">Получить консультацию</button>
                 </div>
             </div>
         </div>
@@ -51,10 +56,10 @@
     <section class="about" id="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title ice-flow">Стандарты iPeptides</h2>
+                <h2 class="section-title ice-flow" data-i18n="about.title">Стандарты iPeptides</h2>
             </div>
             <div class="about-content centered">
-                <p class="about-lead italic">
+                <p class="about-lead italic" data-i18n="about.lead">
                     Консультация и сопровождение по вопросам выбора и применения пептидов — под вашу цель и задачу.
                 </p>
                 <div class="about-stats horizontal">
@@ -64,8 +69,8 @@
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                             </svg>
                         </div>
-                        <span class="stat-title">Стандарты<br class="desktop-only"> качества</span>
-                        <span class="stat-label">чистота состава • контроль качества</span>
+                        <span class="stat-title" data-i18n="about.stat1.title">Стандарты<br class="desktop-only"> качества</span>
+                        <span class="stat-label" data-i18n="about.stat1.label">чистота состава • контроль качества</span>
                     </div>
                     <div class="stat-item">
                         <div class="stat-icon">
@@ -75,8 +80,8 @@
                                 <rect x="5" y="19" width="14" height="2" rx="0.5" opacity="0.4"/>
                             </svg>
                         </div>
-                        <span class="stat-title">Комплексный подход</span>
-                        <span class="stat-label">сон • стресс • восстановление • метаболизм</span>
+                        <span class="stat-title" data-i18n="about.stat2.title">Комплексный подход</span>
+                        <span class="stat-label" data-i18n="about.stat2.label">сон • стресс • восстановление • метаболизм</span>
                     </div>
                     <div class="stat-item">
                         <div class="stat-icon">
@@ -84,8 +89,8 @@
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                             </svg>
                         </div>
-                        <span class="stat-title">Полное сопровождение</span>
-                        <span class="stat-label">рекомендации • поддержка • обратная связь</span>
+                        <span class="stat-title" data-i18n="about.stat3.title">Полное сопровождение</span>
+                        <span class="stat-label" data-i18n="about.stat3.label">рекомендации • поддержка • обратная связь</span>
                     </div>
                 </div>
             </div>
@@ -96,7 +101,7 @@
     <section class="skills" id="skills">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title ice-flow">Направления iPeptides</h2>
+                <h2 class="section-title ice-flow" data-i18n="skills.title">Направления iPeptides</h2>
             </div>
             <div class="skills-carousel">
                 <div class="carousel-arrow carousel-arrow-left">‹</div>
@@ -109,9 +114,9 @@
                         </svg>
                     </div>
                     <div class="skill-card-text">
-                        <h3>Восстановление и регенерация</h3>
-                        <p class="desc-desktop">Поддержка восстановительных процессов тканей после нагрузок, травм и функциональных перегрузок</p>
-                        <p class="desc-mobile">Поддержка восстановления после нагрузок и перегрузок.</p>
+                        <h3 data-i18n="skills.card1.title">Восстановление и регенерация</h3>
+                        <p class="desc-desktop" data-i18n="skills.card1.descDesktop">Поддержка восстановительных процессов тканей после нагрузок, травм и функциональных перегрузок</p>
+                        <p class="desc-mobile" data-i18n="skills.card1.descMobile">Поддержка восстановления после нагрузок и перегрузок.</p>
                     </div>
                 </div>
                 <div class="skill-card skill-card-2">
@@ -121,9 +126,9 @@
                         </svg>
                     </div>
                     <div class="skill-card-text">
-                        <h3>Опорно-двигательный аппарат</h3>
-                        <p class="desc-desktop">Сопровождение программ для связок, сухожилий и мышечной ткани при адаптации к тренировкам и активному образу жизни</p>
-                        <p class="desc-mobile">Программы для связок, сухожилий и мышц.</p>
+                        <h3 data-i18n="skills.card2.title">Опорно-двигательный аппарат</h3>
+                        <p class="desc-desktop" data-i18n="skills.card2.descDesktop">Сопровождение программ для связок, сухожилий и мышечной ткани при адаптации к тренировкам и активному образу жизни</p>
+                        <p class="desc-mobile" data-i18n="skills.card2.descMobile">Программы для связок, сухожилий и мышц.</p>
                     </div>
                 </div>
                 <div class="skill-card skill-card-3">
@@ -133,9 +138,9 @@
                         </svg>
                     </div>
                     <div class="skill-card-text">
-                        <h3>Кожа и дермальные структуры</h3>
-                        <p class="desc-desktop">Поддержка качества кожи: тонус, плотность, восстановление и улучшение визуальных характеристик</p>
-                        <p class="desc-mobile">Тонус, плотность и визуальное качество кожи.</p>
+                        <h3 data-i18n="skills.card3.title">Кожа и дермальные структуры</h3>
+                        <p class="desc-desktop" data-i18n="skills.card3.descDesktop">Поддержка качества кожи: тонус, плотность, восстановление и улучшение визуальных характеристик</p>
+                        <p class="desc-mobile" data-i18n="skills.card3.descMobile">Тонус, плотность и визуальное качество кожи.</p>
                     </div>
                 </div>
                 <div class="skill-card skill-card-4">
@@ -145,9 +150,9 @@
                         </svg>
                     </div>
                     <div class="skill-card-text">
-                        <h3>Стресс-нагрузка и сон</h3>
-                        <p class="desc-desktop">Поддержка адаптационных механизмов организма при перегрузке, снижении ресурса и нарушениях сна</p>
-                        <p class="desc-mobile">Поддержка ресурса и нормализации сна.</p>
+                        <h3 data-i18n="skills.card4.title">Стресс-нагрузка и сон</h3>
+                        <p class="desc-desktop" data-i18n="skills.card4.descDesktop">Поддержка адаптационных механизмов организма при перегрузке, снижении ресурса и нарушениях сна</p>
+                        <p class="desc-mobile" data-i18n="skills.card4.descMobile">Поддержка ресурса и нормализации сна.</p>
                     </div>
                 </div>
                 <div class="skill-card skill-card-5">
@@ -158,9 +163,9 @@
                         </svg>
                     </div>
                     <div class="skill-card-text">
-                        <h3>Иммунная поддержка</h3>
-                        <p class="desc-desktop">Комплексная поддержка защитных функций организма в периоды повышенной нагрузки и сезонных заболеваний</p>
-                        <p class="desc-mobile">Поддержка защитных функций в период нагрузок.</p>
+                        <h3 data-i18n="skills.card5.title">Иммунная поддержка</h3>
+                        <p class="desc-desktop" data-i18n="skills.card5.descDesktop">Комплексная поддержка защитных функций организма в периоды повышенной нагрузки и сезонных заболеваний</p>
+                        <p class="desc-mobile" data-i18n="skills.card5.descMobile">Поддержка защитных функций в период нагрузок.</p>
                     </div>
                 </div>
                 <div class="skill-card skill-card-6">
@@ -171,9 +176,9 @@
                         </svg>
                     </div>
                     <div class="skill-card-text">
-                        <h3>Метаболический профиль</h3>
-                        <p class="desc-desktop">Сопровождение программ, направленных на контроль веса и улучшение метаболических показателей</p>
-                        <p class="desc-mobile">Контроль веса и поддержка метаболизма.</p>
+                        <h3 data-i18n="skills.card6.title">Метаболический профиль</h3>
+                        <p class="desc-desktop" data-i18n="skills.card6.descDesktop">Сопровождение программ, направленных на контроль веса и улучшение метаболических показателей</p>
+                        <p class="desc-mobile" data-i18n="skills.card6.descMobile">Контроль веса и поддержка метаболизма.</p>
                     </div>
                 </div>
                 </div>
@@ -186,7 +191,7 @@
     <section class="consultation" id="portfolio">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title ice-flow">Консультация iPeptides</h2>
+                <h2 class="section-title ice-flow" data-i18n="consultation.title">Консультация iPeptides</h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
@@ -197,8 +202,8 @@
                     </div>
                     <div class="timeline-content">
                         <span class="timeline-step">01</span>
-                        <h3>Заявка</h3>
-                        <p>Оставляете обращение</p>
+                        <h3 data-i18n="consultation.step1.title">Заявка</h3>
+                        <p data-i18n="consultation.step1.desc">Оставляете обращение</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -213,8 +218,8 @@
                     </div>
                     <div class="timeline-content">
                         <span class="timeline-step">02</span>
-                        <h3>Сбор данных</h3>
-                        <p>Цель и особенности</p>
+                        <h3 data-i18n="consultation.step2.title">Сбор данных</h3>
+                        <p data-i18n="consultation.step2.desc">Цель и особенности</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -226,8 +231,8 @@
                     </div>
                     <div class="timeline-content">
                         <span class="timeline-step">03</span>
-                        <h3>Подбор</h3>
-                        <p>Выбор направления</p>
+                        <h3 data-i18n="consultation.step3.title">Подбор</h3>
+                        <p data-i18n="consultation.step3.desc">Выбор направления</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -239,8 +244,8 @@
                     </div>
                     <div class="timeline-content">
                         <span class="timeline-step">04</span>
-                        <h3>Рекомендации</h3>
-                        <p>Структура курса</p>
+                        <h3 data-i18n="consultation.step4.title">Рекомендации</h3>
+                        <p data-i18n="consultation.step4.desc">Структура курса</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -251,13 +256,13 @@
                     </div>
                     <div class="timeline-content">
                         <span class="timeline-step">05</span>
-                        <h3>Сопровождение</h3>
-                        <p>Ответы и поддержка</p>
+                        <h3 data-i18n="consultation.step5.title">Сопровождение</h3>
+                        <p data-i18n="consultation.step5.desc">Ответы и поддержка</p>
                     </div>
                 </div>
             </div>
             <div class="timeline-cta">
-                <button class="btn btn-primary consultation-modal-trigger">Получить консультацию</button>
+                <button class="btn btn-primary consultation-modal-trigger" data-i18n="consultation.ctaBtn">Получить консультацию</button>
             </div>
         </div>
     </section>
@@ -266,8 +271,8 @@
     <section class="shop" id="shop">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title ice-flow">Магазин iPeptides</h2>
-                <p class="shop-subtitle"><em>Подбор и оформление заказа — в рамках консультационного сопровождения.</em></p>
+                <h2 class="section-title ice-flow" data-i18n="shop.title">Магазин iPeptides</h2>
+                <p class="shop-subtitle"><em data-i18n="shop.subtitle">Подбор и оформление заказа — в рамках консультационного сопровождения.</em></p>
             </div>
 
             <!-- Mini Showcase - 3 Featured Products -->
@@ -277,10 +282,10 @@
                         <img src="images/bpc157fon.JPG" alt="BPC-157" class="showcase-image">
                     </div>
                     <div class="showcase-content">
-                        <div class="showcase-badge">Восстановление</div>
+                        <div class="showcase-badge" data-i18n="shop.badge.recovery">Восстановление</div>
                         <h3 class="showcase-title">BPC-157</h3>
-                        <p class="showcase-desc">Поддержка регенеративных процессов</p>
-                        <button class="btn-showcase" data-product="bpc-157">Подробнее</button>
+                        <p class="showcase-desc" data-i18n="shop.bpc157.desc">Поддержка регенеративных процессов</p>
+                        <button class="btn-showcase" data-product="bpc-157" data-i18n="shop.detailsBtn">Подробнее</button>
                     </div>
                 </div>
                 <div class="showcase-card">
@@ -288,10 +293,10 @@
                         <img src="images/ghk-cufon.JPG" alt="GHK-Cu" class="showcase-image">
                     </div>
                     <div class="showcase-content">
-                        <div class="showcase-badge">Кожа</div>
+                        <div class="showcase-badge" data-i18n="shop.badge.skin">Кожа</div>
                         <h3 class="showcase-title">GHK-Cu</h3>
-                        <p class="showcase-desc">Комплексное омоложение и качество кожи</p>
-                        <button class="btn-showcase" data-product="ghk-cu">Подробнее</button>
+                        <p class="showcase-desc" data-i18n="shop.ghkcu.desc">Комплексное омоложение и качество кожи</p>
+                        <button class="btn-showcase" data-product="ghk-cu" data-i18n="shop.detailsBtn">Подробнее</button>
                     </div>
                 </div>
                 <div class="showcase-card">
@@ -299,18 +304,18 @@
                         <img src="images/mots-cfon.JPG" alt="MOTS-C" class="showcase-image">
                     </div>
                     <div class="showcase-content">
-                        <div class="showcase-badge">Метаболизм</div>
+                        <div class="showcase-badge" data-i18n="shop.badge.metabolism">Метаболизм</div>
                         <h3 class="showcase-title">MOTS-C</h3>
-                        <p class="showcase-desc">Метаболический профиль и энергия</p>
-                        <button class="btn-showcase" data-product="mots-c">Подробнее</button>
+                        <p class="showcase-desc" data-i18n="shop.motsc.desc">Метаболический профиль и энергия</p>
+                        <button class="btn-showcase" data-product="mots-c" data-i18n="shop.detailsBtn">Подробнее</button>
                     </div>
                 </div>
             </div>
 
             <!-- CTA Buttons -->
             <div class="shop-cta">
-                <button class="btn btn-primary" id="openCatalogBtn">Открыть каталог</button>
-                <button class="btn btn-secondary consultation-modal-trigger">Получить консультацию</button>
+                <button class="btn btn-primary" id="openCatalogBtn" data-i18n="shop.catalogBtn">Открыть каталог</button>
+                <button class="btn btn-secondary consultation-modal-trigger" data-i18n="shop.consultBtn">Получить консультацию</button>
             </div>
         </div>
     </section>
@@ -885,61 +890,61 @@ Ipamorelin — селективный стимулятор секреции ГР
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Что такое пептиды?</h3>
+                        <h3 data-i18n="faq.q1.question">Что такое пептиды?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Пептиды — биологически активные соединения (короткие цепочки аминокислот), участвующие в регуляции клеточных процессов. В рамках консультации мы объясняем, какие направления поддержки могут быть актуальны под вашу задачу.</p>
+                        <p data-i18n="faq.q1.answer">Пептиды — биологически активные соединения (короткие цепочки аминокислот), участвующие в регуляции клеточных процессов. В рамках консультации мы объясняем, какие направления поддержки могут быть актуальны под вашу задачу.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Нужна ли консультация перед применением?</h3>
+                        <h3 data-i18n="faq.q2.question">Нужна ли консультация перед применением?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Да. Консультация позволяет корректно определить цель, учесть индивидуальные особенности и подобрать оптимальное направление в рамках комплексного подхода.</p>
+                        <p data-i18n="faq.q2.answer">Да. Консультация позволяет корректно определить цель, учесть индивидуальные особенности и подобрать оптимальное направление в рамках комплексного подхода.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Какие задачи можно рассмотреть в рамках сопровождения iPeptides?</h3>
+                        <h3 data-i18n="faq.q3.question">Какие задачи можно рассмотреть в рамках сопровождения iPeptides?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Наиболее частые запросы: восстановление, качество кожи, стресс-нагрузка и сон, поддержка иммунитета, метаболический профиль и общий ресурс.</p>
+                        <p data-i18n="faq.q3.answer">Наиболее частые запросы: восстановление, качество кожи, стресс-нагрузка и сон, поддержка иммунитета, метаболический профиль и общий ресурс.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Когда можно ожидать результат?</h3>
+                        <h3 data-i18n="faq.q4.question">Когда можно ожидать результат?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Сроки зависят от исходного состояния, выбранного направления и длительности курса. Мы ориентируемся на постепенную динамику и понятные критерии оценки.</p>
+                        <p data-i18n="faq.q4.answer">Сроки зависят от исходного состояния, выбранного направления и длительности курса. Мы ориентируемся на постепенную динамику и понятные критерии оценки.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Можно ли совмещать пептидные решения с другими средствами?</h3>
+                        <h3 data-i18n="faq.q5.question">Можно ли совмещать пептидные решения с другими средствами?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Совместимость зависит от индивидуальных факторов. На консультации мы уточняем текущие препараты и подбираем корректный формат сопровождения.</p>
+                        <p data-i18n="faq.q5.answer">Совместимость зависит от индивидуальных факторов. На консультации мы уточняем текущие препараты и подбираем корректный формат сопровождения.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Как получить консультацию?</h3>
+                        <h3 data-i18n="faq.q6.question">Как получить консультацию?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Оставьте заявку на сайте или напишите в мессенджер. Мы уточним ваш запрос и предложим подходящий формат консультации.</p>
+                        <p data-i18n="faq.q6.answer">Оставьте заявку на сайте или напишите в мессенджер. Мы уточним ваш запрос и предложим подходящий формат консультации.</p>
                     </div>
                 </div>
             </div>
             <div class="faq-cta">
-                <button class="btn btn-primary consultation-modal-trigger">Получить консультацию</button>
+                <button class="btn btn-primary consultation-modal-trigger" data-i18n="faq.ctaBtn">Получить консультацию</button>
             </div>
         </div>
     </section>
@@ -948,22 +953,22 @@ Ipamorelin — селективный стимулятор секреции ГР
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title ice-flow">Контакты iPeptides</h2>
+                <h2 class="section-title ice-flow" data-i18n="contact.title">Контакты iPeptides</h2>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-details">
                         <div class="contact-item">
-                            <span class="contact-label">TELEGRAM-КАНАЛ</span>
+                            <span class="contact-label" data-i18n="contact.telegram">TELEGRAM-КАНАЛ</span>
                             <a href="https://t.me/ipeptides" target="_blank">@ipeptides</a>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-label">YOUTUBE-КАНАЛ</span>
+                            <span class="contact-label" data-i18n="contact.youtube">YOUTUBE-КАНАЛ</span>
                             <a href="#" target="_blank">iPeptides</a>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-label">РЕЖИМ СВЯЗИ</span>
-                            <span>Ежедневно 10:00–20:00</span>
+                            <span class="contact-label" data-i18n="contact.hours">РЕЖИМ СВЯЗИ</span>
+                            <span data-i18n="contact.hoursValue">Ежедневно 10:00–20:00</span>
                         </div>
                     </div>
                     <div class="social-links">
@@ -982,11 +987,11 @@ Ipamorelin — селективный стимулятор секреции ГР
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <input type="text" id="name" name="name" required placeholder=" ">
-                        <label for="name">Имя и Фамилия</label>
+                        <label for="name" data-i18n="contact.form.name">Имя и Фамилия</label>
                     </div>
                     <div class="form-group">
                         <input type="tel" id="phone" name="phone" required placeholder=" ">
-                        <label for="phone">Номер телефона</label>
+                        <label for="phone" data-i18n="contact.form.phone">Номер телефона</label>
                     </div>
                     <div class="form-group">
                         <input type="email" id="email" name="email" required placeholder=" ">
@@ -994,9 +999,9 @@ Ipamorelin — селективный стимулятор секреции ГР
                     </div>
                     <div class="form-group checkbox-group">
                         <input type="checkbox" id="consent" name="consent" required>
-                        <label for="consent">Я согласен на обработку моих персональных данных</label>
+                        <label for="consent" data-i18n="contact.form.consent">Я согласен на обработку моих персональных данных</label>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Записаться на консультацию</button>
+                    <button type="submit" class="btn btn-primary btn-full" data-i18n="contact.form.submit">Записаться на консультацию</button>
                 </form>
             </div>
         </div>
@@ -1006,10 +1011,10 @@ Ipamorelin — селективный стимулятор секреции ГР
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 iPeptides. Все права защищены.</p>
+                <p data-i18n="footer.copyright">&copy; 2024 iPeptides. Все права защищены.</p>
             </div>
             <div class="footer-disclaimer">
-                <p>Информация на сайте носит ознакомительный характер и не является медицинской рекомендацией. Решения принимаются индивидуально по итогам консультации.</p>
+                <p data-i18n="footer.disclaimer">Информация на сайте носит ознакомительный характер и не является медицинской рекомендацией. Решения принимаются индивидуально по итогам консультации.</p>
             </div>
         </div>
     </footer>
