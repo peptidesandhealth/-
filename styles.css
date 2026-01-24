@@ -1021,12 +1021,6 @@ section {
 }
 
 /* High contrast text for consultation section */
-.consultation .section-title {
-    color: #1a2a34;
-    -webkit-text-fill-color: #1a2a34;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
-}
-
 .consultation .timeline-content h3 {
     color: #1a2a34;
     -webkit-text-fill-color: #1a2a34;
