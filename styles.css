@@ -1365,46 +1365,17 @@ section {
     border-color: rgba(165, 196, 212, 0.55);
 }
 
-/* Product image wrapper - hero area */
-.showcase-image-wrapper {
-    position: relative;
-    flex: 1;
-    min-height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 20px 0;
-    overflow: hidden;
-}
-
-/* Gradient overlay for smooth transition to text area */
-.showcase-image-wrapper::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 80px;
-    background: linear-gradient(
-        to bottom,
-        rgba(250, 252, 253, 0) 0%,
-        rgba(250, 252, 253, 0.8) 50%,
-        rgba(250, 252, 253, 1) 100%
-    );
-    pointer-events: none;
-    z-index: 2;
-}
-
+/* Product image - directly on card, no wrapper */
 .showcase-image {
-    max-width: 85%;
-    max-height: 200px;
-    width: auto;
+    display: block;
+    width: 75%;
+    max-width: 180px;
     height: auto;
+    margin: 24px auto 0;
     object-fit: contain;
     transition: transform 0.4s ease;
-    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.12));
-    position: relative;
-    z-index: 1;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
+    flex-shrink: 0;
 }
 
 .showcase-card:hover .showcase-image {
@@ -2757,12 +2728,8 @@ body.modal-open {
         min-height: 380px;
     }
 
-    .showcase-image-wrapper {
-        min-height: 190px;
-    }
-
     .showcase-image {
-        max-height: 170px;
+        max-width: 160px;
     }
 
     .showcase-title {
@@ -2931,13 +2898,10 @@ body.modal-open {
         border-radius: 20px;
     }
 
-    .showcase-image-wrapper {
-        min-height: 180px;
-        padding: 16px 16px 0;
-    }
-
     .showcase-image {
-        max-height: 160px;
+        width: 65%;
+        max-width: 140px;
+        margin-top: 20px;
     }
 
     .showcase-content {
