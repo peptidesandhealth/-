@@ -1343,6 +1343,7 @@ section {
     min-height: 420px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     background: linear-gradient(180deg,
         #E8EEF4 0%,
         #EDF2F7 40%,
@@ -1426,11 +1427,6 @@ section {
     color: var(--text-secondary);
     line-height: 1.4;
     margin-bottom: 20px;
-    max-width: 220px;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .btn-showcase {
@@ -2923,10 +2919,6 @@ body.modal-open {
         font-size: 0.8rem;
         line-height: 1.3;
         margin-bottom: 16px;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
 
     .btn-showcase {
