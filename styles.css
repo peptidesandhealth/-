@@ -1199,9 +1199,10 @@ section {
     }
 
     .timeline::before {
-        top: 57px;  /* padding-top (30px) + circle radius (27px) */
-        bottom: 47px;  /* padding-bottom (20px) + circle radius (27px) */
-        left: 27px;
+        top: 57px;
+        bottom: 47px;
+        left: 50px;  /* center of circle: padding(50) - margin(27) + radius(27) = 50px */
+        transform: translateX(-1px);  /* offset for line width */
         right: auto;
         width: 0;
         height: auto;
@@ -2129,9 +2130,10 @@ section {
     }
 
     .timeline::before {
-        top: 42px;  /* padding-top (20px) + circle radius (22px) */
-        bottom: 32px;  /* padding-bottom (10px) + circle radius (22px) */
-        left: 22px;
+        top: 42px;
+        bottom: 32px;
+        left: 44px;  /* center of circle: padding(44) - margin(22) + radius(22) = 44px */
+        transform: translateX(-1px);
     }
 
     .timeline-item {
