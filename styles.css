@@ -2048,15 +2048,18 @@ body.modal-open {
 /* Consultation Modal Mobile */
 @media (max-width: 768px) {
     .consultation-modal-container {
-        width: 90%;
-        max-width: 400px;
-        max-height: 85vh;
-        border-radius: 20px;
+        width: 90% !important;
+        max-width: 400px !important;
+        height: auto !important;
+        max-height: 80vh !important;
+        border-radius: 20px !important;
+        margin: auto;
     }
 
     .consultation-modal-content {
-        padding: 35px 24px;
-        max-height: 85vh;
+        padding: 30px 24px;
+        max-height: calc(80vh - 20px);
+        overflow-y: auto;
     }
 
     .consultation-modal-close {
@@ -2067,36 +2070,48 @@ body.modal-open {
     }
 
     .consultation-modal-title {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         padding-right: 40px;
+        margin-bottom: 8px;
     }
 
     .consultation-modal-subtitle {
         font-size: 0.85rem;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
+    }
+
+    .consultation-modal-form .form-group {
+        margin-bottom: 16px;
     }
 }
 
 @media (max-width: 480px) {
     .consultation-modal-container {
-        width: 92%;
-        max-width: 360px;
+        width: 90% !important;
+        max-width: 340px !important;
+        max-height: 75vh !important;
     }
 
     .consultation-modal-content {
-        padding: 30px 20px;
+        padding: 24px 20px;
+        max-height: calc(75vh - 16px);
     }
 
     .consultation-modal-title {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
     }
 
     .consultation-modal-subtitle {
         font-size: 0.8rem;
+        margin-bottom: 14px;
     }
 
     .consultation-modal-form .form-group {
-        margin-bottom: 18px;
+        margin-bottom: 14px;
+    }
+
+    .consultation-modal-form .form-group input {
+        font-size: 16px; /* Prevent zoom on iOS */
     }
 }
 
