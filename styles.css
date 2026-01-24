@@ -1016,11 +1016,6 @@ section {
     padding: var(--section-padding);
 }
 
-.consultation > .consultation-overlay {
-    padding: 0;
-    background: none;
-}
-
 .consultation .container {
     padding: 0 24px;
 }
