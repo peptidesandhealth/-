@@ -1315,8 +1315,22 @@ section {
    FAQ Section
    ======================================== */
 .faq {
-    background: #EEF2F6;
+    background: linear-gradient(180deg, #E8EEF4 0%, #D8E4EC 50%, #E8EEF4 100%);
     padding: var(--section-padding);
+    position: relative;
+}
+
+.faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse 80% 50% at 20% 20%, rgba(165, 196, 212, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(165, 196, 212, 0.12) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .faq-list {
@@ -1325,33 +1339,61 @@ section {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    position: relative;
+    z-index: 1;
 }
 
 .faq-item {
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.04),
+        0 1px 3px rgba(0, 0, 0, 0.02),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     overflow: hidden;
     transition: all var(--transition-normal);
+    position: relative;
+}
+
+.faq-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(165, 196, 212, 0.5) 20%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(165, 196, 212, 0.5) 80%,
+        transparent 100%);
 }
 
 .faq-item:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow:
+        0 8px 32px rgba(165, 196, 212, 0.2),
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+    border-color: rgba(165, 196, 212, 0.4);
 }
 
 .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 28px;
+    padding: 26px 30px;
     cursor: pointer;
     transition: all var(--transition-normal);
 }
 
 .faq-question:hover {
-    background: rgba(248, 250, 252, 0.5);
+    background: rgba(165, 196, 212, 0.08);
 }
 
 .faq-question h3 {
@@ -1368,32 +1410,36 @@ section {
 }
 
 .faq-question:hover h3 {
-    color: #3a4a54;
-    -webkit-text-fill-color: #3a4a54;
+    color: var(--ice-flow-dark);
+    -webkit-text-fill-color: var(--ice-flow-dark);
 }
 
 .faq-toggle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 300;
-    color: #5a6570;
+    color: var(--ice-flow-dark);
     transition: all var(--transition-normal);
     flex-shrink: 0;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(90, 101, 112, 0.08);
+    background: linear-gradient(135deg, rgba(165, 196, 212, 0.15) 0%, rgba(165, 196, 212, 0.08) 100%);
+    border: 1px solid rgba(165, 196, 212, 0.3);
 }
 
 .faq-item:hover .faq-toggle {
-    background: rgba(90, 101, 112, 0.12);
+    background: linear-gradient(135deg, rgba(165, 196, 212, 0.25) 0%, rgba(165, 196, 212, 0.15) 100%);
+    border-color: rgba(165, 196, 212, 0.5);
 }
 
 .faq-item.active .faq-toggle {
     transform: rotate(45deg);
-    background: rgba(90, 101, 112, 0.15);
+    background: linear-gradient(135deg, var(--ice-flow) 0%, var(--ice-flow-dark) 100%);
+    color: white;
+    border-color: transparent;
 }
 
 .faq-answer {
@@ -1404,7 +1450,7 @@ section {
 
 .faq-item.active .faq-answer {
     max-height: 300px;
-    padding: 0 28px 24px;
+    padding: 0 30px 26px;
 }
 
 .faq-answer p {
@@ -1416,7 +1462,9 @@ section {
 
 .faq-cta {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 48px;
+    position: relative;
+    z-index: 1;
 }
 
 /* ========================================
