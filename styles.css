@@ -1293,16 +1293,16 @@ section {
 }
 
 .showcase-card {
-    background: rgba(255, 255, 255, 0.85);
+    background: linear-gradient(180deg, #E8EEF4 0%, #D8E4EC 50%, #E8EEF4 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 20px;
     padding: 28px 24px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(165, 196, 212, 0.3);
     box-shadow:
         0 8px 32px rgba(0, 0, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
     transition: all var(--transition-normal);
     position: relative;
 }
