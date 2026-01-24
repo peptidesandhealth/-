@@ -1315,35 +1315,43 @@ section {
    FAQ Section
    ======================================== */
 .faq {
-    background: var(--snow-white-pure);
+    background: #EEF2F6;
     padding: var(--section-padding);
 }
 
 .faq-list {
     max-width: 900px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .faq-item {
-    border-bottom: 1px solid var(--chrome-light);
-    margin-bottom: 0;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    transition: all var(--transition-normal);
 }
 
-.faq-item:last-child {
-    border-bottom: none;
+.faq-item:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
 }
 
 .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 0;
+    padding: 24px 28px;
     cursor: pointer;
     transition: all var(--transition-normal);
 }
 
 .faq-question:hover {
-    color: var(--ice-flow-dark);
+    background: rgba(248, 250, 252, 0.5);
 }
 
 .faq-question h3 {
@@ -1353,40 +1361,39 @@ section {
     margin: 0;
     padding-right: 20px;
     transition: all var(--transition-normal);
-    background: linear-gradient(
-        90deg,
-        #3a4a54 0%,
-        #5a6a74 30%,
-        #7a8a94 50%,
-        #5a6a74 70%,
-        #3a4a54 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: faqShimmer 4s ease-in-out infinite;
-}
-
-@keyframes faqShimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    color: #2a3a44;
+    -webkit-text-fill-color: #2a3a44;
+    background: none;
+    animation: none;
 }
 
 .faq-question:hover h3 {
-    color: var(--ice-flow-dark);
+    color: #3a4a54;
+    -webkit-text-fill-color: #3a4a54;
 }
 
 .faq-toggle {
     font-size: 1.5rem;
     font-weight: 300;
-    color: var(--ice-flow);
-    transition: transform var(--transition-normal);
+    color: #5a6570;
+    transition: all var(--transition-normal);
     flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(90, 101, 112, 0.08);
+}
+
+.faq-item:hover .faq-toggle {
+    background: rgba(90, 101, 112, 0.12);
 }
 
 .faq-item.active .faq-toggle {
     transform: rotate(45deg);
+    background: rgba(90, 101, 112, 0.15);
 }
 
 .faq-answer {
@@ -1397,7 +1404,7 @@ section {
 
 .faq-item.active .faq-answer {
     max-height: 300px;
-    padding-bottom: 24px;
+    padding: 0 28px 24px;
 }
 
 .faq-answer p {
@@ -1409,7 +1416,7 @@ section {
 
 .faq-cta {
     text-align: center;
-    margin-top: 35px;
+    margin-top: 40px;
 }
 
 /* ========================================
@@ -1898,6 +1905,37 @@ section {
         gap: 10px;
         text-align: center;
     }
+
+    /* FAQ mobile styles */
+    .faq-list {
+        gap: 12px;
+    }
+
+    .faq-item {
+        border-radius: 14px;
+    }
+
+    .faq-question {
+        padding: 20px 22px;
+    }
+
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 22px 20px;
+    }
+
+    .faq-answer p {
+        font-size: 0.95rem;
+    }
+
+    .faq-toggle {
+        width: 26px;
+        height: 26px;
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2059,6 +2097,43 @@ section {
         padding: 14px 28px;
         font-size: 0.85rem;
         width: 100%;
+    }
+
+    /* FAQ small screen styles */
+    .faq-list {
+        gap: 10px;
+    }
+
+    .faq-item {
+        border-radius: 12px;
+    }
+
+    .faq-question {
+        padding: 18px 18px;
+    }
+
+    .faq-question h3 {
+        font-size: 0.95rem;
+        padding-right: 14px;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 18px 18px;
+    }
+
+    .faq-answer p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .faq-toggle {
+        width: 24px;
+        height: 24px;
+        font-size: 1.2rem;
+    }
+
+    .faq-cta {
+        margin-top: 30px;
     }
 }
 
