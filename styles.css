@@ -1210,8 +1210,8 @@ section {
     }
 
     .timeline::before {
-        top: 40px;
-        bottom: 40px;
+        top: 57px;  /* padding-top (30px) + circle radius (27px) */
+        bottom: 47px;  /* padding-bottom (20px) + circle radius (27px) */
         left: 27px;
         right: auto;
         width: 0;
@@ -2029,6 +2029,8 @@ section {
     }
 
     .timeline::before {
+        top: 42px;  /* padding-top (20px) + circle radius (22px) */
+        bottom: 32px;  /* padding-bottom (10px) + circle radius (22px) */
         left: 22px;
     }
 
