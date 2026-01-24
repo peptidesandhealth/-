@@ -1347,6 +1347,7 @@ section {
     object-fit: contain;
     transition: transform var(--transition-normal);
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+    mix-blend-mode: multiply;
 }
 
 .showcase-card:hover .showcase-image img {
