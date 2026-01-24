@@ -1605,40 +1605,40 @@ section {
     z-index: 1;
 }
 
-/* White text and lines for contact form */
+/* FAQ-style text and lines for contact form */
 .contact-form .form-group input,
 .contact-form .form-group textarea {
-    color: #ffffff;
-    border-bottom-color: rgba(255, 255, 255, 0.6);
+    color: #2a3a44;
+    border-bottom-color: rgba(42, 58, 68, 0.3);
 }
 
 .contact-form .form-group input::placeholder,
 .contact-form .form-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(42, 58, 68, 0.4);
 }
 
 .contact-form .form-group label {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-secondary);
 }
 
 .contact-form .form-group input:focus,
 .contact-form .form-group textarea:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #2a3a44;
 }
 
 .contact-form .form-group input:focus + label,
 .contact-form .form-group input:not(:placeholder-shown) + label,
 .contact-form .form-group textarea:focus + label,
 .contact-form .form-group textarea:not(:placeholder-shown) + label {
-    color: #ffffff;
+    color: #2a3a44;
 }
 
 .contact-form .checkbox-group label {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
 }
 
 .contact-form .checkbox-group input[type="checkbox"] {
-    accent-color: #ffffff;
+    accent-color: #2a3a44;
 }
 
 .form-group {
