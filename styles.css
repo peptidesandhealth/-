@@ -1275,6 +1275,7 @@ section {
     color: var(--text-secondary);
     margin-top: 16px;
     font-weight: 300;
+    text-align: center;
 }
 
 .shop-subtitle em {
