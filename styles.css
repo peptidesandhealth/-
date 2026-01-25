@@ -1,49 +1,38 @@
 /* ========================================
-   Color Palette - Premium Chrome/Steel
+   Color Palette - Pantone Inspired
    ========================================
-   Chrome metallic gradient for headings
-   Soft graphite for text
-   Steel accents - no bright blue
+   Snow White:  #FFFAFA (background)
+   Chrome:      #E8E8E8 / #C0C0C0 (metallic accents)
+   Ice Flow:    #A5C4D4 (cool blue-gray accent)
    ======================================== */
 
 :root {
-    /* Background Colors */
-    --snow-white: #F5F7FA;
-    --snow-white-pure: #EEF2F6;
+    /* Pantone Colors */
+    --snow-white: #F8F9FA;
+    --snow-white-pure: #FCFCFC;
+    --chrome-light: #E8E8E8;
+    --chrome: #C0C0C0;
+    --chrome-dark: #A8A8A8;
+    --chrome-metallic: #D4D4D4;
+    --ice-flow: #A5C4D4;
+    --ice-flow-light: #C5DDE8;
+    --ice-flow-dark: #8BAFC2;
 
-    /* Chrome/Metallic System */
-    --chrome-bright: #F8FAFC;      /* Brightest chrome highlight */
-    --chrome-light: #CBD5E1;       /* Silver */
-    --chrome: #94A3B8;             /* Steel */
-    --chrome-dark: #475569;        /* Graphite metal */
-    --chrome-metallic: #64748B;    /* Mid steel */
-
-    /* Steel Accents (no blue) */
-    --accent-color: #A7B4C6;       /* Steel accent */
-    --accent-dark: #7A8CA3;        /* Dark steel accent */
-    --glass-border: rgba(148, 163, 184, 0.35);  /* Glass card borders */
-
-    /* Text Colors - Soft Graphite */
-    --text-primary: #334155;       /* Main text - soft graphite */
+    /* Premium Typography Colors */
+    --heading-primary: #4A90E2;    /* H1/H2 - Ice blue */
+    --heading-secondary: #2F6FBF;  /* H3 - Deeper blue */
+    --text-primary: #1F2937;       /* Main text - Dark graphite */
     --text-secondary: #64748B;     /* Secondary text */
     --text-muted: #94A3B8;         /* Small text, hints */
-    --text-light: #94A3B8;         /* Legacy compatibility */
+    --accent-color: #7FB6FF;       /* Links, icons, FAQ toggles */
 
-    /* Heading Gradient Colors */
-    --heading-bright: #F8FAFC;
-    --heading-silver: #CBD5E1;
-    --heading-steel: #94A3B8;
-    --heading-graphite: #475569;
-
-    /* Legacy ice-flow colors (now steel) */
-    --ice-flow: #94A3B8;
-    --ice-flow-light: #CBD5E1;
-    --ice-flow-dark: #64748B;
+    /* Legacy text colors for compatibility */
+    --text-light: #94A3B8;
 
     /* Gradients */
-    --gradient-chrome: linear-gradient(135deg, #F8FAFC 0%, #CBD5E1 25%, #94A3B8 50%, #CBD5E1 75%, #F8FAFC 100%);
-    --gradient-steel: linear-gradient(135deg, #CBD5E1 0%, #94A3B8 50%, #CBD5E1 100%);
-    --gradient-mixed: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 50%, #94A3B8 100%);
+    --gradient-chrome: linear-gradient(135deg, #E8E8E8 0%, #C0C0C0 50%, #E8E8E8 100%);
+    --gradient-ice: linear-gradient(135deg, var(--ice-flow-light) 0%, var(--ice-flow) 100%);
+    --gradient-mixed: linear-gradient(135deg, var(--chrome-light) 0%, var(--ice-flow-light) 50%, var(--chrome) 100%);
 
     /* Spacing */
     --section-padding: 70px 0;
@@ -138,13 +127,13 @@ img {
     font-weight: 600;
     background: linear-gradient(
         90deg,
-        #475569 0%,
-        #64748B 20%,
-        #94A3B8 40%,
-        #CBD5E1 50%,
-        #94A3B8 60%,
-        #64748B 80%,
-        #475569 100%
+        #2F6FBF 0%,
+        #4A90E2 20%,
+        #5BA0F0 40%,
+        #7FB6FF 50%,
+        #5BA0F0 60%,
+        #4A90E2 80%,
+        #2F6FBF 100%
     );
     background-size: 300% 100%;
     -webkit-background-clip: text;
@@ -187,7 +176,7 @@ img {
 }
 
 .nav-links a:hover {
-    color: var(--accent-dark);
+    color: var(--heading-primary);
 }
 
 .nav-links a:hover::after {
@@ -297,16 +286,16 @@ img {
 }
 
 .hero-card .hero-title .accent {
-    background: linear-gradient(90deg, #475569 0%, #64748B 25%, #94A3B8 50%, #64748B 75%, #475569 100%);
+    background: linear-gradient(135deg, #3A7BD5 0%, #4A90E2 25%, #5BA0F0 50%, #4A90E2 75%, #3A7BD5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    background-size: 200% 100%;
-    animation: chromeShimmer 4s ease infinite;
+    background-size: 200% 200%;
+    animation: iceFlow 4s ease infinite;
 }
 
 .hero-card .hero-subtitle {
-    color: var(--chrome);
+    color: var(--heading-secondary);
     font-weight: 600;
     letter-spacing: 2.5px;
 }
@@ -325,12 +314,12 @@ img {
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #64748B 0%, #94A3B8 25%, #CBD5E1 50%, #94A3B8 75%, #64748B 100%);
+    background: linear-gradient(135deg, #6a8494 0%, #8aa4b4 25%, #a5c4d4 50%, #8aa4b4 75%, #6a8494 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    background-size: 200% 100%;
-    animation: chromeShimmer 4s ease infinite;
+    background-size: 200% 200%;
+    animation: iceFlow 4s ease infinite;
 }
 
 .hero-title {
@@ -550,29 +539,19 @@ section {
     position: relative;
     display: inline-block;
     background: linear-gradient(
-        90deg,
-        #475569 0%,
-        #64748B 15%,
-        #94A3B8 30%,
-        #CBD5E1 45%,
-        #F8FAFC 50%,
-        #CBD5E1 55%,
-        #94A3B8 70%,
-        #64748B 85%,
-        #475569 100%
+        135deg,
+        #3A7BD5 0%,
+        #4A90E2 25%,
+        #5BA0F0 50%,
+        #4A90E2 75%,
+        #3A7BD5 100%
     );
-    background-size: 300% 100%;
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: chromeShimmer 4s ease-in-out infinite;
+    animation: titleShimmer 4s ease-in-out infinite;
     font-weight: 600;
-}
-
-@keyframes chromeShimmer {
-    0% { background-position: 100% 50%; }
-    50% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
 }
 
 @keyframes titleShimmer {
@@ -588,7 +567,7 @@ section {
     left: 0;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #94A3B8, #CBD5E1, #94A3B8);
+    background: linear-gradient(90deg, var(--heading-primary), var(--accent-color), var(--heading-primary));
     background-size: 200% 100%;
     animation: lineShimmer 2s ease-in-out infinite;
     border-radius: 2px;
@@ -600,12 +579,12 @@ section {
 }
 
 .section-title.ice-flow {
-    background: linear-gradient(90deg, #475569 0%, #94A3B8 25%, #CBD5E1 50%, #94A3B8 75%, #475569 100%);
+    background: linear-gradient(135deg, #2F6FBF 0%, #4A90E2 25%, #5BA0F0 50%, #4A90E2 75%, #2F6FBF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    background-size: 200% 100%;
-    animation: chromeShimmer 4s ease infinite;
+    background-size: 200% 200%;
+    animation: iceFlow 4s ease infinite;
 }
 
 /* ========================================
@@ -725,7 +704,7 @@ section {
     font-size: 3rem;
     font-weight: 600;
     display: block;
-    background: linear-gradient(135deg, #475569 0%, #64748B 50%, #94A3B8 100%);
+    background: linear-gradient(135deg, var(--heading-primary) 0%, var(--heading-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -741,11 +720,11 @@ section {
     margin-bottom: 6px;
     background: linear-gradient(
         90deg,
-        #475569 0%,
-        #64748B 25%,
-        #94A3B8 50%,
-        #64748B 75%,
-        #475569 100%
+        #2F6FBF 0%,
+        #4A90E2 25%,
+        #5BA0F0 50%,
+        #4A90E2 75%,
+        #2F6FBF 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -908,10 +887,10 @@ section {
     margin-bottom: 10px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    color: var(--chrome-dark);
+    color: var(--heading-secondary);
     background: none;
     -webkit-background-clip: unset;
-    -webkit-text-fill-color: var(--chrome-dark);
+    -webkit-text-fill-color: var(--heading-secondary);
     background-clip: unset;
     animation: none;
     filter: none;
@@ -1093,8 +1072,8 @@ section {
 
 /* High contrast text for consultation section */
 .consultation .timeline-content h3 {
-    color: var(--chrome-dark);
-    -webkit-text-fill-color: var(--chrome-dark);
+    color: var(--heading-secondary);
+    -webkit-text-fill-color: var(--heading-secondary);
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
     background: none;
     animation: none;
@@ -1106,7 +1085,7 @@ section {
 }
 
 .consultation .timeline-step {
-    color: var(--accent-dark);
+    color: var(--heading-primary);
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
     font-weight: 700;
 }
@@ -1170,7 +1149,7 @@ section {
 .timeline-circle svg {
     width: 28px;
     height: 28px;
-    color: var(--chrome-dark);
+    color: var(--heading-secondary);
 }
 
 .timeline-item:hover .timeline-circle {
@@ -1190,7 +1169,7 @@ section {
 .timeline-step {
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--accent-dark);
+    color: var(--heading-primary);
     letter-spacing: 1px;
     display: block;
     margin-bottom: 8px;
@@ -1205,11 +1184,11 @@ section {
     letter-spacing: 0.5px;
     background: linear-gradient(
         90deg,
-        #475569 0%,
-        #64748B 30%,
-        #94A3B8 50%,
-        #64748B 70%,
-        #475569 100%
+        #2F6FBF 0%,
+        #4A90E2 30%,
+        #5BA0F0 50%,
+        #4A90E2 70%,
+        #2F6FBF 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -1437,9 +1416,9 @@ section {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--chrome-dark);
-    background: linear-gradient(135deg, rgba(148, 163, 184, 0.15) 0%, rgba(148, 163, 184, 0.08) 100%);
-    border: 1px solid var(--glass-border);
+    color: var(--heading-primary);
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.15) 0%, rgba(74, 144, 226, 0.08) 100%);
+    border: 1px solid rgba(74, 144, 226, 0.25);
     border-radius: 20px;
     margin-bottom: 14px;
 }
@@ -1448,7 +1427,7 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--chrome-dark);
+    color: var(--heading-secondary);
     margin-bottom: 8px;
     letter-spacing: 0.5px;
 }
@@ -1467,7 +1446,7 @@ section {
     font-weight: 500;
     color: var(--text-primary);
     background: rgba(255, 255, 255, 0.9);
-    border: 1px solid var(--glass-border);
+    border: 1px solid rgba(165, 196, 212, 0.4);
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1475,10 +1454,10 @@ section {
 }
 
 .btn-showcase:hover {
-    background: var(--gradient-steel);
-    border-color: var(--chrome);
+    background: var(--gradient-mixed);
+    border-color: var(--ice-flow);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(148, 163, 184, 0.3);
+    box-shadow: 0 4px 15px rgba(165, 196, 212, 0.3);
 }
 
 /* Shop CTA Buttons */
@@ -1493,7 +1472,7 @@ section {
     margin-top: 32px;
 }
 
-/* Wide Catalog Button - Premium Chrome Style */
+/* Wide Catalog Button - Premium Style */
 .btn-catalog-wide {
     display: inline-flex;
     align-items: center;
@@ -1506,13 +1485,13 @@ section {
     border-radius: 60px;
     cursor: pointer;
     border: none;
-    background: linear-gradient(135deg, #475569 0%, #64748B 35%, #94A3B8 50%, #64748B 65%, #475569 100%);
+    background: linear-gradient(135deg, #3A7BD5 0%, #4A90E2 35%, #5BA0F0 65%, #4A90E2 100%);
     background-size: 200% 100%;
     color: white;
     box-shadow:
-        0 8px 32px rgba(71, 85, 105, 0.35),
-        0 4px 16px rgba(71, 85, 105, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        0 8px 32px rgba(74, 144, 226, 0.35),
+        0 4px 16px rgba(74, 144, 226, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
@@ -1528,7 +1507,7 @@ section {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.25),
         transparent
     );
     transition: left 0.6s ease;
@@ -1538,9 +1517,9 @@ section {
     transform: translateY(-4px) scale(1.02);
     background-position: 100% 0;
     box-shadow:
-        0 12px 40px rgba(71, 85, 105, 0.45),
-        0 6px 20px rgba(71, 85, 105, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        0 12px 40px rgba(74, 144, 226, 0.45),
+        0 6px 20px rgba(74, 144, 226, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .btn-catalog-wide:hover::before {
@@ -1624,7 +1603,7 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
-    background: linear-gradient(90deg, #475569 0%, #64748B 25%, #94A3B8 50%, #64748B 75%, #475569 100%);
+    background: linear-gradient(135deg, #2F6FBF 0%, #4A90E2 50%, #2F6FBF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1779,8 +1758,8 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--chrome-dark);
-    background: rgba(148, 163, 184, 0.15);
+    color: var(--heading-primary);
+    background: rgba(74, 144, 226, 0.12);
     border-radius: 20px;
     margin-bottom: 12px;
     align-self: center;
@@ -1790,7 +1769,7 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 1.15rem;
     font-weight: 600;
-    color: var(--chrome-dark);
+    color: var(--heading-secondary);
     margin-bottom: 8px;
 }
 
@@ -1842,7 +1821,7 @@ body.modal-open {
 /* Card Dose Style */
 .card-dose {
     font-size: 0.7rem;
-    color: var(--accent-dark);
+    color: var(--heading-primary);
     font-weight: 600;
     margin-bottom: 8px;
     letter-spacing: 0.3px;
@@ -1954,17 +1933,17 @@ body.modal-open {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 600;
-    color: var(--chrome-dark);
+    color: var(--heading-secondary);
     margin-bottom: 8px;
 }
 
 .product-dose {
     font-size: 1rem;
-    color: var(--chrome-dark);
+    color: var(--heading-primary);
     font-weight: 600;
     margin-bottom: 24px;
     padding-bottom: 20px;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid rgba(74, 144, 226, 0.2);
 }
 
 .product-full {
@@ -2175,7 +2154,7 @@ body.modal-open {
     font-weight: 600;
     text-align: center;
     margin-bottom: 12px;
-    background: linear-gradient(90deg, #475569 0%, #64748B 25%, #94A3B8 50%, #64748B 75%, #475569 100%);
+    background: linear-gradient(135deg, #2F6FBF 0%, #4A90E2 50%, #2F6FBF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -2396,14 +2375,14 @@ body.modal-open {
 }
 
 .faq-question:hover h3 {
-    color: var(--accent-dark);
-    -webkit-text-fill-color: var(--accent-dark);
+    color: var(--heading-primary);
+    -webkit-text-fill-color: var(--heading-primary);
 }
 
 .faq-toggle {
     font-size: 1.4rem;
     font-weight: 300;
-    color: var(--chrome);
+    color: var(--accent-color);
     transition: all var(--transition-normal);
     flex-shrink: 0;
     width: 32px;
@@ -2412,18 +2391,18 @@ body.modal-open {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(148, 163, 184, 0.15) 0%, rgba(148, 163, 184, 0.08) 100%);
-    border: 1px solid var(--glass-border);
+    background: linear-gradient(135deg, rgba(127, 182, 255, 0.15) 0%, rgba(127, 182, 255, 0.08) 100%);
+    border: 1px solid rgba(127, 182, 255, 0.3);
 }
 
 .faq-item:hover .faq-toggle {
-    background: linear-gradient(135deg, rgba(148, 163, 184, 0.25) 0%, rgba(148, 163, 184, 0.15) 100%);
-    border-color: rgba(148, 163, 184, 0.5);
+    background: linear-gradient(135deg, rgba(127, 182, 255, 0.25) 0%, rgba(127, 182, 255, 0.15) 100%);
+    border-color: rgba(127, 182, 255, 0.5);
 }
 
 .faq-item.active .faq-toggle {
     transform: rotate(45deg);
-    background: linear-gradient(135deg, #475569 0%, #64748B 100%);
+    background: linear-gradient(135deg, var(--heading-primary) 0%, var(--heading-secondary) 100%);
     color: white;
     border-color: transparent;
 }
@@ -2478,13 +2457,13 @@ body.modal-open {
     margin-bottom: 30px;
     background: linear-gradient(
         90deg,
-        #475569 0%,
-        #64748B 20%,
-        #94A3B8 40%,
-        #CBD5E1 50%,
-        #94A3B8 60%,
-        #64748B 80%,
-        #475569 100%
+        #2F6FBF 0%,
+        #4A90E2 20%,
+        #5BA0F0 40%,
+        #7FB6FF 50%,
+        #5BA0F0 60%,
+        #4A90E2 80%,
+        #2F6FBF 100%
     );
     background-size: 300% 100%;
     -webkit-background-clip: text;
@@ -2524,7 +2503,7 @@ body.modal-open {
 }
 
 .contact-item a:hover {
-    color: var(--accent-dark);
+    color: var(--heading-primary);
 }
 
 .social-links {
@@ -3569,16 +3548,15 @@ body.modal-open {
    Premium Typography - Mobile Enhancements
    ======================================== */
 @media (max-width: 768px) {
-    /* Section titles - chrome on mobile */
+    /* Section titles - brighter on mobile */
     .section-title {
         font-weight: 700;
         background: linear-gradient(
-            90deg,
-            #475569 0%,
-            #64748B 30%,
-            #94A3B8 50%,
-            #64748B 70%,
-            #475569 100%
+            135deg,
+            #3A7BD5 0%,
+            #4A90E2 40%,
+            #5BA0F0 60%,
+            #4A90E2 100%
         );
         background-size: 200% 100%;
         -webkit-background-clip: text;
