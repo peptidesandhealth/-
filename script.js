@@ -110,8 +110,7 @@ const translations = {
 
         // Contact
         'contact.title': 'Контакты iPeptides',
-        'contact.telegram': 'TELEGRAM-КАНАЛ',
-        'contact.youtube': 'YOUTUBE-КАНАЛ',
+        'contact.telegram': 'TELEGRAM-ЧАТ',
         'contact.hours': 'РЕЖИМ СВЯЗИ',
         'contact.hoursValue': 'Ежедневно 10:00–20:00',
         'contact.form.name': 'Имя и Фамилия',
@@ -212,8 +211,7 @@ const translations = {
 
         // Contact
         'contact.title': 'iPeptides Contacts',
-        'contact.telegram': 'TELEGRAM CHANNEL',
-        'contact.youtube': 'YOUTUBE CHANNEL',
+        'contact.telegram': 'TELEGRAM CHAT',
         'contact.hours': 'CONTACT HOURS',
         'contact.hoursValue': 'Daily 10:00–20:00',
         'contact.form.name': 'Full Name',
