@@ -1473,6 +1473,24 @@ section {
     background: var(--gradient-mixed);
 }
 
+/* Wide Catalog Button */
+.btn-catalog-wide {
+    width: 100%;
+    max-width: 500px;
+    padding: 18px 48px;
+    font-size: 1rem;
+    font-weight: 600;
+    background: var(--gradient-mixed);
+    color: var(--text-primary);
+    border: none;
+    box-shadow: 0 4px 20px rgba(165, 196, 212, 0.3);
+}
+
+.btn-catalog-wide:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(165, 196, 212, 0.4);
+}
+
 /* ========================================
    Catalog Modal
    ======================================== */
@@ -2937,6 +2955,14 @@ body.modal-open {
 
     .shop-cta .btn {
         width: 100%;
+    }
+
+    /* Wide catalog button - mobile */
+    .btn-catalog-wide {
+        width: 100%;
+        padding: 22px 48px;
+        font-size: 1.2rem;
+        font-weight: 600;
     }
 
     /* Catalog modal - mobile full screen */
