@@ -18,10 +18,16 @@
     --ice-flow-light: #C5DDE8;
     --ice-flow-dark: #8BAFC2;
 
-    /* Derived colors */
-    --text-primary: #2D3436;
-    --text-secondary: #636E72;
-    --text-light: #B2BEC3;
+    /* Premium Typography Colors */
+    --heading-primary: #4A90E2;    /* H1/H2 - Ice blue */
+    --heading-secondary: #2F6FBF;  /* H3 - Deeper blue */
+    --text-primary: #1F2937;       /* Main text - Dark graphite */
+    --text-secondary: #64748B;     /* Secondary text */
+    --text-muted: #94A3B8;         /* Small text, hints */
+    --accent-color: #7FB6FF;       /* Links, icons, FAQ toggles */
+
+    /* Legacy text colors for compatibility */
+    --text-light: #94A3B8;
 
     /* Gradients */
     --gradient-chrome: linear-gradient(135deg, #E8E8E8 0%, #C0C0C0 50%, #E8E8E8 100%);
@@ -121,13 +127,13 @@ img {
     font-weight: 600;
     background: linear-gradient(
         90deg,
-        #5a6a74 0%,
-        #7a8a94 20%,
-        #9aaab4 40%,
-        #a8b8c4 50%,
-        #9aaab4 60%,
-        #7a8a94 80%,
-        #5a6a74 100%
+        #2F6FBF 0%,
+        #4A90E2 20%,
+        #5BA0F0 40%,
+        #7FB6FF 50%,
+        #5BA0F0 60%,
+        #4A90E2 80%,
+        #2F6FBF 100%
     );
     background-size: 300% 100%;
     -webkit-background-clip: text;
@@ -153,7 +159,7 @@ img {
 .nav-links a {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     position: relative;
     padding: 5px 0;
 }
@@ -170,7 +176,7 @@ img {
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
+    color: var(--heading-primary);
 }
 
 .nav-links a:hover::after {
@@ -276,11 +282,11 @@ img {
 }
 
 .hero-card .hero-title {
-    color: #4a5a64;
+    color: var(--text-primary);
 }
 
 .hero-card .hero-title .accent {
-    background: linear-gradient(135deg, #4a5a64 0%, #5a6a74 25%, #6a7a84 50%, #5a6a74 75%, #4a5a64 100%);
+    background: linear-gradient(135deg, #3A7BD5 0%, #4A90E2 25%, #5BA0F0 50%, #4A90E2 75%, #3A7BD5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -289,17 +295,18 @@ img {
 }
 
 .hero-card .hero-subtitle {
-    color: #8898a4;
-    font-weight: 500;
+    color: var(--heading-secondary);
+    font-weight: 600;
+    letter-spacing: 2.5px;
 }
 
 .hero-card .hero-tagline {
-    color: #5a6a74;
-    font-weight: 400;
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .hero-card .hero-description {
-    color: #6a7a84;
+    color: var(--text-secondary);
 }
 
 .hero-subtitle {
@@ -532,22 +539,19 @@ section {
     position: relative;
     display: inline-block;
     background: linear-gradient(
-        90deg,
-        #4a6070 0%,
-        #6a8494 15%,
-        #8aa4b4 30%,
-        #a8c0d0 40%,
-        #8aa4b4 50%,
-        #6a8494 65%,
-        #4a6070 80%,
-        #6a8494 90%,
-        #8aa4b4 100%
+        135deg,
+        #3A7BD5 0%,
+        #4A90E2 25%,
+        #5BA0F0 50%,
+        #4A90E2 75%,
+        #3A7BD5 100%
     );
-    background-size: 300% 100%;
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: titleShimmer 4s ease-in-out infinite;
+    font-weight: 600;
 }
 
 @keyframes titleShimmer {
@@ -563,7 +567,7 @@ section {
     left: 0;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--ice-flow), var(--chrome-light), var(--ice-flow));
+    background: linear-gradient(90deg, var(--heading-primary), var(--accent-color), var(--heading-primary));
     background-size: 200% 100%;
     animation: lineShimmer 2s ease-in-out infinite;
     border-radius: 2px;
@@ -575,7 +579,7 @@ section {
 }
 
 .section-title.ice-flow {
-    background: linear-gradient(135deg, #5a7080 0%, #6a8494 25%, #8aa4b4 50%, #6a8494 75%, #5a7080 100%);
+    background: linear-gradient(135deg, #2F6FBF 0%, #4A90E2 25%, #5BA0F0 50%, #4A90E2 75%, #2F6FBF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -612,14 +616,14 @@ section {
 
 .about-lead {
     font-size: 1.15rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 0;
-    line-height: 1.6;
+    line-height: 1.7;
     max-width: 700px;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     background: none;
     -webkit-background-clip: unset;
-    -webkit-text-fill-color: var(--text-secondary);
+    -webkit-text-fill-color: var(--text-primary);
     background-clip: unset;
     animation: none;
 }
@@ -700,7 +704,7 @@ section {
     font-size: 3rem;
     font-weight: 600;
     display: block;
-    background: linear-gradient(135deg, var(--ice-flow-dark) 0%, var(--text-primary) 100%);
+    background: linear-gradient(135deg, var(--heading-primary) 0%, var(--heading-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -709,18 +713,18 @@ section {
 .stat-title {
     font-family: 'Inter', sans-serif;
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: 700;
     display: block;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 6px;
     background: linear-gradient(
         90deg,
-        #3a4a54 0%,
-        #5a6a74 25%,
-        #7a8a94 50%,
-        #5a6a74 75%,
-        #3a4a54 100%
+        #2F6FBF 0%,
+        #4A90E2 25%,
+        #5BA0F0 50%,
+        #4A90E2 75%,
+        #2F6FBF 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -735,10 +739,11 @@ section {
 }
 
 .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     letter-spacing: 0.3px;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 .about-note {
@@ -882,10 +887,10 @@ section {
     margin-bottom: 10px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    color: #1a2a34;
+    color: var(--heading-secondary);
     background: none;
     -webkit-background-clip: unset;
-    -webkit-text-fill-color: #1a2a34;
+    -webkit-text-fill-color: var(--heading-secondary);
     background-clip: unset;
     animation: none;
     filter: none;
@@ -899,8 +904,8 @@ section {
 
 .skill-card p {
     font-size: 0.875rem;
-    color: #3a4550;
-    line-height: 1.5;
+    color: var(--text-primary);
+    line-height: 1.6;
     font-weight: 400;
 }
 
@@ -1067,19 +1072,22 @@ section {
 
 /* High contrast text for consultation section */
 .consultation .timeline-content h3 {
-    color: #1a2a34;
-    -webkit-text-fill-color: #1a2a34;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+    color: var(--heading-secondary);
+    -webkit-text-fill-color: var(--heading-secondary);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
+    background: none;
+    animation: none;
 }
 
 .consultation .timeline-content p {
-    color: #2a3a44;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    color: var(--text-primary);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .consultation .timeline-step {
-    color: #3a5a6a;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+    color: var(--heading-primary);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+    font-weight: 700;
 }
 
 .section-subtitle {
@@ -1141,7 +1149,7 @@ section {
 .timeline-circle svg {
     width: 28px;
     height: 28px;
-    color: #3a5a6a;
+    color: var(--heading-secondary);
 }
 
 .timeline-item:hover .timeline-circle {
@@ -1160,8 +1168,8 @@ section {
 
 .timeline-step {
     font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--ice-flow-dark);
+    font-weight: 700;
+    color: var(--heading-primary);
     letter-spacing: 1px;
     display: block;
     margin-bottom: 8px;
@@ -1170,17 +1178,17 @@ section {
 .timeline-content h3 {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     background: linear-gradient(
         90deg,
-        #3a4a54 0%,
-        #5a6a74 30%,
-        #7a8a94 50%,
-        #5a6a74 70%,
-        #3a4a54 100%
+        #2F6FBF 0%,
+        #4A90E2 30%,
+        #5BA0F0 50%,
+        #4A90E2 70%,
+        #2F6FBF 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -1196,7 +1204,7 @@ section {
 
 .timeline-content p {
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     line-height: 1.5;
 }
 
@@ -1317,9 +1325,9 @@ section {
 
 .shop-subtitle {
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     margin-top: 16px;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -1405,12 +1413,12 @@ section {
     display: inline-block;
     padding: 5px 14px;
     font-size: 0.65rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--ice-flow-dark);
-    background: linear-gradient(135deg, rgba(165, 196, 212, 0.2) 0%, rgba(165, 196, 212, 0.1) 100%);
-    border: 1px solid rgba(165, 196, 212, 0.25);
+    color: var(--heading-primary);
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.15) 0%, rgba(74, 144, 226, 0.08) 100%);
+    border: 1px solid rgba(74, 144, 226, 0.25);
     border-radius: 20px;
     margin-bottom: 14px;
 }
@@ -1419,15 +1427,15 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--heading-secondary);
     margin-bottom: 8px;
     letter-spacing: 0.5px;
 }
 
 .showcase-desc {
     font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
+    color: var(--text-primary);
+    line-height: 1.5;
     margin-bottom: 20px;
 }
 
@@ -1546,7 +1554,7 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
-    background: linear-gradient(135deg, #4a6070 0%, #6a8494 50%, #4a6070 100%);
+    background: linear-gradient(135deg, #2F6FBF 0%, #4A90E2 50%, #2F6FBF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1698,11 +1706,11 @@ section {
     display: inline-block;
     padding: 3px 10px;
     font-size: 0.65rem;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--ice-flow-dark);
-    background: rgba(165, 196, 212, 0.12);
+    color: var(--heading-primary);
+    background: rgba(74, 144, 226, 0.12);
     border-radius: 20px;
     margin-bottom: 12px;
     align-self: center;
@@ -1712,14 +1720,14 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 1.15rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--heading-secondary);
     margin-bottom: 8px;
 }
 
 .card-desc {
     font-size: 0.8rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
+    color: var(--text-primary);
+    line-height: 1.5;
     flex: 1;
     display: flex;
     align-items: flex-start;
@@ -1764,8 +1772,8 @@ body.modal-open {
 /* Card Dose Style */
 .card-dose {
     font-size: 0.7rem;
-    color: var(--ice-flow-dark);
-    font-weight: 500;
+    color: var(--heading-primary);
+    font-weight: 600;
     margin-bottom: 8px;
     letter-spacing: 0.3px;
 }
@@ -1876,17 +1884,17 @@ body.modal-open {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--heading-secondary);
     margin-bottom: 8px;
 }
 
 .product-dose {
     font-size: 1rem;
-    color: var(--ice-flow-dark);
-    font-weight: 500;
+    color: var(--heading-primary);
+    font-weight: 600;
     margin-bottom: 24px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(165, 196, 212, 0.2);
+    border-bottom: 1px solid rgba(74, 144, 226, 0.2);
 }
 
 .product-full {
@@ -2097,7 +2105,7 @@ body.modal-open {
     font-weight: 600;
     text-align: center;
     margin-bottom: 12px;
-    background: linear-gradient(135deg, #4a6070 0%, #6a8494 50%, #4a6070 100%);
+    background: linear-gradient(135deg, #2F6FBF 0%, #4A90E2 50%, #2F6FBF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -2307,25 +2315,25 @@ body.modal-open {
 .faq-question h3 {
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0;
     padding-right: 20px;
     transition: all var(--transition-normal);
-    color: #2a3a44;
-    -webkit-text-fill-color: #2a3a44;
+    color: var(--text-primary);
+    -webkit-text-fill-color: var(--text-primary);
     background: none;
     animation: none;
 }
 
 .faq-question:hover h3 {
-    color: var(--ice-flow-dark);
-    -webkit-text-fill-color: var(--ice-flow-dark);
+    color: var(--heading-primary);
+    -webkit-text-fill-color: var(--heading-primary);
 }
 
 .faq-toggle {
     font-size: 1.4rem;
     font-weight: 300;
-    color: var(--ice-flow-dark);
+    color: var(--accent-color);
     transition: all var(--transition-normal);
     flex-shrink: 0;
     width: 32px;
@@ -2334,18 +2342,18 @@ body.modal-open {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(165, 196, 212, 0.15) 0%, rgba(165, 196, 212, 0.08) 100%);
-    border: 1px solid rgba(165, 196, 212, 0.3);
+    background: linear-gradient(135deg, rgba(127, 182, 255, 0.15) 0%, rgba(127, 182, 255, 0.08) 100%);
+    border: 1px solid rgba(127, 182, 255, 0.3);
 }
 
 .faq-item:hover .faq-toggle {
-    background: linear-gradient(135deg, rgba(165, 196, 212, 0.25) 0%, rgba(165, 196, 212, 0.15) 100%);
-    border-color: rgba(165, 196, 212, 0.5);
+    background: linear-gradient(135deg, rgba(127, 182, 255, 0.25) 0%, rgba(127, 182, 255, 0.15) 100%);
+    border-color: rgba(127, 182, 255, 0.5);
 }
 
 .faq-item.active .faq-toggle {
     transform: rotate(45deg);
-    background: linear-gradient(135deg, var(--ice-flow) 0%, var(--ice-flow-dark) 100%);
+    background: linear-gradient(135deg, var(--heading-primary) 0%, var(--heading-secondary) 100%);
     color: white;
     border-color: transparent;
 }
@@ -2363,7 +2371,7 @@ body.modal-open {
 
 .faq-answer p {
     font-size: 1rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     line-height: 1.8;
     margin: 0;
 }
@@ -2395,18 +2403,18 @@ body.modal-open {
 
 .contact-lead {
     font-size: 1.75rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5;
     margin-bottom: 30px;
     background: linear-gradient(
         90deg,
-        #4a5a64 0%,
-        #5a6a74 20%,
-        #7a8a94 40%,
-        #8a9aa4 50%,
-        #7a8a94 60%,
-        #5a6a74 80%,
-        #4a5a64 100%
+        #2F6FBF 0%,
+        #4A90E2 20%,
+        #5BA0F0 40%,
+        #7FB6FF 50%,
+        #5BA0F0 60%,
+        #4A90E2 80%,
+        #2F6FBF 100%
     );
     background-size: 300% 100%;
     -webkit-background-clip: text;
@@ -2442,10 +2450,11 @@ body.modal-open {
 .contact-item span {
     font-size: 1.125rem;
     color: var(--text-primary);
+    font-weight: 500;
 }
 
 .contact-item a:hover {
-    color: var(--ice-flow-dark);
+    color: var(--heading-primary);
 }
 
 .social-links {
@@ -2648,7 +2657,7 @@ body.modal-open {
 
 .footer-disclaimer p {
     font-size: 0.75rem;
-    color: var(--text-light);
+    color: var(--text-muted);
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
@@ -3461,4 +3470,108 @@ body.modal-open {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--chrome-dark);
+}
+
+/* ========================================
+   Premium Typography - Mobile Enhancements
+   ======================================== */
+@media (max-width: 768px) {
+    /* Section titles - brighter on mobile */
+    .section-title {
+        font-weight: 700;
+        background: linear-gradient(
+            135deg,
+            #3A7BD5 0%,
+            #4A90E2 40%,
+            #5BA0F0 60%,
+            #4A90E2 100%
+        );
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Hero card text - more readable */
+    .hero-card .hero-subtitle {
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    .hero-card .hero-tagline {
+        font-weight: 600;
+    }
+
+    /* About lead text */
+    .about-lead {
+        font-weight: 500;
+    }
+
+    /* Stat titles - more prominent */
+    .stat-title {
+        font-weight: 800;
+    }
+
+    /* Card headings - more visible */
+    .skill-card h3 {
+        font-weight: 800;
+    }
+
+    /* Timeline text */
+    .timeline-content h3 {
+        font-weight: 800;
+    }
+
+    /* FAQ questions */
+    .faq-question h3 {
+        font-weight: 700;
+    }
+
+    /* Showcase titles */
+    .showcase-title {
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Even bolder on very small screens */
+    .section-title {
+        font-weight: 800;
+    }
+
+    .hero-card .hero-title {
+        font-weight: 800;
+    }
+
+    .hero-card .hero-tagline {
+        font-weight: 600;
+    }
+
+    .hero-card .hero-description {
+        font-weight: 500;
+        line-height: 1.6;
+    }
+
+    /* Ensure readable text on mobile */
+    .about-lead {
+        font-weight: 500;
+        line-height: 1.6;
+    }
+
+    .stat-label {
+        font-weight: 500;
+    }
+
+    .skill-card p {
+        font-weight: 500;
+    }
+
+    .showcase-desc {
+        font-weight: 500;
+    }
+
+    .faq-answer p {
+        font-weight: 500;
+        line-height: 1.7;
+    }
 }
