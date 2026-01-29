@@ -10,7 +10,267 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initContactForm();
     initParallaxEffects();
+    initFAQ();
+    initSkillsCarousel();
+    initCatalogModal();
+    initConsultationModal();
+    initLanguageSwitcher();
 });
+
+// ========================================
+// Language Translations
+// ========================================
+const translations = {
+    ru: {
+        // Navigation
+        'nav.standards': 'Стандарты',
+        'nav.directions': 'Направления',
+        'nav.consultation': 'Консультация',
+        'nav.shop': 'Магазин',
+        'nav.contacts': 'Контакты',
+
+        // Hero
+        'hero.subtitle': 'КЛЮЧ К СОВРЕМЕННОМУ ОЗДОРОВЛЕНИЮ',
+        'hero.tagline': 'Инновационные решения в рамках комплексного подхода к здоровью и восстановлению',
+        'hero.shopBtn': 'Перейти в магазин',
+        'hero.consultBtn': 'Получить консультацию',
+
+        // About
+        'about.title': 'Стандарты iPeptides',
+        'about.lead': 'Консультация и сопровождение по вопросам выбора и применения пептидов — под вашу цель и задачу.',
+        'about.stat1.title': 'Стандарты<br class="desktop-only"> качества',
+        'about.stat1.label': 'чистота состава • контроль качества',
+        'about.stat2.title': 'Комплексный подход',
+        'about.stat2.label': 'сон • стресс • восстановление • метаболизм',
+        'about.stat3.title': 'Полное сопровождение',
+        'about.stat3.label': 'рекомендации • поддержка • обратная связь',
+
+        // Skills
+        'skills.title': 'Направления iPeptides',
+        'skills.card1.title': 'Восстановление и регенерация',
+        'skills.card1.descDesktop': 'Поддержка восстановительных процессов тканей после нагрузок, травм и функциональных перегрузок',
+        'skills.card1.descMobile': 'Поддержка восстановления после нагрузок и перегрузок.',
+        'skills.card2.title': 'Опорно-двигательный аппарат',
+        'skills.card2.descDesktop': 'Сопровождение программ для связок, сухожилий и мышечной ткани при адаптации к тренировкам и активному образу жизни',
+        'skills.card2.descMobile': 'Программы для связок, сухожилий и мышц.',
+        'skills.card3.title': 'Кожа и дермальные структуры',
+        'skills.card3.descDesktop': 'Поддержка качества кожи: тонус, плотность, восстановление и улучшение визуальных характеристик',
+        'skills.card3.descMobile': 'Тонус, плотность и визуальное качество кожи.',
+        'skills.card4.title': 'Стресс-нагрузка и сон',
+        'skills.card4.descDesktop': 'Поддержка адаптационных механизмов организма при перегрузке, снижении ресурса и нарушениях сна',
+        'skills.card4.descMobile': 'Поддержка ресурса и нормализации сна.',
+        'skills.card5.title': 'Иммунная поддержка',
+        'skills.card5.descDesktop': 'Комплексная поддержка защитных функций организма в периоды повышенной нагрузки и сезонных заболеваний',
+        'skills.card5.descMobile': 'Поддержка защитных функций в период нагрузок.',
+        'skills.card6.title': 'Метаболический профиль',
+        'skills.card6.descDesktop': 'Сопровождение программ, направленных на контроль веса и улучшение метаболических показателей',
+        'skills.card6.descMobile': 'Контроль веса и поддержка метаболизма.',
+
+        // Consultation
+        'consultation.title': 'Консультация iPeptides',
+        'consultation.step1.title': 'Заявка',
+        'consultation.step1.desc': 'Оставляете обращение',
+        'consultation.step2.title': 'Сбор данных',
+        'consultation.step2.desc': 'Цель и особенности',
+        'consultation.step3.title': 'Подбор',
+        'consultation.step3.desc': 'Выбор направления',
+        'consultation.step4.title': 'Рекомендации',
+        'consultation.step4.desc': 'Структура курса',
+        'consultation.step5.title': 'Сопровождение',
+        'consultation.step5.desc': 'Ответы и поддержка',
+        'consultation.ctaBtn': 'Получить консультацию',
+
+        // Shop
+        'shop.title': 'Магазин iPeptides',
+        'shop.subtitle': 'Подбор и оформление заказа — в рамках консультационного сопровождения.',
+        'shop.badge.recovery': 'Восстановление',
+        'shop.badge.skin': 'Кожа',
+        'shop.badge.metabolism': 'Метаболизм',
+        'shop.bpc157.desc': 'Поддержка регенеративных процессов',
+        'shop.ghkcu.desc': 'Комплексное омоложение и качество кожи',
+        'shop.motsc.desc': 'Метаболический профиль и энергия',
+        'shop.detailsBtn': 'Подробнее',
+        'shop.catalogBtn': 'Открыть каталог',
+        'shop.consultBtn': 'Получить консультацию',
+
+        // FAQ
+        'faq.q1.question': 'Что такое пептиды?',
+        'faq.q1.answer': 'Пептиды — биологически активные соединения (короткие цепочки аминокислот), участвующие в регуляции клеточных процессов. В рамках консультации мы объясняем, какие направления поддержки могут быть актуальны под вашу задачу.',
+        'faq.q2.question': 'Нужна ли консультация перед применением?',
+        'faq.q2.answer': 'Да. Консультация позволяет корректно определить цель, учесть индивидуальные особенности и подобрать оптимальное направление в рамках комплексного подхода.',
+        'faq.q3.question': 'Какие задачи можно рассмотреть в рамках сопровождения iPeptides?',
+        'faq.q3.answer': 'Наиболее частые запросы: восстановление, качество кожи, стресс-нагрузка и сон, поддержка иммунитета, метаболический профиль и общий ресурс.',
+        'faq.q4.question': 'Когда можно ожидать результат?',
+        'faq.q4.answer': 'Сроки зависят от исходного состояния, выбранного направления и длительности курса. Мы ориентируемся на постепенную динамику и понятные критерии оценки.',
+        'faq.q5.question': 'Можно ли совмещать пептидные решения с другими средствами?',
+        'faq.q5.answer': 'Совместимость зависит от индивидуальных факторов. На консультации мы уточняем текущие препараты и подбираем корректный формат сопровождения.',
+        'faq.q6.question': 'Как получить консультацию?',
+        'faq.q6.answer': 'Оставьте заявку на сайте или напишите в мессенджер. Мы уточним ваш запрос и предложим подходящий формат консультации.',
+        'faq.ctaBtn': 'Получить консультацию',
+
+        // Contact
+        'contact.title': 'Контакты iPeptides',
+        'contact.telegram': 'TELEGRAM-ЧАТ',
+        'contact.hours': 'РЕЖИМ СВЯЗИ',
+        'contact.hoursValue': 'Ежедневно 10:00–20:00',
+        'contact.form.name': 'Имя и Фамилия',
+        'contact.form.phone': 'Номер телефона',
+        'contact.form.consent': 'Я согласен на обработку моих персональных данных',
+        'contact.form.submit': 'Записаться на консультацию',
+
+        // Footer
+        'footer.copyright': '© 2024 iPeptides. Все права защищены.',
+        'footer.disclaimer': 'Информация на сайте носит ознакомительный характер и не является медицинской рекомендацией. Решения принимаются индивидуально по итогам консультации.'
+    },
+    en: {
+        // Navigation
+        'nav.standards': 'Standards',
+        'nav.directions': 'Directions',
+        'nav.consultation': 'Consultation',
+        'nav.shop': 'Shop',
+        'nav.contacts': 'Contacts',
+
+        // Hero
+        'hero.subtitle': 'THE KEY TO MODERN WELLNESS',
+        'hero.tagline': 'Innovative solutions within a comprehensive approach to health and recovery',
+        'hero.shopBtn': 'Go to Shop',
+        'hero.consultBtn': 'Get Consultation',
+
+        // About
+        'about.title': 'iPeptides Standards',
+        'about.lead': 'Consultation and support on peptide selection and application — tailored to your goals and needs.',
+        'about.stat1.title': 'Quality<br class="desktop-only"> Standards',
+        'about.stat1.label': 'purity of composition • quality control',
+        'about.stat2.title': 'Comprehensive Approach',
+        'about.stat2.label': 'sleep • stress • recovery • metabolism',
+        'about.stat3.title': 'Full Support',
+        'about.stat3.label': 'recommendations • support • feedback',
+
+        // Skills
+        'skills.title': 'iPeptides Directions',
+        'skills.card1.title': 'Recovery & Regeneration',
+        'skills.card1.descDesktop': 'Supporting tissue recovery processes after physical stress, injuries and functional overloads',
+        'skills.card1.descMobile': 'Recovery support after stress and overloads.',
+        'skills.card2.title': 'Musculoskeletal System',
+        'skills.card2.descDesktop': 'Program support for ligaments, tendons and muscle tissue adapting to training and active lifestyle',
+        'skills.card2.descMobile': 'Programs for ligaments, tendons and muscles.',
+        'skills.card3.title': 'Skin & Dermal Structures',
+        'skills.card3.descDesktop': 'Skin quality support: tone, density, recovery and visual improvement',
+        'skills.card3.descMobile': 'Tone, density and visual skin quality.',
+        'skills.card4.title': 'Stress Load & Sleep',
+        'skills.card4.descDesktop': 'Supporting body adaptation mechanisms during overload, resource depletion and sleep disorders',
+        'skills.card4.descMobile': 'Resource support and sleep normalization.',
+        'skills.card5.title': 'Immune Support',
+        'skills.card5.descDesktop': 'Comprehensive support of body defense functions during high load and seasonal illness periods',
+        'skills.card5.descMobile': 'Defense function support during stress.',
+        'skills.card6.title': 'Metabolic Profile',
+        'skills.card6.descDesktop': 'Program support aimed at weight control and metabolic improvement',
+        'skills.card6.descMobile': 'Weight control and metabolism support.',
+
+        // Consultation
+        'consultation.title': 'iPeptides Consultation',
+        'consultation.step1.title': 'Request',
+        'consultation.step1.desc': 'Submit your inquiry',
+        'consultation.step2.title': 'Data Collection',
+        'consultation.step2.desc': 'Goals and specifics',
+        'consultation.step3.title': 'Selection',
+        'consultation.step3.desc': 'Direction choice',
+        'consultation.step4.title': 'Recommendations',
+        'consultation.step4.desc': 'Course structure',
+        'consultation.step5.title': 'Support',
+        'consultation.step5.desc': 'Answers and assistance',
+        'consultation.ctaBtn': 'Get Consultation',
+
+        // Shop
+        'shop.title': 'iPeptides Shop',
+        'shop.subtitle': 'Product selection and ordering — as part of consultation support.',
+        'shop.badge.recovery': 'Recovery',
+        'shop.badge.skin': 'Skin',
+        'shop.badge.metabolism': 'Metabolism',
+        'shop.bpc157.desc': 'Regenerative process support',
+        'shop.ghkcu.desc': 'Comprehensive rejuvenation and skin quality',
+        'shop.motsc.desc': 'Metabolic profile and energy',
+        'shop.detailsBtn': 'Learn More',
+        'shop.catalogBtn': 'Open Catalog',
+        'shop.consultBtn': 'Get Consultation',
+
+        // FAQ
+        'faq.q1.question': 'What are peptides?',
+        'faq.q1.answer': 'Peptides are biologically active compounds (short amino acid chains) involved in cellular process regulation. During consultation, we explain which support directions may be relevant to your needs.',
+        'faq.q2.question': 'Is consultation required before use?',
+        'faq.q2.answer': 'Yes. Consultation allows correct goal definition, considering individual characteristics and selecting the optimal direction within a comprehensive approach.',
+        'faq.q3.question': 'What tasks can be addressed with iPeptides support?',
+        'faq.q3.answer': 'Most common requests: recovery, skin quality, stress load and sleep, immune support, metabolic profile and overall resources.',
+        'faq.q4.question': 'When can results be expected?',
+        'faq.q4.answer': 'Timing depends on initial condition, chosen direction and course duration. We focus on gradual progress and clear evaluation criteria.',
+        'faq.q5.question': 'Can peptide solutions be combined with other products?',
+        'faq.q5.answer': 'Compatibility depends on individual factors. During consultation, we review current medications and select the appropriate support format.',
+        'faq.q6.question': 'How to get a consultation?',
+        'faq.q6.answer': 'Submit a request on the website or message us. We will clarify your inquiry and suggest the appropriate consultation format.',
+        'faq.ctaBtn': 'Get Consultation',
+
+        // Contact
+        'contact.title': 'iPeptides Contacts',
+        'contact.telegram': 'TELEGRAM CHAT',
+        'contact.hours': 'CONTACT HOURS',
+        'contact.hoursValue': 'Daily 10:00–20:00',
+        'contact.form.name': 'Full Name',
+        'contact.form.phone': 'Phone Number',
+        'contact.form.consent': 'I consent to the processing of my personal data',
+        'contact.form.submit': 'Book a Consultation',
+
+        // Footer
+        'footer.copyright': '© 2024 iPeptides. All rights reserved.',
+        'footer.disclaimer': 'Information on this website is for informational purposes only and does not constitute medical advice. Decisions are made individually based on consultation results.'
+    }
+};
+
+// Current language state
+let currentLanguage = localStorage.getItem('ipeptides-lang') || 'ru';
+
+// ========================================
+// Language Switcher
+// ========================================
+function initLanguageSwitcher() {
+    const switcher = document.getElementById('langSwitcher');
+    if (!switcher) return;
+
+    // Set initial state
+    updateLanguageUI(currentLanguage);
+    applyTranslations(currentLanguage);
+
+    // Handle click
+    switcher.addEventListener('click', () => {
+        currentLanguage = currentLanguage === 'ru' ? 'en' : 'ru';
+        localStorage.setItem('ipeptides-lang', currentLanguage);
+        updateLanguageUI(currentLanguage);
+        applyTranslations(currentLanguage);
+
+        // Update html lang attribute
+        document.documentElement.lang = currentLanguage;
+    });
+}
+
+function updateLanguageUI(lang) {
+    const options = document.querySelectorAll('.lang-option');
+    options.forEach(option => {
+        if (option.dataset.lang === lang) {
+            option.classList.add('active');
+        } else {
+            option.classList.remove('active');
+        }
+    });
+}
+
+function applyTranslations(lang) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+}
 
 // ========================================
 // Navbar Scroll Effect
@@ -372,6 +632,29 @@ function initPreloader() {
 }
 
 // ========================================
+// FAQ Accordion
+// ========================================
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', () => {
+            // Close other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+}
+
+// ========================================
 // Utility Functions
 // ========================================
 function debounce(func, wait) {
@@ -403,3 +686,361 @@ const throttledScroll = throttle(() => {
 }, 100);
 
 window.addEventListener('scroll', throttledScroll);
+
+// ========================================
+// Skills Carousel
+// ========================================
+function initSkillsCarousel() {
+    const carousel = document.querySelector('.skills-carousel');
+    if (!carousel) return;
+
+    const grid = carousel.querySelector('.skills-grid');
+    const leftArrow = carousel.querySelector('.carousel-arrow-left');
+    const rightArrow = carousel.querySelector('.carousel-arrow-right');
+
+    if (!grid || !leftArrow || !rightArrow) return;
+
+    // Get card width for scrolling
+    const getScrollAmount = () => {
+        const card = grid.querySelector('.skill-card');
+        if (card) {
+            return card.offsetWidth + 16; // card width + gap
+        }
+        return 300;
+    };
+
+    // Scroll left
+    leftArrow.addEventListener('click', () => {
+        grid.scrollBy({
+            left: -getScrollAmount(),
+            behavior: 'smooth'
+        });
+    });
+
+    // Scroll right
+    rightArrow.addEventListener('click', () => {
+        grid.scrollBy({
+            left: getScrollAmount(),
+            behavior: 'smooth'
+        });
+    });
+
+    // Touch/swipe is already handled by CSS scroll-snap
+}
+
+// ========================================
+// Catalog Modal
+// ========================================
+function initCatalogModal() {
+    const modal = document.getElementById('catalogModal');
+    const openBtn = document.getElementById('openCatalogBtn');
+    const closeBtn = document.getElementById('closeCatalogBtn');
+    const overlay = modal?.querySelector('.catalog-overlay');
+    const searchInput = document.getElementById('catalogSearch');
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const catalogCards = document.querySelectorAll('.catalog-card');
+    const catalogEmpty = document.getElementById('catalogEmpty');
+    const catalogGrid = document.getElementById('catalogGrid');
+    const showcaseButtons = document.querySelectorAll('.btn-showcase');
+
+    if (!modal || !openBtn) return;
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    // Open modal
+    function openModal() {
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+    }
+
+    // Close modal
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+
+    // Filter cards
+    function filterCards() {
+        let visibleCount = 0;
+
+        catalogCards.forEach(card => {
+            const category = card.dataset.category;
+            const name = card.dataset.name.toLowerCase();
+
+            const matchesFilter = currentFilter === 'all' || category === currentFilter;
+            const matchesSearch = currentSearch === '' || name.includes(currentSearch.toLowerCase());
+
+            if (matchesFilter && matchesSearch) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+
+        // Show/hide empty state
+        if (catalogEmpty && catalogGrid) {
+            if (visibleCount === 0) {
+                catalogEmpty.style.display = 'block';
+                catalogGrid.style.display = 'none';
+            } else {
+                catalogEmpty.style.display = 'none';
+                catalogGrid.style.display = 'grid';
+            }
+        }
+    }
+
+    // Open button click
+    openBtn.addEventListener('click', openModal);
+
+    // Close button click
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Overlay click
+    if (overlay) {
+        overlay.addEventListener('click', closeModal);
+    }
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // Search input
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value.trim();
+            filterCards();
+        });
+    }
+
+    // Filter chips
+    filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            // Update active state
+            filterChips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+
+            // Update filter
+            currentFilter = chip.dataset.filter;
+            filterCards();
+        });
+    });
+
+    // Showcase buttons - open modal with filter
+    showcaseButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const productName = btn.dataset.product;
+
+            // Open modal
+            openModal();
+
+            // Set search to product name
+            if (searchInput && productName) {
+                searchInput.value = productName.toUpperCase();
+                currentSearch = productName;
+                filterCards();
+            }
+        });
+    });
+
+    // Card buttons - open product detail modal
+    const cardButtons = document.querySelectorAll('.btn-card');
+    cardButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const card = btn.closest('.catalog-card');
+            if (card) {
+                openProductModal(card);
+            }
+        });
+    });
+
+    // Initialize product modal
+    initProductModal();
+}
+
+// ========================================
+// Product Detail Modal
+// ========================================
+function initProductModal() {
+    const productModal = document.getElementById('productModal');
+    const closeProductBtn = document.getElementById('closeProductBtn');
+    const productOverlay = productModal?.querySelector('.product-overlay');
+    const catalogModal = document.getElementById('catalogModal');
+
+    if (!productModal) return;
+
+    // Close product modal
+    function closeProductModal() {
+        productModal.classList.remove('active');
+        // Don't remove modal-open if catalog is still open
+        if (!catalogModal?.classList.contains('active')) {
+            document.body.classList.remove('modal-open');
+        }
+    }
+
+    // Close button
+    if (closeProductBtn) {
+        closeProductBtn.addEventListener('click', closeProductModal);
+    }
+
+    // Overlay click
+    if (productOverlay) {
+        productOverlay.addEventListener('click', closeProductModal);
+    }
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && productModal.classList.contains('active')) {
+            closeProductModal();
+        }
+    });
+}
+
+// Open product modal with card data
+function openProductModal(card) {
+    const productModal = document.getElementById('productModal');
+    const productTitle = document.getElementById('productTitle');
+    const productBadge = document.getElementById('productBadge');
+    const productDose = document.getElementById('productDose');
+    const productFull = document.getElementById('productFull');
+
+    if (!productModal || !card) return;
+
+    // Get data from card
+    const name = card.dataset.name || '';
+    const dose = card.dataset.dose || '';
+    const fullDesc = card.dataset.full || '';
+    const badge = card.querySelector('.card-badge')?.textContent || '';
+
+    // Populate modal
+    if (productTitle) productTitle.textContent = name;
+    if (productBadge) productBadge.textContent = badge;
+    if (productDose) productDose.textContent = dose;
+
+    // Format full description with paragraphs
+    if (productFull) {
+        const paragraphs = fullDesc.split('\n\n').filter(p => p.trim());
+        productFull.innerHTML = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+    }
+
+    // Show modal
+    productModal.classList.add('active');
+    document.body.classList.add('modal-open');
+}
+
+// ========================================
+// Consultation Modal
+// ========================================
+function initConsultationModal() {
+    const modal = document.getElementById('consultationModal');
+    const closeBtn = document.getElementById('closeConsultationBtn');
+    const overlay = modal?.querySelector('.consultation-modal-overlay');
+    const form = document.getElementById('consultationModalForm');
+    const triggers = document.querySelectorAll('.consultation-modal-trigger');
+    const productModal = document.getElementById('productModal');
+    const catalogModal = document.getElementById('catalogModal');
+
+    if (!modal) return;
+
+    // Open modal function
+    function openConsultationModal() {
+        // Close other modals first
+        if (productModal?.classList.contains('active')) {
+            productModal.classList.remove('active');
+        }
+        if (catalogModal?.classList.contains('active')) {
+            catalogModal.classList.remove('active');
+        }
+
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+    }
+
+    // Close modal function
+    function closeConsultationModal() {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+
+    // Add click handlers to all trigger buttons
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            openConsultationModal();
+        });
+    });
+
+    // Close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeConsultationModal);
+    }
+
+    // Overlay click
+    if (overlay) {
+        overlay.addEventListener('click', closeConsultationModal);
+    }
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeConsultationModal();
+        }
+    });
+
+    // Form submission
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+
+            // Get form data
+            const formData = {
+                name: form.querySelector('#modalName').value,
+                phone: form.querySelector('#modalPhone').value,
+                email: form.querySelector('#modalEmail').value
+            };
+
+            // Show loading state
+            submitBtn.textContent = 'Отправка...';
+            submitBtn.disabled = true;
+
+            // Simulate form submission
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Success
+                submitBtn.textContent = 'Заявка отправлена!';
+                submitBtn.style.background = 'var(--ice-flow)';
+                form.reset();
+
+                // Close modal and reset button after delay
+                setTimeout(() => {
+                    closeConsultationModal();
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 2000);
+
+            } catch (error) {
+                // Error
+                submitBtn.textContent = 'Ошибка! Попробуйте снова';
+                submitBtn.style.background = '#ff6b6b';
+
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }
+        });
+    }
+}
