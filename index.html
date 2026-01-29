@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Personal Card</title>
+    <title>iPeptides | Пептидные решения для здоровья</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -11,13 +11,20 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Portfolio</a>
+            <a href="#" class="logo">iPeptidesPlus</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" data-i18n="nav.standards">Стандарты</a></li>
+                <li><a href="#skills" data-i18n="nav.directions">Направления</a></li>
+                <li><a href="#portfolio" data-i18n="nav.consultation">Консультация</a></li>
+                <li><a href="#shop" data-i18n="nav.shop">Магазин</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" data-i18n="nav.contacts">Контакты</a></li>
             </ul>
+            <button class="lang-switcher" id="langSwitcher" aria-label="Switch language">
+                <span class="lang-option active" data-lang="ru">RU</span>
+                <span class="lang-divider">/</span>
+                <span class="lang-option" data-lang="en">EN</span>
+            </button>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -29,39 +36,19 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-content">
-            <div class="hero-text">
-                <p class="hero-subtitle">Welcome to my world</p>
+            <div class="hero-card">
                 <h1 class="hero-title">
-                    <span class="name-line">Creative</span>
-                    <span class="name-line accent">Designer</span>
-                    <span class="name-line">&amp; Developer</span>
+                    <span class="name-line accent">iPeptidesPlus</span>
                 </h1>
-                <p class="hero-description">
-                    I create elegant digital experiences that combine aesthetics with functionality.
-                    Transforming ideas into beautiful, user-centered solutions.
+                <p class="hero-subtitle" data-i18n="hero.subtitle">КЛЮЧ К СОВРЕМЕННОМУ ОЗДОРОВЛЕНИЮ</p>
+                <p class="hero-tagline" data-i18n="hero.tagline">
+                    Инновационные решения в рамках комплексного подхода к здоровью и восстановлению
                 </p>
                 <div class="hero-buttons">
-                    <a href="#portfolio" class="btn btn-primary">View Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#shop" class="btn btn-primary" data-i18n="hero.shopBtn">Перейти в магазин</a>
+                    <button class="btn btn-primary consultation-modal-trigger" data-i18n="hero.consultBtn">Получить консультацию</button>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="hero-shape shape-1"></div>
-                <div class="hero-shape shape-2"></div>
-                <div class="hero-shape shape-3"></div>
-                <div class="hero-image-container">
-                    <div class="hero-image-placeholder">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="100" cy="80" r="40" fill="currentColor" opacity="0.3"/>
-                            <ellipse cx="100" cy="160" rx="60" ry="35" fill="currentColor" opacity="0.3"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
         </div>
     </section>
 
@@ -69,38 +56,41 @@
     <section class="about" id="about">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">01</span>
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title ice-flow" data-i18n="about.title">Стандарты iPeptides</h2>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-lead">
-                        I'm a passionate creative professional with over 5 years of experience
-                        in digital design and web development.
-                    </p>
-                    <p>
-                        My approach combines minimalist aesthetics with cutting-edge technology
-                        to create memorable digital experiences. I believe in the power of
-                        thoughtful design to solve complex problems and connect with audiences
-                        on a deeper level.
-                    </p>
-                    <p>
-                        When I'm not designing, you can find me exploring new technologies,
-                        capturing moments through photography, or enjoying a good cup of coffee.
-                    </p>
-                </div>
-                <div class="about-stats">
+            <div class="about-content centered">
+                <p class="about-lead italic" data-i18n="about.lead">
+                    Консультация и сопровождение по вопросам выбора и применения пептидов — под вашу цель и задачу.
+                </p>
+                <div class="about-stats horizontal">
                     <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Projects Completed</span>
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <span class="stat-title" data-i18n="about.stat1.title">Стандарты<br class="desktop-only"> качества</span>
+                        <span class="stat-label" data-i18n="about.stat1.label">чистота состава • контроль качества</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Years Experience</span>
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="6" rx="1"/>
+                                <rect x="3" y="11" width="18" height="6" rx="1" opacity="0.7"/>
+                                <rect x="5" y="19" width="14" height="2" rx="0.5" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <span class="stat-title" data-i18n="about.stat2.title">Комплексный подход</span>
+                        <span class="stat-label" data-i18n="about.stat2.label">сон • стресс • восстановление • метаболизм</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">30+</span>
-                        <span class="stat-label">Happy Clients</span>
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <span class="stat-title" data-i18n="about.stat3.title">Полное сопровождение</span>
+                        <span class="stat-label" data-i18n="about.stat3.label">рекомендации • поддержка • обратная связь</span>
                     </div>
                 </div>
             </div>
@@ -111,126 +101,951 @@
     <section class="skills" id="skills">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">02</span>
-                <h2 class="section-title">Skills & Expertise</h2>
+                <h2 class="section-title ice-flow" data-i18n="skills.title">Направления iPeptides</h2>
             </div>
-            <div class="skills-grid">
-                <div class="skill-card">
+            <div class="skills-carousel">
+                <div class="carousel-arrow carousel-arrow-left">‹</div>
+                <div class="skills-grid six-cards">
+                    <div class="skill-card skill-card-1">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <path d="M9 9h6v6H9z"/>
-                        </svg>
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>Creating intuitive interfaces and seamless user experiences</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Building responsive and performant web applications</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4.5 12.5l3 3 8-8"/>
                             <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-                            <path d="M2 12h20"/>
                         </svg>
                     </div>
-                    <h3>Brand Identity</h3>
-                    <p>Crafting memorable visual identities and brand systems</p>
+                    <div class="skill-card-text">
+                        <h3 data-i18n="skills.card1.title">Восстановление и регенерация</h3>
+                        <p class="desc-desktop" data-i18n="skills.card1.descDesktop">Поддержка восстановительных процессов тканей после нагрузок, травм и функциональных перегрузок</p>
+                        <p class="desc-mobile" data-i18n="skills.card1.descMobile">Поддержка восстановления после нагрузок и перегрузок.</p>
+                    </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card skill-card-2">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
                         </svg>
                     </div>
-                    <h3>Problem Solving</h3>
-                    <p>Finding creative solutions to complex challenges</p>
+                    <div class="skill-card-text">
+                        <h3 data-i18n="skills.card2.title">Опорно-двигательный аппарат</h3>
+                        <p class="desc-desktop" data-i18n="skills.card2.descDesktop">Сопровождение программ для связок, сухожилий и мышечной ткани при адаптации к тренировкам и активному образу жизни</p>
+                        <p class="desc-mobile" data-i18n="skills.card2.descMobile">Программы для связок, сухожилий и мышц.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="tech-stack">
-                <h4>Technologies I work with:</h4>
-                <div class="tech-tags">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Vue.js</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Figma</span>
-                    <span class="tech-tag">Adobe XD</span>
-                    <span class="tech-tag">Photoshop</span>
-                    <span class="tech-tag">Illustrator</span>
+                <div class="skill-card skill-card-3">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-card-text">
+                        <h3 data-i18n="skills.card3.title">Кожа и дермальные структуры</h3>
+                        <p class="desc-desktop" data-i18n="skills.card3.descDesktop">Поддержка качества кожи: тонус, плотность, восстановление и улучшение визуальных характеристик</p>
+                        <p class="desc-mobile" data-i18n="skills.card3.descMobile">Тонус, плотность и визуальное качество кожи.</p>
+                    </div>
                 </div>
+                <div class="skill-card skill-card-4">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-card-text">
+                        <h3 data-i18n="skills.card4.title">Стресс-нагрузка и сон</h3>
+                        <p class="desc-desktop" data-i18n="skills.card4.descDesktop">Поддержка адаптационных механизмов организма при перегрузке, снижении ресурса и нарушениях сна</p>
+                        <p class="desc-mobile" data-i18n="skills.card4.descMobile">Поддержка ресурса и нормализации сна.</p>
+                    </div>
+                </div>
+                <div class="skill-card skill-card-5">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <div class="skill-card-text">
+                        <h3 data-i18n="skills.card5.title">Иммунная поддержка</h3>
+                        <p class="desc-desktop" data-i18n="skills.card5.descDesktop">Комплексная поддержка защитных функций организма в периоды повышенной нагрузки и сезонных заболеваний</p>
+                        <p class="desc-mobile" data-i18n="skills.card5.descMobile">Поддержка защитных функций в период нагрузок.</p>
+                    </div>
+                </div>
+                <div class="skill-card skill-card-6">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 3v18h18"/>
+                            <path d="M18 9l-5 5-4-4-3 3"/>
+                        </svg>
+                    </div>
+                    <div class="skill-card-text">
+                        <h3 data-i18n="skills.card6.title">Метаболический профиль</h3>
+                        <p class="desc-desktop" data-i18n="skills.card6.descDesktop">Сопровождение программ, направленных на контроль веса и улучшение метаболических показателей</p>
+                        <p class="desc-mobile" data-i18n="skills.card6.descMobile">Контроль веса и поддержка метаболизма.</p>
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-arrow carousel-arrow-right">›</div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <!-- Consultation Timeline Section -->
+    <section class="consultation" id="portfolio">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">03</span>
-                <h2 class="section-title">Selected Work</h2>
+                <h2 class="section-title ice-flow" data-i18n="consultation.title">Консультация iPeptides</h2>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item large">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <span>Project 01</span>
-                        </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
                     </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Web Design</span>
-                        <h3>E-Commerce Platform</h3>
-                        <p>Complete redesign of an online shopping experience</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <span>Project 02</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Brand Identity</span>
-                        <h3>Tech Startup Branding</h3>
-                        <p>Visual identity system for an AI company</p>
+                    <div class="timeline-content">
+                        <span class="timeline-step">01</span>
+                        <h3 data-i18n="consultation.step1.title">Заявка</h3>
+                        <p data-i18n="consultation.step1.desc">Оставляете обращение</p>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <span>Project 03</span>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <path d="M14 2v6h6"/>
+                            <path d="M16 13H8"/>
+                            <path d="M16 17H8"/>
+                            <path d="M10 9H8"/>
+                        </svg>
                     </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Mobile App</span>
-                        <h3>Fitness Tracker App</h3>
-                        <p>UI/UX design for health monitoring app</p>
-                    </div>
-                </div>
-                <div class="portfolio-item wide">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <span>Project 04</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Web Development</span>
-                        <h3>Creative Agency Website</h3>
-                        <p>Full-stack development with modern animations</p>
+                    <div class="timeline-content">
+                        <span class="timeline-step">02</span>
+                        <h3 data-i18n="consultation.step2.title">Сбор данных</h3>
+                        <p data-i18n="consultation.step2.desc">Цель и особенности</p>
                     </div>
                 </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-step">03</span>
+                        <h3 data-i18n="consultation.step3.title">Подбор</h3>
+                        <p data-i18n="consultation.step3.desc">Выбор направления</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-step">04</span>
+                        <h3 data-i18n="consultation.step4.title">Рекомендации</h3>
+                        <p data-i18n="consultation.step4.desc">Структура курса</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-step">05</span>
+                        <h3 data-i18n="consultation.step5.title">Сопровождение</h3>
+                        <p data-i18n="consultation.step5.desc">Ответы и поддержка</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-cta">
+                <button class="btn btn-primary consultation-modal-trigger" data-i18n="consultation.ctaBtn">Получить консультацию</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop" id="shop">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title ice-flow" data-i18n="shop.title">Магазин iPeptides</h2>
+                <p class="shop-subtitle"><em data-i18n="shop.subtitle">Подбор и оформление заказа — в рамках консультационного сопровождения.</em></p>
+            </div>
+
+            <!-- Mini Showcase - 3 Featured Products -->
+            <div class="shop-showcase">
+                <div class="showcase-card">
+                    <img src="images/1.png" alt="BPC-157" class="showcase-image">
+                    <div class="showcase-content">
+                        <div class="showcase-badge" data-i18n="shop.badge.recovery">Восстановление</div>
+                        <h3 class="showcase-title">BPC-157</h3>
+                        <p class="showcase-desc" data-i18n="shop.bpc157.desc">Поддержка регенеративных процессов</p>
+                        <button class="btn-showcase" data-product="bpc-157" data-i18n="shop.detailsBtn">Подробнее</button>
+                    </div>
+                </div>
+                <div class="showcase-card">
+                    <img src="images/2.png" alt="GHK-Cu" class="showcase-image">
+                    <div class="showcase-content">
+                        <div class="showcase-badge" data-i18n="shop.badge.skin">Кожа</div>
+                        <h3 class="showcase-title">GHK-Cu</h3>
+                        <p class="showcase-desc" data-i18n="shop.ghkcu.desc">Комплексное омоложение и качество кожи</p>
+                        <button class="btn-showcase" data-product="ghk-cu" data-i18n="shop.detailsBtn">Подробнее</button>
+                    </div>
+                </div>
+                <div class="showcase-card">
+                    <img src="images/3.png" alt="MOTS-C" class="showcase-image">
+                    <div class="showcase-content">
+                        <div class="showcase-badge" data-i18n="shop.badge.metabolism">Метаболизм</div>
+                        <h3 class="showcase-title">MOTS-C</h3>
+                        <p class="showcase-desc" data-i18n="shop.motsc.desc">Метаболический профиль и энергия</p>
+                        <button class="btn-showcase" data-product="mots-c" data-i18n="shop.detailsBtn">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="shop-cta shop-cta-single">
+                <button class="btn btn-catalog-wide" id="openCatalogBtn" data-i18n="shop.catalogBtn">Открыть каталог</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Modal -->
+    <div class="catalog-modal" id="catalogModal">
+        <div class="catalog-overlay"></div>
+        <div class="catalog-container">
+            <!-- Modal Header -->
+            <div class="catalog-header">
+                <h2 class="catalog-title">Каталог iPeptides</h2>
+                <button class="catalog-close" id="closeCatalogBtn" aria-label="Закрыть">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="catalog-filters">
+                <div class="catalog-search">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="catalogSearch" placeholder="Поиск по названию...">
+                </div>
+                <div class="catalog-chips">
+                    <button class="filter-chip active" data-filter="all">Все</button>
+                    <button class="filter-chip" data-filter="recovery">Восстановление</button>
+                    <button class="filter-chip" data-filter="skin">Кожа</button>
+                    <button class="filter-chip" data-filter="sleep">Сон / стресс</button>
+                    <button class="filter-chip" data-filter="metabolism">Метаболизм</button>
+                    <button class="filter-chip" data-filter="immunity">Иммунитет</button>
+                    <button class="filter-chip" data-filter="libido">Либидо</button>
+                    <button class="filter-chip" data-filter="extra">Дополнительно</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="catalog-grid" id="catalogGrid">
+                <!-- Metabolism -->
+                <div class="catalog-card" data-category="metabolism" data-name="Tirzepatide"
+                     data-dose="5 mg | 10 mg"
+                     data-full="Tirzepatide — современный двойной агонист рецепторов GIP и GLP-1, представляющий новое поколение пептидов для управления весом и метаболическим здоровьем.
+
+Механизм действия основан на активации двух ключевых сигнальных путей, что обеспечивает выраженный эффект снижения аппетита и улучшения чувствительности к инсулину.
+
+Клинические исследования демонстрируют значительное снижение массы тела и улучшение показателей гликемического контроля.
+
+Пептид способствует нормализации пищевого поведения, снижая тягу к перееданию и формируя устойчивые привычки питания.
+
+Рекомендуется применять в рамках комплексной программы, включающей коррекцию рациона и физическую активность.">
+                    <div class="card-badge">Метаболизм</div>
+                    <h3 class="card-title">Tirzepatide</h3>
+                    <p class="card-dose">5 mg | 10 mg</p>
+                    <p class="card-desc">Двойной агонист GIP/GLP-1 для снижения веса и контроля аппетита</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="metabolism" data-name="Retatrutide"
+                     data-dose="5 mg | 10 mg"
+                     data-full="Retatrutide — инновационный тройной агонист рецепторов GIP, GLP-1 и глюкагона, представляющий передовой подход к коррекции веса.
+
+Уникальный механизм тройного действия обеспечивает комплексное воздействие на метаболические процессы, превосходя по эффективности препараты предыдущего поколения.
+
+Активация глюкагоновых рецепторов усиливает термогенез и расход энергии, что дополнительно ускоряет процесс снижения веса.
+
+Пептид демонстрирует выраженное влияние на композицию тела, способствуя сохранению мышечной массы при потере жировой ткани.
+
+Подходит для тех, кто ищет максимально эффективное решение в рамках программы управления весом под наблюдением специалиста.">
+                    <div class="card-badge">Метаболизм</div>
+                    <h3 class="card-title">Retatrutide</h3>
+                    <p class="card-dose">5 mg | 10 mg</p>
+                    <p class="card-desc">Тройной агонист нового поколения для мощного снижения веса</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="metabolism" data-name="AOD-9604"
+                     data-dose="5 mg"
+                     data-full="AOD-9604 — специализированный пептид, представляющий собой модифицированный фрагмент гормона роста (176-191), созданный для целенаправленного жиросжигания.
+
+Ключевое преимущество — избирательное воздействие на жировую ткань без влияния на уровень глюкозы крови и инсулиноподобный фактор роста.
+
+Механизм действия основан на стимуляции липолиза и окисления жирных кислот, что делает его безопасным выбором для длительного применения.
+
+Особенно эффективен для работы с локальными жировыми отложениями, устойчивыми к стандартным методам коррекции.
+
+Отлично сочетается с другими пептидами метаболической направленности, усиливая общий результат программы снижения веса.">
+                    <div class="card-badge">Метаболизм</div>
+                    <h3 class="card-title">AOD-9604</h3>
+                    <p class="card-dose">5 mg</p>
+                    <p class="card-desc">Жиросжигающий пептид без влияния на уровень сахара</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="metabolism" data-name="5-Amino-1MQ"
+                     data-dose="5 mg"
+                     data-full="5-Amino-1MQ — инновационный ингибитор фермента NNMT, открывающий новые возможности в области метаболической коррекции.
+
+Блокируя NNMT, пептид препятствует накоплению жировой ткани и активирует естественные процессы жиросжигания на клеточном уровне.
+
+Исследования показывают положительное влияние на энергетический метаболизм, повышение выносливости и работоспособности.
+
+Способствует улучшению чувствительности тканей к инсулину, что важно для поддержания стабильного уровня энергии в течение дня.
+
+Перспективное решение для тех, кто стремится оптимизировать метаболизм и поддерживать здоровую композицию тела.">
+                    <div class="card-badge">Метаболизм</div>
+                    <h3 class="card-title">5-Amino-1MQ</h3>
+                    <p class="card-dose">5 mg</p>
+                    <p class="card-desc">Ингибитор NNMT для ускорения метаболизма</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="metabolism" data-name="MOTS-C"
+                     data-dose="10 mg | 40 mg"
+                     data-full="MOTS-C — митохондриальный пептид, кодируемый митохондриальной ДНК, играющий ключевую роль в регуляции метаболизма и энергетического баланса.
+
+Уникальный механизм действия направлен на оптимизацию работы митохондрий — энергетических станций клетки, что обеспечивает повышение общего уровня энергии.
+
+Активирует путь AMPK, улучшая утилизацию глюкозы и жирных кислот, что способствует нормализации веса и метаболических показателей.
+
+Демонстрирует выраженные антивозрастные свойства, поддерживая клеточное здоровье и замедляя процессы старения на митохондриальном уровне.
+
+Идеальный выбор для тех, кто стремится повысить жизненный тонус, улучшить физическую форму и поддержать метаболическое здоровье.">
+                    <div class="card-badge">Метаболизм</div>
+                    <h3 class="card-title">MOTS-C</h3>
+                    <p class="card-dose">10 mg | 40 mg</p>
+                    <p class="card-desc">Митохондриальный пептид для энергии и метаболизма</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <!-- Recovery -->
+                <div class="catalog-card" data-category="recovery" data-name="BPC-157"
+                     data-dose="10 mg"
+                     data-full="BPC-157 (Body Protection Compound) — революционный регенеративный пептид, изначально обнаруженный в желудочном соке человека.
+
+Обладает выдающейся способностью ускорять заживление различных типов тканей: мышц, сухожилий, связок, нервов и слизистой оболочки ЖКТ.
+
+Механизм действия включает стимуляцию ангиогенеза (образования новых сосудов) и активацию факторов роста, что обеспечивает комплексное восстановление.
+
+Особенно ценен для спортсменов и активных людей, способствуя быстрому возвращению к тренировкам после травм и перегрузок.
+
+Демонстрирует гастропротекторные свойства, поддерживая здоровье пищеварительной системы и целостность слизистой оболочки.">
+                    <div class="card-badge">Восстановление</div>
+                    <h3 class="card-title">BPC-157</h3>
+                    <p class="card-dose">10 mg</p>
+                    <p class="card-desc">Революционный пептид для восстановления тканей и защиты ЖКТ</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="recovery" data-name="TB-500"
+                     data-dose="5 mg"
+                     data-full="TB-500 (Thymosin Beta-4) — мощный регенеративный пептид, естественно присутствующий в организме человека в высоких концентрациях в местах повреждения тканей.
+
+Ключевое свойство — способность регулировать актин, основной белок клеточного каркаса, что критически важно для миграции клеток и заживления ран.
+
+Способствует восстановлению мышечных волокон, сухожилий и связок, улучшая гибкость и подвижность суставов.
+
+Обладает противовоспалительными свойствами, снижая отёк и дискомфорт в зоне повреждения.
+
+Широко применяется в спортивной медицине для ускорения реабилитации и поддержания высокого уровня физической активности.">
+                    <div class="card-badge">Восстановление</div>
+                    <h3 class="card-title">TB-500</h3>
+                    <p class="card-dose">5 mg</p>
+                    <p class="card-desc">Регенеративный пептид для мышц, связок и суставов</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="recovery" data-name="BPC-157 + TB-500"
+                     data-dose="5 mg + 5 mg"
+                     data-full="BPC-157 + TB-500 — синергетическая комбинация двух наиболее эффективных регенеративных пептидов, объединённых для максимального восстановительного эффекта.
+
+Сочетание механизмов действия обеспечивает комплексный подход: BPC-157 активирует факторы роста и ангиогенез, TB-500 регулирует клеточную миграцию и снижает воспаление.
+
+Комбинация особенно эффективна при травмах опорно-двигательного аппарата, обеспечивая ускоренное заживление и восстановление функций.
+
+Подходит для спортсменов в период интенсивных тренировок, помогая минимизировать время восстановления между нагрузками.
+
+Оптимальный выбор для тех, кто ищет максимально эффективное решение для регенерации и возвращения к активному образу жизни.">
+                    <div class="card-badge">Восстановление</div>
+                    <h3 class="card-title">BPC-157 + TB-500</h3>
+                    <p class="card-dose">5 mg + 5 mg</p>
+                    <p class="card-desc">Синергетическая комбинация для максимального восстановления</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="recovery" data-name="IGF-1 LR3"
+                     data-dose="1 mg"
+                     data-full="IGF-1 LR3 — модифицированная форма инсулиноподобного фактора роста с увеличенным периодом полураспада, обеспечивающим пролонгированное действие.
+
+Является мощным анаболическим агентом, стимулирующим рост и восстановление мышечной ткани на клеточном уровне.
+
+Активирует сателлитные клетки мышц, способствуя гиперплазии (увеличению количества мышечных волокон), а не только гипертрофии.
+
+Улучшает азотистый баланс и синтез белка, что критически важно для набора качественной мышечной массы и восстановления после тренировок.
+
+Рекомендуется для опытных пользователей, стремящихся к значительному улучшению физической формы и спортивных результатов.">
+                    <div class="card-badge">Восстановление</div>
+                    <h3 class="card-title">IGF-1 LR3</h3>
+                    <p class="card-dose">1 mg</p>
+                    <p class="card-desc">Модифицированный фактор роста для набора мышечной массы</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="recovery" data-name="KPV"
+                     data-dose="10 mg"
+                     data-full="KPV — трипептид, производный от альфа-меланоцитстимулирующего гормона, обладающий выраженными противовоспалительными и регенеративными свойствами.
+
+Механизм действия основан на модуляции воспалительных путей и снижении продукции провоспалительных цитокинов.
+
+Особенно эффективен для восстановления слизистой оболочки кишечника, что делает его ценным при нарушениях работы ЖКТ.
+
+Способствует заживлению тканей и уменьшению болевых ощущений, связанных с воспалительными процессами.
+
+Перспективное решение для поддержания здоровья кишечника и общего восстановления организма.">
+                    <div class="card-badge">Восстановление</div>
+                    <h3 class="card-title">KPV</h3>
+                    <p class="card-dose">10 mg</p>
+                    <p class="card-desc">Противовоспалительный пептид для регенерации тканей</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <!-- Skin -->
+                <div class="catalog-card" data-category="skin" data-name="GHK-Cu"
+                     data-dose="50 mg"
+                     data-full="GHK-Cu — медный пептид, признанный одним из наиболее изученных и эффективных омолаживающих соединений в современной космецевтике.
+
+Стимулирует синтез коллагена, эластина и гликозаминогликанов, восстанавливая плотность и упругость кожи на структурном уровне.
+
+Обладает антиоксидантными свойствами, защищая клетки от окислительного стресса и преждевременного старения.
+
+Активирует процессы ремоделирования кожи, улучшая текстуру, тон и общий внешний вид.
+
+Универсальное решение для комплексного омоложения, подходящее как для местного применения, так и для системного воздействия.">
+                    <div class="card-badge">Кожа</div>
+                    <h3 class="card-title">GHK-Cu</h3>
+                    <p class="card-dose">50 mg</p>
+                    <p class="card-desc">Медный пептид для омоложения и синтеза коллагена</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="skin" data-name="Glow"
+                     data-dose="70 mg (GHK-Cu 50mg + TB-500 10mg + BPC-157 10mg)"
+                     data-full="Glow — премиальный мультифункциональный комплекс, объединяющий три синергетических пептида для комплексного омоложения кожи.
+
+GHK-Cu (50 mg) обеспечивает стимуляцию коллагена и эластина, TB-500 (10 mg) ускоряет регенерацию, BPC-157 (10 mg) защищает и восстанавливает ткани.
+
+Комплексное воздействие направлено на улучшение плотности, эластичности и сияния кожи, устранение мелких морщин и улучшение текстуры.
+
+Формула разработана для тех, кто ищет интенсивное омолаживающее решение с доказанной эффективностью компонентов.
+
+Идеальный выбор для anti-age программ, обеспечивающий видимые результаты и долгосрочное улучшение качества кожи.">
+                    <div class="card-badge">Кожа</div>
+                    <h3 class="card-title">Glow</h3>
+                    <p class="card-dose">70 mg</p>
+                    <p class="card-desc">Мультикомплекс для сияния и омоложения кожи</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="skin" data-name="KLOW"
+                     data-dose="80 mg (GHK-Cu + TB-500 + BPC-157 + KPV)"
+                     data-full="KLOW — расширенный регенеративный комплекс, включающий четыре взаимодополняющих пептида для глубокого восстановления и омоложения.
+
+Помимо классической тройки GHK-Cu, TB-500 и BPC-157, содержит KPV — противовоспалительный пептид, усиливающий восстановительные процессы.
+
+Формула особенно эффективна при наличии воспалительных состояний кожи, обеспечивая одновременно успокоение и регенерацию.
+
+Комплексный подход позволяет воздействовать на множественные механизмы старения и повреждения кожи.
+
+Продвинутое решение для тех, кто стремится к максимальным результатам в области дермального омоложения и восстановления.">
+                    <div class="card-badge">Кожа</div>
+                    <h3 class="card-title">KLOW</h3>
+                    <p class="card-dose">80 mg</p>
+                    <p class="card-desc">Расширенный комплекс для восстановления и омоложения</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="skin" data-name="Snap-8"
+                     data-dose="10 mg"
+                     data-full="Snap-8 — косметический пептид нового поколения, действующий по принципу модуляции мышечных сокращений для разглаживания мимических морщин.
+
+Механизм действия направлен на снижение высвобождения нейромедиаторов в нервно-мышечном соединении, обеспечивая эффект расслабления мимической мускулатуры.
+
+Эффективен против морщин в области лба, межбровья, вокруг глаз и носогубных складок — зон, наиболее подверженных мимической активности.
+
+В отличие от инъекционных методов, обеспечивает естественный результат с сохранением живой мимики и выразительности лица.
+
+Идеальное решение для тех, кто ищет неинвазивный способ коррекции возрастных изменений с накопительным эффектом.">
+                    <div class="card-badge">Кожа</div>
+                    <h3 class="card-title">Snap-8</h3>
+                    <p class="card-dose">10 mg</p>
+                    <p class="card-desc">Пептид для разглаживания мимических морщин</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <!-- Sleep / Longevity -->
+                <div class="catalog-card" data-category="sleep" data-name="Ipamorelin + CJC-1295"
+                     data-dose="10 mg"
+                     data-full="Ipamorelin + CJC-1295 — золотой стандарт комбинации для естественной стимуляции выработки гормона роста.
+
+Ipamorelin — селективный стимулятор секреции ГР без побочной активации кортизола и пролактина, CJC-1295 — пролонгатор действия, обеспечивающий стабильный фон.
+
+Синергия компонентов обеспечивает улучшение качества сна, восстановления, композиции тела и общего самочувствия.
+
+Особенно эффективен для оптимизации сна: углубляет фазы медленного сна, способствует более полному восстановлению и утренней бодрости.
+
+Подходит для тех, кто стремится естественным путём оптимизировать гормональный профиль и улучшить качество жизни.">
+                    <div class="card-badge">Сон / стресс</div>
+                    <h3 class="card-title">Ipamorelin + CJC-1295</h3>
+                    <p class="card-dose">10 mg</p>
+                    <p class="card-desc">Стимуляция гормона роста, улучшение сна и восстановления</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="sleep" data-name="Epithalon"
+                     data-dose="10 mg | 40 mg | 50 mg"
+                     data-full="Epithalon (Эпиталон) — синтетический аналог эпиталамина, разработанный российскими учёными как геропротектор для замедления процессов старения.
+
+Ключевой механизм — активация теломеразы, фермента, удлиняющего теломеры хромосом, что напрямую связано с клеточным долголетием.
+
+Способствует восстановлению циркадных ритмов и нормализации выработки мелатонина, улучшая качество сна и общую биоритмику организма.
+
+Демонстрирует иммуномодулирующие свойства, поддерживая защитные функции организма на оптимальном уровне.
+
+Один из наиболее изученных пептидов в области геронтологии, рекомендуемый для программ активного долголетия.">
+                    <div class="card-badge">Сон / стресс</div>
+                    <h3 class="card-title">Epithalon</h3>
+                    <p class="card-dose">10 mg | 40 mg | 50 mg</p>
+                    <p class="card-desc">Геропротектор для замедления старения и нормализации сна</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="sleep" data-name="SS-31"
+                     data-dose="10 mg"
+                     data-full="SS-31 (Elamipretide) — митохондриальный пептид, целенаправленно воздействующий на внутреннюю мембрану митохондрий для оптимизации клеточной энергетики.
+
+Уникальный механизм действия связан с кардиолипином — ключевым фосфолипидом митохондриальных мембран, стабилизация которого улучшает работу дыхательной цепи.
+
+Обеспечивает защиту клеток от окислительного стресса и поддержание оптимального уровня производства АТФ — универсальной энергетической валюты организма.
+
+Способствует повышению физической и умственной работоспособности, снижению утомляемости и улучшению восстановления.
+
+Перспективное решение для поддержания клеточной молодости и оптимальной энергетики на митохондриальном уровне.">
+                    <div class="card-badge">Сон / стресс</div>
+                    <h3 class="card-title">SS-31</h3>
+                    <p class="card-dose">10 mg</p>
+                    <p class="card-desc">Митохондриальный пептид для клеточной энергии</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="sleep" data-name="NAD+"
+                     data-dose="100 mg | 500 mg | 1000 mg"
+                     data-full="NAD+ (Никотинамидадениндинуклеотид) — ключевой коэнзим, участвующий в сотнях метаболических реакций и критически важный для клеточного здоровья.
+
+Уровень NAD+ естественно снижается с возрастом, что связано с ухудшением энергетического метаболизма, когнитивных функций и восстановительных процессов.
+
+Восполнение NAD+ активирует сиртуины — белки долголетия, регулирующие клеточный метаболизм, репарацию ДНК и воспалительные процессы.
+
+Способствует улучшению памяти, концентрации, качества сна и физической выносливости.
+
+Фундаментальный компонент anti-age протоколов, обеспечивающий поддержку на базовом клеточном уровне.">
+                    <div class="card-badge">Сон / стресс</div>
+                    <h3 class="card-title">NAD+</h3>
+                    <p class="card-dose">100 mg | 500 mg | 1000 mg</p>
+                    <p class="card-desc">Коэнзим для клеточного омоложения и энергии</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <!-- Immunity -->
+                <div class="catalog-card" data-category="immunity" data-name="Thymosin Alpha-1"
+                     data-dose="10 mg"
+                     data-full="Thymosin Alpha-1 — мощный иммуномодулятор, естественно вырабатываемый тимусом и играющий центральную роль в созревании и функционировании иммунных клеток.
+
+Активирует Т-клетки, натуральные киллеры и дендритные клетки, обеспечивая комплексную поддержку как врождённого, так и адаптивного иммунитета.
+
+Одобрен в ряде стран для клинического применения при вирусных инфекциях и иммунодефицитных состояниях, что подтверждает его эффективность и безопасность.
+
+Особенно ценен в периоды повышенной нагрузки на иммунную систему: сезон простуд, восстановление после болезней, хронический стресс.
+
+Рекомендуется для тех, кто стремится укрепить защитные силы организма и поддержать оптимальную иммунную функцию.">
+                    <div class="card-badge">Иммунитет</div>
+                    <h3 class="card-title">Thymosin Alpha-1</h3>
+                    <p class="card-dose">10 mg</p>
+                    <p class="card-desc">Мощный иммуномодулятор для укрепления защиты организма</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="immunity" data-name="LL-37"
+                     data-dose="5 mg"
+                     data-full="LL-37 — единственный кателицидин человека, представляющий собой эндогенный антимикробный пептид с широким спектром защитных функций.
+
+Обладает прямой антимикробной активностью против бактерий, вирусов и грибов, а также модулирует иммунный ответ организма.
+
+Способствует заживлению ран и восстановлению тканей, стимулируя миграцию клеток и ангиогенез в зоне повреждения.
+
+Регулирует воспалительные процессы, предотвращая как недостаточный, так и избыточный иммунный ответ.
+
+Универсальное решение для укрепления первой линии защиты организма и поддержания здоровья слизистых оболочек.">
+                    <div class="card-badge">Иммунитет</div>
+                    <h3 class="card-title">LL-37</h3>
+                    <p class="card-dose">5 mg</p>
+                    <p class="card-desc">Антимикробный пептид для иммунитета и заживления</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <!-- Libido -->
+                <div class="catalog-card" data-category="libido" data-name="Kisspeptin-10"
+                     data-dose="5 mg"
+                     data-full="Kisspeptin-10 — нейропептид, играющий ключевую роль в регуляции репродуктивной оси и гормонального баланса организма.
+
+Действует на уровне гипоталамуса, стимулируя выработку гонадотропин-рилизинг гормона (ГнРГ) и активируя всю репродуктивную ось.
+
+Способствует нормализации уровня тестостерона и эстрогенов, улучшая либидо, сексуальную функцию и общее самочувствие.
+
+Исследования демонстрируют положительное влияние на эмоциональный фон, настроение и восприятие сексуальных стимулов.
+
+Физиологичный подход к поддержанию гормонального здоровья, работающий через естественные регуляторные механизмы организма.">
+                    <div class="card-badge">Либидо</div>
+                    <h3 class="card-title">Kisspeptin-10</h3>
+                    <p class="card-dose">5 mg</p>
+                    <p class="card-desc">Регуляция гормонального баланса и повышение либидо</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="libido" data-name="Oxytocin"
+                     data-dose="5 mg"
+                     data-full="Oxytocin — пептидный гормон и нейромедиатор, известный как «гормон доверия», играющий ключевую роль в эмоциональной регуляции и социальном поведении.
+
+Связывается с рецепторами в лимбической системе, снижая уровень кортизола и активируя центры удовольствия и безопасности.
+
+Способствует уменьшению тревожности, улучшению эмоционального контакта и повышению доверия в межличностных отношениях.
+
+Влияет на вегетативную регуляцию, нормализуя сердечный ритм и улучшая качество сна при хроническом стрессе.
+
+Подходит для комплексных anti-age и психонейропротективных протоколов, усиливая эффект медитации и терапевтических практик.">
+                    <div class="card-badge">Либидо</div>
+                    <h3 class="card-title">Oxytocin</h3>
+                    <p class="card-dose">5 mg</p>
+                    <p class="card-desc">Нейропептид для снижения тревожности и эмоционального баланса</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="libido" data-name="PT-141"
+                     data-dose="10 mg"
+                     data-full="PT-141 (Bremelanotide) — синтетический пептид, производный α-MSH, уникальный активатор сексуального желания через центральную нервную систему.
+
+В отличие от сосудистых препаратов, PT-141 воздействует на рецепторы MC-4R в гипоталамусе — зоне, регулирующей половое поведение.
+
+Усиливает сексуальное влечение и возбуждение у мужчин и женщин, улучшая чувственность и яркость ощущений.
+
+Повышает уровень дофамина и эндорфинов, способствуя улучшению настроения и уверенности в себе.
+
+Эффект наступает через 30–60 минут и сохраняется до 6–12 часов, подходит при снижении либидо на фоне стресса и усталости.">
+                    <div class="card-badge">Либидо</div>
+                    <h3 class="card-title">PT-141</h3>
+                    <p class="card-dose">10 mg</p>
+                    <p class="card-desc">Активатор либидо через центральную нервную систему</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="libido" data-name="Melanotan II"
+                     data-dose="10 mg"
+                     data-full="Melanotan II — синтетический аналог α-меланоцитстимулирующего гормона с двойным действием: стимуляция загара и усиление либидо.
+
+Активирует меланокортиновые рецепторы MC1R (пигментация кожи) и MC4R (сексуальное поведение), обеспечивая комплексный эффект.
+
+Усиливает выработку меланина, способствуя естественному загару и повышая защиту кожи от ультрафиолетового излучения.
+
+Повышает сексуальное влечение и улучшает качество интимной жизни как у мужчин, так и у женщин.
+
+Перспективное решение для тех, кто стремится к естественному загару и поддержанию сексуального здоровья.">
+                    <div class="card-badge">Либидо</div>
+                    <h3 class="card-title">Melanotan II</h3>
+                    <p class="card-dose">10 mg</p>
+                    <p class="card-desc">Пептид для естественного загара и усиления либидо</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="sleep" data-name="Pinealon"
+                     data-dose="10 mg"
+                     data-full="Pinealon — синтетический трипептид, аналог эндогенного пептида эпифиза (шишковидной железы), обладающий нейропротекторным действием.
+
+Снижает окислительный стресс и защищает клетки мозга от повреждений, поддерживая когнитивные функции.
+
+Улучшает работу шишковидной железы и нормализует выработку мелатонина, восстанавливая циркадные ритмы.
+
+Способствует улучшению качества сна, эмоциональной стабильности и снижению тревожности.
+
+Оптимальный выбор для поддержки нейропластичности и нормализации сна при нарушениях биоритмов.">
+                    <div class="card-badge">Сон / стресс</div>
+                    <h3 class="card-title">Pinealon</h3>
+                    <p class="card-dose">10 mg</p>
+                    <p class="card-desc">Нейропротекторный пептид для сна и когнитивных функций</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="sleep" data-name="Semax"
+                     data-dose="10 mg"
+                     data-full="Semax — синтетический гептапептид с выраженным ноотропным, анксиолитическим и нейропротекторным действием.
+
+Улучшает когнитивные функции, память и концентрацию внимания, стимулируя выработку нейротрофических факторов (BDNF).
+
+Снижает тревожность и повышает стрессоустойчивость, улучшая мозговое кровообращение и метаболизм.
+
+Применяется для поддержки восстановления после черепно-мозговых травм и при хронической усталости.
+
+Эффективное решение для тех, кто стремится улучшить ментальную продуктивность и эмоциональную устойчивость.">
+                    <div class="card-badge">Сон / стресс</div>
+                    <h3 class="card-title">Semax</h3>
+                    <p class="card-dose">10 mg</p>
+                    <p class="card-desc">Ноотроп для памяти, концентрации и стрессоустойчивости</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="sleep" data-name="Selank"
+                     data-dose="5 mg"
+                     data-full="Selank — синтетический гептапептид с анксиолитическим, ноотропным и иммуномодулирующим действием.
+
+Модулирует ГАМК-ергическую систему, снижая тревожность и улучшая когнитивные функции без седативного эффекта.
+
+Стимулирует выработку нейротрофических факторов, улучшая нейропластичность и способность к обучению.
+
+Обладает иммуномодулирующим эффектом, повышая защитные функции организма через активацию Т-лимфоцитов.
+
+Идеальный выбор при тревожных расстройствах, нарушениях памяти и снижении иммунитета.">
+                    <div class="card-badge">Сон / стресс</div>
+                    <h3 class="card-title">Selank</h3>
+                    <p class="card-dose">5 mg</p>
+                    <p class="card-desc">Анксиолитик для снижения тревожности и улучшения памяти</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <!-- Extra -->
+                <div class="catalog-card" data-category="extra" data-name="Бактерицидная вода"
+                     data-dose=""
+                     data-full="Бактерицидная вода — стерильный раствор для разведения пептидов.
+
+Содержит бензиловый спирт (0.9%), который обеспечивает антимикробную защиту и позволяет хранить разведённый раствор в течение нескольких недель.
+
+Идеально подходит для многократного использования флакона с пептидом без риска контаминации.
+
+Обязательный компонент для безопасного и эффективного применения пептидной терапии.">
+                    <div class="card-badge">Дополнительно</div>
+                    <h3 class="card-title">Бактерицидная вода</h3>
+                    <p class="card-desc">Стерильный раствор для разведения пептидов</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="extra" data-name="Картридж для шприц-ручки"
+                     data-dose=""
+                     data-full="Картридж для шприц-ручки — удобное решение для точного дозирования пептидов.
+
+Совместим со стандартными шприц-ручками, обеспечивает простоту и комфорт при инъекциях.
+
+Позволяет точно контролировать дозировку благодаря механизму шприц-ручки.
+
+Оптимальный выбор для тех, кто ценит удобство и точность в пептидной терапии.">
+                    <div class="card-badge">Дополнительно</div>
+                    <h3 class="card-title">Картридж для шприц-ручки</h3>
+                    <p class="card-desc">Для точного дозирования пептидов</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="extra" data-name="Игла инъекционная"
+                     data-dose=""
+                     data-full="Игла инъекционная — стерильные одноразовые иглы для подкожных инъекций.
+
+Тонкие иглы минимизируют дискомфорт при введении препарата.
+
+Индивидуальная стерильная упаковка гарантирует безопасность каждой инъекции.
+
+Необходимый расходный материал для пептидной терапии.">
+                    <div class="card-badge">Дополнительно</div>
+                    <h3 class="card-title">Игла инъекционная</h3>
+                    <p class="card-desc">Стерильные иглы для подкожных инъекций</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="extra" data-name="Шприц инсулиновый"
+                     data-dose=""
+                     data-full="Шприц инсулиновый — точный инструмент для дозирования и введения пептидов.
+
+Шкала в единицах (U) позволяет точно отмерять необходимую дозу препарата.
+
+Тонкая интегрированная игла обеспечивает комфортное введение.
+
+Стандартный и надёжный способ введения пептидов для подкожных инъекций.">
+                    <div class="card-badge">Дополнительно</div>
+                    <h3 class="card-title">Шприц инсулиновый</h3>
+                    <p class="card-desc">Для точного дозирования и введения пептидов</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+
+                <div class="catalog-card" data-category="extra" data-name="Салфетка спиртовая"
+                     data-dose=""
+                     data-full="Салфетка спиртовая — одноразовые салфетки для дезинфекции.
+
+Пропитаны 70% изопропиловым спиртом для эффективной антисептической обработки.
+
+Используются для обработки места инъекции и резиновой пробки флакона перед набором препарата.
+
+Обязательный элемент для соблюдения стерильности при пептидной терапии.">
+                    <div class="card-badge">Дополнительно</div>
+                    <h3 class="card-title">Салфетка спиртовая</h3>
+                    <p class="card-desc">Для дезинфекции места инъекции</p>
+                    <button class="btn-card">Подробнее</button>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="catalog-empty" id="catalogEmpty" style="display: none;">
+                <p>По вашему запросу ничего не найдено</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="product-overlay"></div>
+        <div class="product-container">
+            <button class="product-close" id="closeProductBtn" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="product-content">
+                <div class="product-badge" id="productBadge">Категория</div>
+                <h2 class="product-title" id="productTitle">Название продукта</h2>
+                <p class="product-dose" id="productDose">Дозировка</p>
+                <div class="product-full" id="productFull">
+                    <p>Полное описание продукта...</p>
+                </div>
+                <button class="btn btn-primary btn-consultation consultation-modal-trigger">Консультация</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consultation Modal -->
+    <div class="consultation-modal" id="consultationModal">
+        <div class="consultation-modal-overlay"></div>
+        <div class="consultation-modal-container">
+            <button class="consultation-modal-close" id="closeConsultationBtn" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="consultation-modal-content">
+                <h2 class="consultation-modal-title">Записаться на консультацию</h2>
+                <p class="consultation-modal-subtitle">Оставьте заявку, и мы свяжемся с вами для подбора оптимального решения</p>
+                <form class="consultation-modal-form" id="consultationModalForm">
+                    <div class="form-group">
+                        <input type="text" id="modalName" name="name" required placeholder=" ">
+                        <label for="modalName">Имя и Фамилия</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="modalPhone" name="phone" required placeholder=" ">
+                        <label for="modalPhone">Номер телефона</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="modalEmail" name="email" required placeholder=" ">
+                        <label for="modalEmail">E-mail</label>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="modalConsent" name="consent" required>
+                        <label for="modalConsent">Я согласен на обработку моих персональных данных</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Записаться на консультацию</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title ice-flow">FAQ iPeptides</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="faq.q1.question">Что такое пептиды?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.q1.answer">Пептиды — биологически активные соединения (короткие цепочки аминокислот), участвующие в регуляции клеточных процессов. В рамках консультации мы объясняем, какие направления поддержки могут быть актуальны под вашу задачу.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="faq.q2.question">Нужна ли консультация перед применением?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.q2.answer">Да. Консультация позволяет корректно определить цель, учесть индивидуальные особенности и подобрать оптимальное направление в рамках комплексного подхода.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="faq.q3.question">Какие задачи можно рассмотреть в рамках сопровождения iPeptides?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.q3.answer">Наиболее частые запросы: восстановление, качество кожи, стресс-нагрузка и сон, поддержка иммунитета, метаболический профиль и общий ресурс.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="faq.q4.question">Когда можно ожидать результат?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.q4.answer">Сроки зависят от исходного состояния, выбранного направления и длительности курса. Мы ориентируемся на постепенную динамику и понятные критерии оценки.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="faq.q5.question">Можно ли совмещать пептидные решения с другими средствами?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.q5.answer">Совместимость зависит от индивидуальных факторов. На консультации мы уточняем текущие препараты и подбираем корректный формат сопровождения.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="faq.q6.question">Как получить консультацию?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.q6.answer">Оставьте заявку на сайте или напишите в мессенджер. Мы уточним ваш запрос и предложим подходящий формат консультации.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-cta">
+                <button class="btn btn-primary consultation-modal-trigger" data-i18n="faq.ctaBtn">Получить консультацию</button>
             </div>
         </div>
     </section>
@@ -239,47 +1054,24 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">04</span>
-                <h2 class="section-title">Get in Touch</h2>
+                <h2 class="section-title ice-flow" data-i18n="contact.title">Контакты iPeptides</h2>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <p class="contact-lead">
-                        Have a project in mind? Let's create something amazing together.
-                    </p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <span class="contact-label">Email</span>
-                            <a href="mailto:hello@example.com">hello@example.com</a>
+                            <span class="contact-label" data-i18n="contact.telegram">TELEGRAM-ЧАТ</span>
+                            <a href="https://t.me/iPeptidesPlus" target="_blank">@iPeptidesPlus</a>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-label">Phone</span>
-                            <a href="tel:+1234567890">+1 (234) 567-890</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Location</span>
-                            <span>New York, NY</span>
+                            <span class="contact-label" data-i18n="contact.hours">РЕЖИМ СВЯЗИ</span>
+                            <span data-i18n="contact.hoursValue">Ежедневно 10:00–20:00</span>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn">
+                        <a href="https://t.me/iPeptidesPlus" class="social-link" aria-label="Telegram" target="_blank">
                             <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Dribbble">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.814zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.17zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.825 0-1.63.1-2.4.285zm10.335 3.483c-.218.29-1.935 2.493-5.724 4.04.24.49.47.985.68 1.486.08.18.15.36.22.53 3.41-.43 6.8.26 7.14.33-.02-2.42-.88-4.64-2.31-6.38z"/>
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                             </svg>
                         </a>
                     </div>
@@ -287,17 +1079,21 @@
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <input type="text" id="name" name="name" required placeholder=" ">
-                        <label for="name">Your Name</label>
+                        <label for="name" data-i18n="contact.form.name">Имя и Фамилия</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" required placeholder=" ">
+                        <label for="phone" data-i18n="contact.form.phone">Номер телефона</label>
                     </div>
                     <div class="form-group">
                         <input type="email" id="email" name="email" required placeholder=" ">
-                        <label for="email">Your Email</label>
+                        <label for="email">E-mail</label>
                     </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-                        <label for="message">Your Message</label>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent" data-i18n="contact.form.consent">Я согласен на обработку моих персональных данных</label>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    <button type="submit" class="btn btn-primary btn-full" data-i18n="contact.form.submit">Записаться на консультацию</button>
                 </form>
             </div>
         </div>
@@ -307,8 +1103,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Portfolio. All rights reserved.</p>
-                <p>Designed with passion</p>
+                <p data-i18n="footer.copyright">&copy; 2024 iPeptides. Все права защищены.</p>
+            </div>
+            <div class="footer-disclaimer">
+                <p data-i18n="footer.disclaimer">Информация на сайте носит ознакомительный характер и не является медицинской рекомендацией. Решения принимаются индивидуально по итогам консультации.</p>
             </div>
         </div>
     </footer>
