@@ -3317,7 +3317,10 @@ body.modal-open {
 .footer-copyright {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    margin-bottom: 12px;
+    margin: 0 auto 12px;
+    text-align: center;
+    display: block;
+    width: 100%;
 }
 
 .footer-disclaimer {
