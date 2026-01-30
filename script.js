@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initStatsCarousel();
     initPhotoBanner();
     initConsultationSteps();
+    initDirectionsAccordion();
     initShopGallery();
     initCatalogModal();
     initConsultationModal();
@@ -818,6 +819,33 @@ function initConsultationSteps() {
     // Dynamic cards removed - consultation section is now static
     // This function is kept for compatibility but does nothing
     return;
+}
+
+// ========================================
+// Directions Accordion
+// ========================================
+function initDirectionsAccordion() {
+    const items = document.querySelectorAll('.dir-item');
+    if (!items.length) return;
+
+    items.forEach(item => {
+        const header = item.querySelector('.dir-header');
+        if (!header) return;
+
+        header.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+
+            // Close all other items (accordion behavior)
+            items.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('open');
+                }
+            });
+
+            // Toggle current item
+            item.classList.toggle('open', !isOpen);
+        });
+    });
 }
 
 // ========================================
