@@ -3,6 +3,14 @@
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Always scroll to top on page load (ignore URL hash)
+    if (window.location.hash) {
+        // Clear the hash without triggering scroll
+        history.replaceState(null, null, window.location.pathname + window.location.search);
+    }
+    // Scroll to top immediately
+    window.scrollTo(0, 0);
+
     // Initialize all components
     initNavbar();
     initMobileMenu();
@@ -759,7 +767,8 @@ function initSkillsCarousel() {
 }
 
 // ========================================
-// Stats Carousel (Mobile) - Swipe only, auto-scroll
+// Stats Carousel (Mobile) - Swipe only, NO auto-scroll
+// Auto-scroll disabled to prevent page jump bug on iOS Safari
 // ========================================
 function initStatsCarousel() {
     const statsContainer = document.querySelector('.about-stats');
@@ -767,91 +776,11 @@ function initStatsCarousel() {
 
     if (!statsContainer || !statItems.length) return;
 
-    // Only apply auto-scroll on mobile
+    // Only apply on mobile
     if (window.innerWidth > 768) return;
 
-    let currentIndex = 0;
-    let autoplayInterval;
-    let userInteracted = false;
-    const autoplayDelay = 5000; // 5 seconds
-    const pauseAfterInteraction = 8000; // 8 seconds pause after user swipe
-
-    // Scroll to specific item
-    function scrollToItem(index) {
-        if (index >= statItems.length) index = 0;
-        if (index < 0) index = statItems.length - 1;
-
-        const targetItem = statItems[index];
-        if (targetItem) {
-            targetItem.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center'
-            });
-            currentIndex = index;
-        }
-    }
-
-    // Auto-scroll to next
-    function autoScroll() {
-        scrollToItem(currentIndex + 1);
-    }
-
-    // Start autoplay
-    function startAutoplay() {
-        stopAutoplay();
-        autoplayInterval = setInterval(autoScroll, autoplayDelay);
-    }
-
-    // Stop autoplay
-    function stopAutoplay() {
-        if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-            autoplayInterval = null;
-        }
-    }
-
-    // Handle user interaction - pause autoplay
-    function handleUserInteraction() {
-        userInteracted = true;
-        stopAutoplay();
-
-        // Resume autoplay after pause
-        setTimeout(() => {
-            if (userInteracted) {
-                userInteracted = false;
-                startAutoplay();
-            }
-        }, pauseAfterInteraction);
-    }
-
-    // Detect scroll position to update current index
-    statsContainer.addEventListener('scroll', () => {
-        const containerRect = statsContainer.getBoundingClientRect();
-        const containerCenter = containerRect.left + containerRect.width / 2;
-
-        let closestIndex = 0;
-        let closestDistance = Infinity;
-
-        statItems.forEach((item, index) => {
-            const itemRect = item.getBoundingClientRect();
-            const itemCenter = itemRect.left + itemRect.width / 2;
-            const distance = Math.abs(containerCenter - itemCenter);
-
-            if (distance < closestDistance) {
-                closestDistance = distance;
-                closestIndex = index;
-            }
-        });
-
-        currentIndex = closestIndex;
-    }, { passive: true });
-
-    // Touch events to detect user swipe
-    statsContainer.addEventListener('touchstart', handleUserInteraction, { passive: true });
-
-    // Start autoplay
-    startAutoplay();
+    // Auto-scroll completely disabled - user swipes manually
+    // CSS scroll-snap handles the snapping behavior
 }
 
 // ========================================
