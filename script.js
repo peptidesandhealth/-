@@ -758,17 +758,74 @@ function initSkillsCarousel() {
 }
 
 // ========================================
-// Stats Carousel (Mobile) - Dots Sync
+// Stats Carousel (Mobile) - Swipe only, auto-scroll
 // ========================================
 function initStatsCarousel() {
     const statsContainer = document.querySelector('.about-stats');
-    const dots = document.querySelectorAll('.stats-dot');
     const statItems = document.querySelectorAll('.about-stats .stat-item');
 
-    if (!statsContainer || !dots.length || !statItems.length) return;
+    if (!statsContainer || !statItems.length) return;
 
-    // Update active dot based on scroll position
-    const updateActiveDot = () => {
+    // Only apply auto-scroll on mobile
+    if (window.innerWidth > 768) return;
+
+    let currentIndex = 0;
+    let autoplayInterval;
+    let userInteracted = false;
+    const autoplayDelay = 5000; // 5 seconds
+    const pauseAfterInteraction = 8000; // 8 seconds pause after user swipe
+
+    // Scroll to specific item
+    function scrollToItem(index) {
+        if (index >= statItems.length) index = 0;
+        if (index < 0) index = statItems.length - 1;
+
+        const targetItem = statItems[index];
+        if (targetItem) {
+            targetItem.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+            currentIndex = index;
+        }
+    }
+
+    // Auto-scroll to next
+    function autoScroll() {
+        scrollToItem(currentIndex + 1);
+    }
+
+    // Start autoplay
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(autoScroll, autoplayDelay);
+    }
+
+    // Stop autoplay
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+    }
+
+    // Handle user interaction - pause autoplay
+    function handleUserInteraction() {
+        userInteracted = true;
+        stopAutoplay();
+
+        // Resume autoplay after pause
+        setTimeout(() => {
+            if (userInteracted) {
+                userInteracted = false;
+                startAutoplay();
+            }
+        }, pauseAfterInteraction);
+    }
+
+    // Detect scroll position to update current index
+    statsContainer.addEventListener('scroll', () => {
         const containerRect = statsContainer.getBoundingClientRect();
         const containerCenter = containerRect.left + containerRect.width / 2;
 
@@ -786,30 +843,14 @@ function initStatsCarousel() {
             }
         });
 
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === closestIndex);
-        });
-    };
+        currentIndex = closestIndex;
+    }, { passive: true });
 
-    // Listen to scroll events
-    statsContainer.addEventListener('scroll', updateActiveDot, { passive: true });
+    // Touch events to detect user swipe
+    statsContainer.addEventListener('touchstart', handleUserInteraction, { passive: true });
 
-    // Click on dots to scroll to corresponding card
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            const targetItem = statItems[index];
-            if (targetItem) {
-                targetItem.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest',
-                    inline: 'center'
-                });
-            }
-        });
-    });
-
-    // Initial update
-    updateActiveDot();
+    // Start autoplay
+    startAutoplay();
 }
 
 // ========================================
