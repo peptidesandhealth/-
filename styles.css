@@ -1093,12 +1093,14 @@ section {
 }
 
 .direction-item {
-    padding: 24px 32px;
+    padding: 28px 24px;
     border-bottom: 1px solid rgba(200, 210, 220, 0.3);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
     transition: background 0.2s ease;
 }
 
@@ -1123,7 +1125,7 @@ section {
     color: var(--text);
     letter-spacing: -0.01em;
     display: block;
-    width: 100%;
+    text-align: center;
 }
 
 .direction-tags {
@@ -1132,7 +1134,7 @@ section {
     color: var(--text-2);
     line-height: 1.5;
     display: block;
-    width: 100%;
+    text-align: center;
     opacity: 0.85;
 }
 
@@ -3410,14 +3412,17 @@ body.modal-open {
     .directions-list {
         grid-template-columns: 1fr;
         gap: 0;
+        max-width: 400px;
+        margin: 0 auto;
     }
 
     .direction-item {
-        padding: 20px 16px;
+        padding: 24px 20px;
         border-right: none !important;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
     }
 
     .direction-item:last-child {
@@ -3426,10 +3431,14 @@ body.modal-open {
 
     .direction-title {
         font-size: 0.95rem;
+        text-align: center;
     }
 
     .direction-tags {
         font-size: 0.85rem;
+        text-align: center;
+        max-width: 280px;
+        line-height: 1.6;
     }
 
     /* Legacy skill styles - hidden */
