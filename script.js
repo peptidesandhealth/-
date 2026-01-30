@@ -125,6 +125,8 @@ const translations = {
         'contact.form.submit': 'Записаться на консультацию',
 
         // Footer
+        'footer.telegram': 'TELEGRAM',
+        'footer.hours': 'Ежедневно 10:00–20:00',
         'footer.copyright': '© 2024 iPeptides. Все права защищены.',
         'footer.disclaimer': 'Информация на сайте носит ознакомительный характер и не является медицинской рекомендацией. Решения принимаются индивидуально по итогам консультации.'
     },
@@ -220,6 +222,8 @@ const translations = {
         'contact.form.submit': 'Book a Consultation',
 
         // Footer
+        'footer.telegram': 'TELEGRAM',
+        'footer.hours': 'Available daily 10:00–20:00',
         'footer.copyright': '© 2024 iPeptides. All rights reserved.',
         'footer.disclaimer': 'Information on this website is for informational purposes only and does not constitute medical advice. Decisions are made individually based on consultation results.'
     }
