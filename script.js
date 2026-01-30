@@ -969,6 +969,17 @@ function initConsultationSteps() {
             });
         });
 
+        // Pause autoplay when user focuses on form inputs
+        const consultationForm = document.getElementById('consultationForm');
+        if (consultationForm) {
+            const formInputs = consultationForm.querySelectorAll('input, button');
+            formInputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    pauseAutoplay();
+                });
+            });
+        }
+
         // Handle window resize
         let resizeTimeout;
         window.addEventListener('resize', () => {
