@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillsCarousel();
     initStatsCarousel();
     initPhotoBanner();
+    initShopGallery();
     initCatalogModal();
     initConsultationModal();
     initLanguageSwitcher();
@@ -833,6 +834,128 @@ function initPhotoBanner() {
     });
 
     observer.observe(bannerInner);
+}
+
+// ========================================
+// Shop Gallery Carousel
+// ========================================
+function initShopGallery() {
+    const slides = document.querySelectorAll('.gallery-slide');
+    const dots = document.querySelectorAll('.gallery-dot');
+    const prevBtn = document.querySelector('.gallery-prev');
+    const nextBtn = document.querySelector('.gallery-next');
+
+    if (!slides.length || !dots.length) return;
+
+    let currentSlide = 0;
+    let autoplayInterval;
+    const autoplayDelay = 4000; // 4 seconds
+
+    // Show specific slide
+    function showSlide(index) {
+        // Handle wrapping
+        if (index >= slides.length) index = 0;
+        if (index < 0) index = slides.length - 1;
+
+        // Update slides
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+
+        currentSlide = index;
+    }
+
+    // Next slide
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    // Previous slide
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    // Start autoplay
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(nextSlide, autoplayDelay);
+    }
+
+    // Stop autoplay
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+        }
+    }
+
+    // Event listeners for arrows
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            startAutoplay(); // Restart autoplay after manual interaction
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            startAutoplay(); // Restart autoplay after manual interaction
+        });
+    }
+
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            startAutoplay(); // Restart autoplay after manual interaction
+        });
+    });
+
+    // Pause autoplay on hover
+    const galleryContainer = document.querySelector('.gallery-container');
+    if (galleryContainer) {
+        galleryContainer.addEventListener('mouseenter', stopAutoplay);
+        galleryContainer.addEventListener('mouseleave', startAutoplay);
+    }
+
+    // Touch support for swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (galleryContainer) {
+        galleryContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoplay();
+        }, { passive: true });
+
+        galleryContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            startAutoplay();
+        }, { passive: true });
+    }
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                nextSlide(); // Swipe left = next
+            } else {
+                prevSlide(); // Swipe right = prev
+            }
+        }
+    }
+
+    // Initialize
+    showSlide(0);
+    startAutoplay();
 }
 
 // ========================================
