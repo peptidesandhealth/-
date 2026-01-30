@@ -19,7 +19,7 @@
     --border-hover: #C5CED8;
 
     /* === Text Hierarchy === */
-    --text: #2B2F36;
+    --text: #3A3F47;
     --text-2: #5F6B78;
     --text-3: #8A96A3;
     --text-inverse: #FFFFFF;
@@ -63,8 +63,8 @@
     --gradient-overlay-soft: linear-gradient(180deg, rgba(245, 247, 250, 0) 0%, rgba(245, 247, 250, 0.95) 100%);
 
     /* === Spacing === */
-    --section-padding: 100px 0;
-    --section-padding-mobile: 60px 0;
+    --section-padding: 70px 0;
+    --section-padding-mobile: 50px 0;
     --container-width: 1200px;
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -773,7 +773,7 @@ section {
 }
 
 .section-header {
-    margin-bottom: 48px;
+    margin-bottom: 36px;
 }
 
 .section-number {
@@ -787,10 +787,12 @@ section {
 }
 
 .section-title {
-    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-size: clamp(1.5rem, 3vw, 2rem);
     position: relative;
     display: inline-block;
     color: var(--text);
+    letter-spacing: 0.15em;
+    font-weight: 500;
     background: linear-gradient(
         135deg,
         var(--text) 0%,
@@ -840,14 +842,14 @@ section {
    ======================================== */
 .about {
     background: #EEF2F6;
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 48px;
+    gap: 32px;
 }
 
 .about-content.centered {
@@ -1080,7 +1082,7 @@ section {
    ======================================== */
 .skills {
     background: var(--snow-white-pure);
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 /* Directions List - 2 columns on desktop */
@@ -3089,7 +3091,7 @@ body.modal-open {
 
 @media (max-width: 768px) {
     :root {
-        --section-padding: 60px 0;
+        --section-padding: 50px 0;
     }
 
     .container {
@@ -3126,10 +3128,11 @@ body.modal-open {
         font-size: 0.7rem;
     }
 
-    /* Hero mobile - text directly on background */
+    /* Hero mobile - full screen with dynamic viewport */
     .hero {
-        padding: 100px 20px 50px;
-        min-height: auto;
+        padding: 100px 20px 60px;
+        min-height: 100vh;
+        min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
     }
 
     .hero-content {
@@ -3206,7 +3209,7 @@ body.modal-open {
 
     /* About section mobile */
     .about {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
     .about-lead {
