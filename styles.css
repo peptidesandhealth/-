@@ -1080,9 +1080,62 @@ section {
     padding: 50px 0;
 }
 
-/* Directions Accordion - no cards, only text */
-.directions-accordion {
-    max-width: 600px;
+/* ========================================
+   Directions Section - Desktop & Mobile
+   ======================================== */
+
+/* Desktop version: static 2-column grid */
+.directions-desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.direction-item {
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(200, 210, 220, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+}
+
+.direction-item:nth-child(odd) {
+    border-right: 1px solid rgba(200, 210, 220, 0.25);
+}
+
+.direction-item:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+.direction-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2a3a44;
+    display: block;
+    text-align: center;
+}
+
+.direction-tags {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #5a6a74;
+    line-height: 1.5;
+    display: block;
+    text-align: center;
+    opacity: 0.85;
+}
+
+/* Mobile version: accordion - hidden by default */
+.directions-mobile {
+    display: none;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -1098,7 +1151,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 18px 0;
     cursor: pointer;
     transition: opacity 0.2s ease;
 }
@@ -1109,14 +1162,14 @@ section {
 
 .dir-title {
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: #2a3a44;
 }
 
 .dir-chevron {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     color: #7a8a94;
     flex-shrink: 0;
     transition: transform 0.28s ease-in-out;
@@ -1147,32 +1200,18 @@ section {
     font-size: 0.85rem;
     font-weight: 400;
     color: #5a6a74;
-    padding: 0 0 20px 0;
+    padding: 0 0 16px 0;
     margin: 0;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .directions-accordion {
-        max-width: 100%;
+/* Switch to mobile accordion at ≤991px */
+@media (max-width: 991px) {
+    .directions-desktop {
+        display: none;
     }
 
-    .dir-header {
-        padding: 16px 0;
-    }
-
-    .dir-title {
-        font-size: 0.9rem;
-    }
-
-    .dir-chevron {
-        width: 18px;
-        height: 18px;
-    }
-
-    .dir-tags {
-        font-size: 0.8rem;
-        padding-bottom: 16px;
+    .directions-mobile {
+        display: block;
     }
 }
 

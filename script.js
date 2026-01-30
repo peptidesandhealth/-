@@ -822,17 +822,28 @@ function initConsultationSteps() {
 }
 
 // ========================================
-// Directions Accordion
+// Directions Accordion (Mobile Only)
 // ========================================
 function initDirectionsAccordion() {
-    const items = document.querySelectorAll('.dir-item');
+    const mobileContainer = document.querySelector('.directions-mobile');
+    if (!mobileContainer) return;
+
+    const items = mobileContainer.querySelectorAll('.dir-item');
     if (!items.length) return;
 
-    items.forEach(item => {
-        const header = item.querySelector('.dir-header');
-        if (!header) return;
+    const mobileQuery = window.matchMedia('(max-width: 991px)');
 
-        header.addEventListener('click', () => {
+    // Close all accordion items
+    function closeAllItems() {
+        items.forEach(item => item.classList.remove('open'));
+    }
+
+    // Handle click on accordion header
+    function handleHeaderClick(item) {
+        return () => {
+            // Only work on mobile
+            if (!mobileQuery.matches) return;
+
             const isOpen = item.classList.contains('open');
 
             // Close all other items (accordion behavior)
@@ -844,7 +855,22 @@ function initDirectionsAccordion() {
 
             // Toggle current item
             item.classList.toggle('open', !isOpen);
-        });
+        };
+    }
+
+    // Attach click handlers
+    items.forEach(item => {
+        const header = item.querySelector('.dir-header');
+        if (header) {
+            header.addEventListener('click', handleHeaderClick(item));
+        }
+    });
+
+    // On resize to desktop: close all accordion items
+    mobileQuery.addEventListener('change', (e) => {
+        if (!e.matches) {
+            closeAllItems();
+        }
     });
 }
 
