@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallaxEffects();
     initFAQ();
     initSkillsCarousel();
+    initStatsCarousel();
     initCatalogModal();
     initConsultationModal();
     initLanguageSwitcher();
@@ -752,6 +753,61 @@ function initSkillsCarousel() {
     });
 
     // Touch/swipe is already handled by CSS scroll-snap
+}
+
+// ========================================
+// Stats Carousel (Mobile) - Dots Sync
+// ========================================
+function initStatsCarousel() {
+    const statsContainer = document.querySelector('.about-stats');
+    const dots = document.querySelectorAll('.stats-dot');
+    const statItems = document.querySelectorAll('.about-stats .stat-item');
+
+    if (!statsContainer || !dots.length || !statItems.length) return;
+
+    // Update active dot based on scroll position
+    const updateActiveDot = () => {
+        const containerRect = statsContainer.getBoundingClientRect();
+        const containerCenter = containerRect.left + containerRect.width / 2;
+
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        statItems.forEach((item, index) => {
+            const itemRect = item.getBoundingClientRect();
+            const itemCenter = itemRect.left + itemRect.width / 2;
+            const distance = Math.abs(containerCenter - itemCenter);
+
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestIndex = index;
+            }
+        });
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === closestIndex);
+        });
+    };
+
+    // Listen to scroll events
+    statsContainer.addEventListener('scroll', updateActiveDot, { passive: true });
+
+    // Click on dots to scroll to corresponding card
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            const targetItem = statItems[index];
+            if (targetItem) {
+                targetItem.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                    inline: 'center'
+                });
+            }
+        });
+    });
+
+    // Initial update
+    updateActiveDot();
 }
 
 // ========================================

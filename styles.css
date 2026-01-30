@@ -1051,6 +1051,11 @@ section {
     font-weight: 400;
 }
 
+/* Stats carousel dots - hidden on desktop */
+.stats-dots {
+    display: none;
+}
+
 .about-note {
     padding: 20px 28px;
     background: linear-gradient(145deg,
@@ -3123,37 +3128,82 @@ body.modal-open {
         padding: 0 8px;
     }
 
-    /* Caps-spaced mobile - reduced letter-spacing */
+    /* Caps-spaced mobile - more contrast and letter-spacing */
     .about-lead.caps-spaced {
-        font-size: 0.8rem;
-        letter-spacing: 0.15em;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        color: #5A6A7A;
+        font-weight: 600;
     }
 
+    /* Mobile carousel for stats */
     .about-stats,
     .about-stats.horizontal {
-        flex-direction: column;
+        flex-direction: row;
         gap: 16px;
         width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 8px 0 16px;
+        margin: 0 -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        /* Hide scrollbar */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .about-stats::-webkit-scrollbar,
+    .about-stats.horizontal::-webkit-scrollbar {
+        display: none;
     }
 
     .stat-item,
     .about-stats.horizontal .stat-item {
-        flex: none;
-        max-width: 100%;
-        width: 100%;
-        padding: 24px 20px 20px;
-        border-radius: 14px;
+        flex: 0 0 calc(85% - 8px);
+        max-width: calc(85% - 8px);
+        min-height: 200px;
+        padding: 28px 24px 24px;
+        border-radius: 16px;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+        box-shadow: 0 4px 16px rgba(43, 47, 54, 0.06);
     }
 
     /* Mobile: subtle press effect instead of hover lift */
     .stat-item:hover {
         transform: none;
-        box-shadow: 0 4px 20px rgba(43, 47, 54, 0.06);
+        box-shadow: 0 4px 16px rgba(43, 47, 54, 0.06);
     }
 
     .stat-item:active {
         transform: scale(0.98);
         box-shadow: 0 2px 12px rgba(43, 47, 54, 0.08);
+    }
+
+    /* Stats dots indicator - visible on mobile */
+    .stats-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .stats-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #C8D4DE;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .stats-dot.active {
+        background: #6B7D8E;
+        transform: scale(1.1);
     }
 
     /* Mobile icon badge - FIXED size */
