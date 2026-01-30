@@ -154,16 +154,17 @@ section {
     right: 0;
     z-index: 1000;
     padding: 20px 0;
-    background: rgba(245, 247, 250, 0.92);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background: transparent;
     border-bottom: 1px solid transparent;
-    transition: all var(--transition-normal);
+    transition: background 0.2s ease, padding 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Scrolled state - solid background for readability on light sections */
 .navbar.scrolled {
     padding: 14px 0;
     background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border-bottom-color: var(--border-light);
     box-shadow: var(--shadow-sm);
 }
@@ -177,10 +178,23 @@ section {
     align-items: center;
 }
 
+/* Right side wrapper: lang-switcher + burger */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Logo - light on hero, dark when scrolled */
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    transition: color 0.2s ease;
+}
+
+.navbar.scrolled .logo {
     background: linear-gradient(
         90deg,
         #5a6a74 0%,
@@ -275,21 +289,32 @@ body.menu-open {
     border-bottom: none;
 }
 
-/* Language Switcher */
+/* Language Switcher - light on hero, dark when scrolled */
 .lang-switcher {
     display: flex;
     align-items: center;
     gap: 4px;
-    background: rgba(159, 182, 201, 0.1);
-    border: 1px solid rgba(159, 182, 201, 0.25);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: var(--radius-pill);
-    padding: 6px 14px;
+    padding: 8px 16px;
     cursor: pointer;
-    transition: all var(--transition-normal);
-    margin-right: 16px;
+    transition: all 0.2s ease;
+    min-height: 36px;
 }
 
 .lang-switcher:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Scrolled state - dark colors */
+.navbar.scrolled .lang-switcher {
+    background: rgba(159, 182, 201, 0.1);
+    border-color: rgba(159, 182, 201, 0.25);
+}
+
+.navbar.scrolled .lang-switcher:hover {
     background: rgba(159, 182, 201, 0.2);
     border-color: rgba(159, 182, 201, 0.4);
 }
@@ -297,23 +322,36 @@ body.menu-open {
 .lang-option {
     font-size: 0.75rem;
     font-weight: 500;
-    color: var(--text-2);
-    transition: all var(--transition-normal);
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
     letter-spacing: 0.5px;
 }
 
 .lang-option.active {
-    color: var(--text);
+    color: rgba(255, 255, 255, 0.95);
     font-weight: 600;
+}
+
+/* Scrolled state */
+.navbar.scrolled .lang-option {
+    color: var(--text-2);
+}
+
+.navbar.scrolled .lang-option.active {
+    color: var(--text);
 }
 
 .lang-divider {
     font-size: 0.7rem;
-    color: var(--border);
+    color: rgba(255, 255, 255, 0.5);
     opacity: 0.6;
 }
 
-/* Burger menu - always visible */
+.navbar.scrolled .lang-divider {
+    color: var(--border);
+}
+
+/* Burger menu - always visible, light on hero */
 .mobile-menu-btn {
     display: flex;
     flex-direction: column;
@@ -321,16 +359,25 @@ body.menu-open {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    padding: 10px;
     z-index: 1002;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
 }
 
 .mobile-menu-btn span {
     width: 24px;
     height: 2px;
-    background: var(--text);
-    transition: all var(--transition-normal);
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.2s ease;
     border-radius: 2px;
+}
+
+/* Scrolled state - dark burger */
+.navbar.scrolled .mobile-menu-btn span {
+    background: var(--text);
 }
 
 .mobile-menu-btn.active span:nth-child(1) {
@@ -495,8 +542,29 @@ body.menu-open {
     justify-content: flex-start;
 }
 
-/* Hero buttons - glass/ice style on dark background */
-.hero-buttons .btn-primary {
+/* Single hero CTA - prominent glass button */
+.hero-cta {
+    padding: 18px 48px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.hero-cta:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Legacy: Hero buttons - glass/ice style on dark background */
+.hero-buttons .btn-primary:not(.hero-cta) {
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.25);
     color: var(--surface);
@@ -504,7 +572,7 @@ body.menu-open {
     -webkit-backdrop-filter: blur(8px);
 }
 
-.hero-buttons .btn-primary:hover {
+.hero-buttons .btn-primary:not(.hero-cta):hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -3041,13 +3109,18 @@ body.modal-open {
         padding: 14px 0;
     }
 
+    /* Mobile navbar-right */
+    .navbar-right {
+        gap: 12px;
+    }
+
     .lang-switcher {
-        margin-right: 12px;
-        padding: 5px 10px;
+        padding: 6px 12px;
+        min-height: 36px;
     }
 
     .lang-option {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     /* Hero mobile - text directly on background */
@@ -3099,14 +3172,21 @@ body.modal-open {
         margin-right: auto;
     }
 
-    /* Hero buttons - stacked on mobile */
+    /* Hero button - single CTA on mobile */
     .hero-buttons {
         flex-direction: column;
         align-items: center;
         gap: 12px;
     }
 
-    .hero-buttons .btn {
+    .hero-cta {
+        width: auto;
+        min-width: 240px;
+        padding: 16px 40px;
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons .btn:not(.hero-cta) {
         width: 100%;
         max-width: 280px;
         padding: 16px 32px;
@@ -3505,7 +3585,15 @@ body.modal-open {
         gap: 10px;
     }
 
-    .hero-buttons .btn {
+    /* Single hero CTA on small screens */
+    .hero-cta {
+        width: auto;
+        min-width: 200px;
+        padding: 14px 36px;
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons .btn:not(.hero-cta) {
         width: 100%;
         max-width: 100%;
         padding: 14px 28px;

@@ -273,24 +273,44 @@ function applyTranslations(lang) {
 }
 
 // ========================================
-// Navbar Scroll Effect
+// Navbar Scroll Effect - transparent on hero, solid after
 // ========================================
 function initNavbar() {
     const navbar = document.querySelector('.navbar');
+    const hero = document.querySelector('.hero');
     let lastScroll = 0;
 
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
+    // Calculate threshold: when to switch from transparent to solid
+    const getScrollThreshold = () => {
+        if (hero) {
+            // Switch to solid when hero is mostly scrolled out of view
+            return hero.offsetHeight - 100;
+        }
+        return 100;
+    };
 
-        // Add/remove scrolled class
-        if (currentScroll > 50) {
+    const updateNavbar = () => {
+        const currentScroll = window.pageYOffset;
+        const threshold = getScrollThreshold();
+
+        // Add/remove scrolled class based on hero visibility
+        if (currentScroll > threshold) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
 
         lastScroll = currentScroll;
-    });
+    };
+
+    // Initial check
+    updateNavbar();
+
+    // Update on scroll
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+
+    // Update threshold on resize
+    window.addEventListener('resize', updateNavbar, { passive: true });
 }
 
 // ========================================
