@@ -225,122 +225,18 @@
         </div>
     </section>
 
-    <!-- Consultation Timeline Section -->
+    <!-- Consultation Section - Clean Premium -->
     <section class="consultation-v2" id="portfolio">
         <div class="container">
             <div class="section-header centered">
                 <h2 class="section-title ice-flow" data-i18n="consultation.title">КОНСУЛЬТАЦИЯ</h2>
             </div>
 
-            <!-- SVG Gradient Definition for Ring -->
-            <svg width="0" height="0" style="position: absolute;">
-                <defs>
-                    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color: #5a6a74; stop-opacity: 1" />
-                        <stop offset="50%" style="stop-color: #7a8a94; stop-opacity: 1" />
-                        <stop offset="100%" style="stop-color: #4a5a64; stop-opacity: 1" />
-                    </linearGradient>
-                </defs>
-            </svg>
-
-            <!-- 2-Column Layout -->
-            <div class="consultation-layout">
-                <!-- Left Column: Steps -->
-                <div class="consultation-steps-col">
-                    <!-- Desktop: Step Ribbon -->
-                    <div class="steps-ribbon">
-                        <div class="ribbon-step" data-step="0">
-                            <span class="ribbon-num">01</span>
-                            <span class="ribbon-label">Заявка</span>
-                        </div>
-                        <div class="ribbon-connector"></div>
-                        <div class="ribbon-step" data-step="1">
-                            <span class="ribbon-num">02</span>
-                            <span class="ribbon-label">Сбор данных</span>
-                        </div>
-                        <div class="ribbon-connector"></div>
-                        <div class="ribbon-step" data-step="2">
-                            <span class="ribbon-num">03</span>
-                            <span class="ribbon-label">Подбор</span>
-                        </div>
-                        <div class="ribbon-connector"></div>
-                        <div class="ribbon-step" data-step="3">
-                            <span class="ribbon-num">04</span>
-                            <span class="ribbon-label">Рекомендации</span>
-                        </div>
-                        <div class="ribbon-connector"></div>
-                        <div class="ribbon-step" data-step="4">
-                            <span class="ribbon-num">05</span>
-                            <span class="ribbon-label">Сопровождение</span>
-                        </div>
-                    </div>
-
-                    <!-- Cards Stack (Mobile) / Active Card (Desktop) -->
-                    <div class="steps-cards-wrapper">
-                        <div class="steps-cards">
-                            <div class="step-card" data-step="0">
-                                <div class="step-ring" data-progress="20">
-                                    <svg viewBox="0 0 36 36">
-                                        <circle class="ring-bg" cx="18" cy="18" r="16"/>
-                                        <circle class="ring-progress" cx="18" cy="18" r="16"/>
-                                    </svg>
-                                    <span class="ring-num">01</span>
-                                </div>
-                                <h3 class="step-title">ЗАЯВКА</h3>
-                                <p class="step-desc">Оставляете обращение</p>
-                            </div>
-                            <div class="step-card" data-step="1">
-                                <div class="step-ring" data-progress="40">
-                                    <svg viewBox="0 0 36 36">
-                                        <circle class="ring-bg" cx="18" cy="18" r="16"/>
-                                        <circle class="ring-progress" cx="18" cy="18" r="16"/>
-                                    </svg>
-                                    <span class="ring-num">02</span>
-                                </div>
-                                <h3 class="step-title">СБОР ДАННЫХ</h3>
-                                <p class="step-desc">Цель и особенности</p>
-                            </div>
-                            <div class="step-card" data-step="2">
-                                <div class="step-ring" data-progress="60">
-                                    <svg viewBox="0 0 36 36">
-                                        <circle class="ring-bg" cx="18" cy="18" r="16"/>
-                                        <circle class="ring-progress" cx="18" cy="18" r="16"/>
-                                    </svg>
-                                    <span class="ring-num">03</span>
-                                </div>
-                                <h3 class="step-title">ПОДБОР</h3>
-                                <p class="step-desc">Выбор решения</p>
-                            </div>
-                            <div class="step-card" data-step="3">
-                                <div class="step-ring" data-progress="80">
-                                    <svg viewBox="0 0 36 36">
-                                        <circle class="ring-bg" cx="18" cy="18" r="16"/>
-                                        <circle class="ring-progress" cx="18" cy="18" r="16"/>
-                                    </svg>
-                                    <span class="ring-num">04</span>
-                                </div>
-                                <h3 class="step-title">РЕКОМЕНДАЦИИ</h3>
-                                <p class="step-desc">План курса</p>
-                            </div>
-                            <div class="step-card" data-step="4">
-                                <div class="step-ring" data-progress="100">
-                                    <svg viewBox="0 0 36 36">
-                                        <circle class="ring-bg" cx="18" cy="18" r="16"/>
-                                        <circle class="ring-progress" cx="18" cy="18" r="16"/>
-                                    </svg>
-                                    <span class="ring-num">05</span>
-                                </div>
-                                <h3 class="step-title">СОПРОВОЖДЕНИЕ</h3>
-                                <p class="step-desc">Поддержка и ответы</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Glass Form -->
+            <!-- 2-Column Layout: Form Left, Steps Right -->
+            <div class="consultation-grid">
+                <!-- Left Column: Form -->
                 <div class="consultation-form-col">
-                    <form class="glass-form" id="consultationForm">
-                        <h3 class="glass-form-title">ФОРМА</h3>
+                    <form class="consultation-form-clean" id="consultationForm">
                         <div class="form-group">
                             <input type="text" id="consultName" name="name" required placeholder=" ">
                             <label for="consultName" data-i18n="contact.form.name">Имя и Фамилия</label>
@@ -353,8 +249,34 @@
                             <input type="checkbox" id="consultConsent" name="consent" required>
                             <label for="consultConsent" data-i18n="contact.form.consent">Я согласен на обработку моих персональных данных</label>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full" data-i18n="contact.form.submit">Записаться на консультацию</button>
+                        <button type="submit" class="btn-consultation-submit" data-i18n="contact.form.submit">ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ</button>
                     </form>
+                </div>
+
+                <!-- Right Column: Steps List (text only) -->
+                <div class="consultation-steps-col">
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <span class="step-num">01</span>
+                            <span class="step-label">ЗАЯВКА</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-num">02</span>
+                            <span class="step-label">СБОР ДАННЫХ</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-num">03</span>
+                            <span class="step-label">ПОДБОР</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-num">04</span>
+                            <span class="step-label">РЕКОМЕНДАЦИИ</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-num">05</span>
+                            <span class="step-label">СОПРОВОЖДЕНИЕ</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
