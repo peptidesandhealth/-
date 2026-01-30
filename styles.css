@@ -1601,13 +1601,14 @@ section {
     align-items: center;
 }
 
-.steps-list {
+/* Desktop steps - vertical list */
+.consult-steps {
     display: flex;
     flex-direction: column;
     gap: 0;
 }
 
-.step-item {
+.consult-steps .step {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1615,11 +1616,11 @@ section {
     border-bottom: 1px solid rgba(90, 106, 116, 0.1);
 }
 
-.step-item:last-child {
+.consult-steps .step:last-child {
     border-bottom: none;
 }
 
-.step-num {
+.consult-steps .n {
     font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
@@ -1628,7 +1629,7 @@ section {
     min-width: 24px;
 }
 
-.step-label {
+.consult-steps .t {
     font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
@@ -1668,43 +1669,47 @@ section {
         width: 100%;
     }
 
-    /* Mobile steps - 3 rows grid, centered */
-    .steps-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px 24px;
+    /* Mobile steps - CSS grid, even spacing */
+    .consult-steps {
         width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-        text-align: center;
+        max-width: 520px;
+        margin: 18px auto 22px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 22px;
+        justify-items: center;
+        align-items: center;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
     }
 
-    .step-item {
+    .consult-steps .step {
+        width: 100%;
         display: inline-flex;
         align-items: baseline;
         justify-content: center;
+        gap: 10px;
+        white-space: nowrap;
         padding: 0;
         border-bottom: none;
-        gap: 8px;
     }
 
-    /* 5th item spans full width */
-    .step-item:last-child {
-        grid-column: 1 / -1;
-    }
-
-    .step-num {
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.15em;
+    .consult-steps .n {
+        opacity: 0.75;
+        font-weight: 500;
+        font-size: 12px;
         min-width: auto;
     }
 
-    .step-label {
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
+    .consult-steps .t {
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+    /* 05 centered on third row */
+    .consult-steps .step--wide {
+        grid-column: 1 / -1;
+        justify-content: center;
     }
 
     /* Mobile form */
