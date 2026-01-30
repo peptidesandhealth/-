@@ -294,16 +294,20 @@ function initNavbar() {
 }
 
 // ========================================
-// Mobile Menu Toggle
+// Mobile Menu Toggle (Burger menu on all screens)
 // ========================================
 function initMobileMenu() {
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+    const navOverlay = document.querySelector('.nav-overlay');
 
     if (menuBtn && navLinks) {
+        // Toggle menu on burger click
         menuBtn.addEventListener('click', () => {
             menuBtn.classList.toggle('active');
             navLinks.classList.toggle('active');
+            if (navOverlay) navOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         });
 
         // Close menu when clicking a link
@@ -311,14 +315,28 @@ function initMobileMenu() {
             link.addEventListener('click', () => {
                 menuBtn.classList.remove('active');
                 navLinks.classList.remove('active');
+                if (navOverlay) navOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
             });
         });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+        // Close menu when clicking overlay (outside menu panel)
+        if (navOverlay) {
+            navOverlay.addEventListener('click', () => {
                 menuBtn.classList.remove('active');
                 navLinks.classList.remove('active');
+                navOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        }
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                menuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                if (navOverlay) navOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
             }
         });
     }
