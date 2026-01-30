@@ -1608,6 +1608,150 @@ section {
     box-shadow: 0 6px 24px rgba(74, 90, 100, 0.4);
 }
 
+/* 2-Column Layout for Consultation */
+.consultation-layout {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    gap: 40px;
+    align-items: start;
+}
+
+.consultation-steps-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.consultation-form-col {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Glass Form Styling */
+.glass-form {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 36px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    width: 100%;
+    max-width: 340px;
+}
+
+.glass-form-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2a3a44;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.glass-form .form-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.glass-form .form-group input {
+    width: 100%;
+    padding: 14px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #2a3a44;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(42, 58, 68, 0.25);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.glass-form .form-group input::placeholder {
+    color: transparent;
+}
+
+.glass-form .form-group label {
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(42, 58, 68, 0.6);
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.glass-form .form-group input:focus,
+.glass-form .form-group input:not(:placeholder-shown) {
+    border-bottom-color: #4a5a64;
+}
+
+.glass-form .form-group input:focus + label,
+.glass-form .form-group input:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 0.7rem;
+    color: #4a5a64;
+    letter-spacing: 0.5px;
+}
+
+.glass-form .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.glass-form .checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: #4a5a64;
+    flex-shrink: 0;
+}
+
+.glass-form .checkbox-group label {
+    position: static;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(42, 58, 68, 0.7);
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.glass-form .btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, #4a5a64 0%, #5a6a74 50%, #4a5a64 100%);
+    color: #fff;
+    padding: 14px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(74, 90, 100, 0.25);
+}
+
+.glass-form .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 90, 100, 0.35);
+}
+
+/* Hide old CTA button on desktop when form is visible */
+@media (min-width: 769px) {
+    .consultation-cta {
+        display: none;
+    }
+}
+
 /* Mobile Stack Cards */
 @media (max-width: 768px) {
     .consultation-v2 {
@@ -1620,6 +1764,45 @@ section {
 
     .consultation-v2 .section-header {
         margin-bottom: 24px;
+    }
+
+    /* Mobile: Single column layout */
+    .consultation-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .consultation-form-col {
+        order: 2;
+    }
+
+    .glass-form {
+        max-width: 100%;
+        padding: 28px 24px;
+    }
+
+    .glass-form-title {
+        font-size: 0.8rem;
+        margin-bottom: 24px;
+    }
+
+    .glass-form .form-group {
+        margin-bottom: 20px;
+    }
+
+    .glass-form .form-group input {
+        padding: 12px 0;
+        font-size: 0.85rem;
+    }
+
+    .glass-form .checkbox-group {
+        margin-bottom: 24px;
+    }
+
+    .glass-form .btn-primary {
+        padding: 12px 20px;
+        font-size: 0.75rem;
     }
 
     /* Hide ribbon on mobile */
@@ -3037,6 +3220,72 @@ body.modal-open {
     border-color: var(--ice-flow);
     color: var(--text-primary);
     transform: translateY(-3px);
+}
+
+/* Centered Contact Content */
+.contact-content-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.contact-info-only {
+    order: 0;
+    text-align: center;
+}
+
+.contact-telegram-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.telegram-link-large {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(165, 196, 212, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.telegram-link-large:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(74, 90, 100, 0.15);
+}
+
+.telegram-link-large svg {
+    width: 36px;
+    height: 36px;
+    color: #0088cc;
+    transition: transform 0.3s ease;
+}
+
+.telegram-link-large:hover svg {
+    transform: scale(1.1);
+}
+
+.telegram-username {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2a3a44;
+    letter-spacing: 0.5px;
+}
+
+.contact-hours {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #5a6a74;
+    margin: 0;
 }
 
 /* Contact Form */
