@@ -1114,11 +1114,13 @@ section {
 
 .direction-title {
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #2a3a44;
     display: block;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
 
 .direction-tags {
@@ -1148,10 +1150,10 @@ section {
 }
 
 .dir-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 0;
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 18px 40px;
     cursor: pointer;
     transition: opacity 0.2s ease;
 }
@@ -1162,21 +1164,26 @@ section {
 
 .dir-title {
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
     color: #2a3a44;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
 
 .dir-chevron {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 18px;
     height: 18px;
     color: #7a8a94;
-    flex-shrink: 0;
     transition: transform 0.28s ease-in-out;
 }
 
 .dir-item.open .dir-chevron {
-    transform: rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .dir-content {
@@ -1204,8 +1211,8 @@ section {
     margin: 0;
 }
 
-/* Switch to mobile accordion at ≤991px */
-@media (max-width: 991px) {
+/* Switch to mobile accordion at ≤767px */
+@media (max-width: 767px) {
     .directions-desktop {
         display: none;
     }
@@ -2840,13 +2847,15 @@ body.modal-open {
 
 .faq-question h3 {
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
     margin: 0;
     padding-right: 16px;
     transition: color 0.25s ease;
     color: #3a4a54;
-    line-height: 1.4;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .faq-question:hover h3 {
@@ -3777,8 +3786,9 @@ body.modal-open {
     }
 
     .faq-question h3 {
-        font-size: 0.88rem;
+        font-size: 0.75rem;
         padding-right: 12px;
+        letter-spacing: 0.06em;
     }
 
     .faq-chevron {
@@ -4045,8 +4055,9 @@ body.modal-open {
     }
 
     .faq-question h3 {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
         padding-right: 10px;
+        letter-spacing: 0.05em;
     }
 
     .faq-chevron {

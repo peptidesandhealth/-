@@ -831,7 +831,7 @@ function initDirectionsAccordion() {
     const items = mobileContainer.querySelectorAll('.dir-item');
     if (!items.length) return;
 
-    const mobileQuery = window.matchMedia('(max-width: 991px)');
+    const mobileQuery = window.matchMedia('(max-width: 767px)');
 
     // Close all accordion items
     function closeAllItems() {
