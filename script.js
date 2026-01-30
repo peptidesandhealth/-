@@ -808,7 +808,7 @@ function initPhotoBanner() {
 }
 
 // ========================================
-// Consultation Steps V2 - Premium Steps
+// Consultation Steps V2 - Premium Smooth Steps
 // ========================================
 function initConsultationSteps() {
     const section = document.querySelector('.consultation-v2');
@@ -820,22 +820,27 @@ function initConsultationSteps() {
 
     if (!cards.length) return;
 
+    // Respect reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     let currentStep = 0;
     let autoplayInterval = null;
     let pauseTimeout = null;
     const totalSteps = 5;
     const autoplayDelay = 1500; // 1.5 seconds
-    const pauseDuration = 12000; // 12 seconds pause after interaction
+    const pauseDuration = 11000; // 11 seconds pause after interaction
 
     // Initialize first step as active
     function init() {
-        setActiveStep(0, false);
-        startAutoplay();
+        setActiveStep(0);
+        if (!prefersReducedMotion) {
+            startAutoplay();
+        }
         setupEventListeners();
     }
 
-    // Set active step
-    function setActiveStep(index, animate = true) {
+    // Set active step - smooth crossfade only, no pulse
+    function setActiveStep(index) {
         if (index < 0) index = totalSteps - 1;
         if (index >= totalSteps) index = 0;
 
@@ -846,27 +851,21 @@ function initConsultationSteps() {
             step.classList.toggle('active', i === index);
         });
 
-        // Update cards
+        // Update cards - no pulse animation
         const isMobile = window.innerWidth <= 768;
 
         cards.forEach((card, i) => {
             // Remove all state classes
-            card.classList.remove('active', 'stack-2', 'stack-3', 'hidden', 'pulse');
+            card.classList.remove('active', 'stack-2', 'stack-3', 'hidden');
 
             if (i === index) {
                 card.classList.add('active');
-                if (animate) {
-                    // Add pulse animation
-                    requestAnimationFrame(() => {
-                        card.classList.add('pulse');
-                    });
-                }
             } else if (isMobile) {
-                // Mobile stack effect
-                const diff = i - index;
-                if (diff === 1 || (index === totalSteps - 1 && i === 0)) {
+                // Mobile stack effect - translateY only, no scale
+                const diff = (i - index + totalSteps) % totalSteps;
+                if (diff === 1) {
                     card.classList.add('stack-2');
-                } else if (diff === 2 || (index === totalSteps - 2 && i === 0) || (index === totalSteps - 1 && i === 1)) {
+                } else if (diff === 2) {
                     card.classList.add('stack-3');
                 } else {
                     card.classList.add('hidden');
