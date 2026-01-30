@@ -9,19 +9,21 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">iPeptidesPlus</a>
-            <button class="lang-switcher" id="langSwitcher" aria-label="Switch language">
-                <span class="lang-option active" data-lang="ru">RU</span>
-                <span class="lang-divider">/</span>
-                <span class="lang-option" data-lang="en">EN</span>
-            </button>
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="navbar-right">
+                <button class="lang-switcher" id="langSwitcher" aria-label="Switch language">
+                    <span class="lang-option active" data-lang="ru">RU</span>
+                    <span class="lang-divider">/</span>
+                    <span class="lang-option" data-lang="en">EN</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -50,8 +52,7 @@
                     Инновационные решения в рамках комплексного подхода к здоровью и восстановлению
                 </p>
                 <div class="hero-buttons">
-                    <a href="#shop" class="btn btn-primary" data-i18n="hero.shopBtn">Перейти в магазин</a>
-                    <button class="btn btn-primary consultation-modal-trigger" data-i18n="hero.consultBtn">Получить консультацию</button>
+                    <a href="#shop" class="btn btn-primary hero-cta" data-i18n="hero.shopBtn">Перейти в магазин</a>
                 </div>
             </div>
         </div>
