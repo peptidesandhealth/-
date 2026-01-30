@@ -881,6 +881,15 @@ section {
     font-style: italic;
 }
 
+/* Caps + letter-spacing style for subtitle */
+.about-lead.caps-spaced {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-2);
+}
+
 .about-text p {
     color: var(--text-2);
     margin-bottom: 20px;
@@ -3228,6 +3237,12 @@ body.modal-open {
         margin-bottom: 0;
         color: var(--text-2);
         padding: 0 8px;
+    }
+
+    /* Caps-spaced mobile - reduced letter-spacing */
+    .about-lead.caps-spaced {
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
     }
 
     .about-stats,
