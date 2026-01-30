@@ -1360,262 +1360,379 @@ section {
 }
 
 /* ========================================
-   Consultation Timeline Section
+   Consultation V2 - Premium Steps Section
    ======================================== */
-.consultation {
+.consultation-v2 {
     background-color: var(--snow-white);
     background-image: url('images/consultation-bg3.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: var(--section-padding);
+    padding: 40px 0 50px;
 }
 
-.consultation .container {
+.consultation-v2 .container {
     padding: 0 24px;
+    max-width: 900px;
 }
 
-/* High contrast text for consultation section */
-.consultation .timeline-content h3 {
-    color: #1a2a34;
-    -webkit-text-fill-color: #1a2a34;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+.consultation-v2 .section-header {
+    margin-bottom: 32px;
 }
 
-.consultation .timeline-content p {
-    color: #2a3a44;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-}
-
-.consultation .timeline-step {
-    color: #3a5a6a;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
-}
-
-.section-subtitle {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-top: 16px;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.timeline {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: relative;
-    padding: 40px 0;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 56px;
-    left: 12%;
-    right: 12%;
-    height: 1px;
-    border-top: 2px dotted rgba(255, 255, 255, 0.7);
-    background: none;
-}
-
-.timeline-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    flex: 1;
-    max-width: 160px;
-}
-
-.timeline-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(255, 255, 255, 0.8);
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
+/* Steps Ribbon - Desktop */
+.steps-ribbon {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0;
+    margin-bottom: 28px;
+}
+
+.ribbon-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     position: relative;
-    z-index: 2;
-    transition: all var(--transition-normal);
-    box-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.15),
-        0 2px 8px rgba(0, 0, 0, 0.1),
-        inset 0 1px 2px rgba(255, 255, 255, 1);
+    opacity: 0.6;
 }
 
-.timeline-circle svg {
-    width: 28px;
-    height: 28px;
-    color: #3a5a6a;
+.ribbon-step.active {
+    opacity: 1;
 }
 
-.timeline-item:hover .timeline-circle {
-    background: rgba(255, 255, 255, 0.98);
-    border-color: rgba(255, 255, 255, 0.9);
-    transform: scale(1.08);
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.2),
-        0 4px 12px rgba(0, 0, 0, 0.12),
-        inset 0 1px 2px rgba(255, 255, 255, 1);
+.ribbon-step:hover {
+    opacity: 1;
 }
 
-.timeline-content {
-    margin-top: 24px;
-}
-
-.timeline-step {
-    font-size: 0.75rem;
+.ribbon-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
     font-weight: 600;
-    color: var(--ice-flow-dark);
+    color: #5a6a74;
     letter-spacing: 1px;
-    display: block;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
 }
 
-.timeline-content h3 {
+.ribbon-step.active .ribbon-num {
+    color: #3a4a54;
+}
+
+.ribbon-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #4a5a64;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.ribbon-step.active .ribbon-label {
+    color: #2a3a44;
+    font-weight: 600;
+}
+
+.ribbon-connector {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(90, 106, 116, 0.2), rgba(90, 106, 116, 0.4), rgba(90, 106, 116, 0.2));
+}
+
+/* Cards Wrapper */
+.steps-cards-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+/* Cards Container */
+.steps-cards {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+
+/* Individual Step Card */
+.step-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 28px 32px;
+    text-align: center;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.96);
+    transition: all 0.3s ease-in-out;
+}
+
+.step-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    z-index: 3;
+}
+
+/* Ring Progress Indicator */
+.step-ring {
+    width: 56px;
+    height: 56px;
+    position: relative;
+    margin: 0 auto 16px;
+}
+
+.step-ring svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.step-ring .ring-bg {
+    fill: none;
+    stroke: rgba(90, 106, 116, 0.15);
+    stroke-width: 2;
+}
+
+.step-ring .ring-progress {
+    fill: none;
+    stroke: url(#ringGradient);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 100.53;
+    stroke-dashoffset: 100.53;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+/* Progress values: 20% = 80.42, 40% = 60.32, 60% = 40.21, 80% = 20.11, 100% = 0 */
+.step-card[data-step="0"] .ring-progress { stroke-dashoffset: 80.42; }
+.step-card[data-step="1"] .ring-progress { stroke-dashoffset: 60.32; }
+.step-card[data-step="2"] .ring-progress { stroke-dashoffset: 40.21; }
+.step-card[data-step="3"] .ring-progress { stroke-dashoffset: 20.11; }
+.step-card[data-step="4"] .ring-progress { stroke-dashoffset: 0; }
+
+.ring-num {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5a64;
+    letter-spacing: 1px;
+}
+
+/* Step Title */
+.step-title {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 6px;
+    color: #2a3a44;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    background: linear-gradient(
-        90deg,
-        #3a4a54 0%,
-        #5a6a74 30%,
-        #7a8a94 50%,
-        #5a6a74 70%,
-        #3a4a54 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: timelineShimmer 3.5s ease-in-out infinite;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
 }
 
-@keyframes timelineShimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+/* Step Description */
+.step-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #5a6a74;
+    line-height: 1.4;
 }
 
-.timeline-content p {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
-
-.timeline-cta {
+/* Consultation CTA */
+.consultation-cta {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 32px;
 }
 
-/* Accent button style */
-.btn-accent {
-    background: linear-gradient(135deg, #5a7a8a 0%, #7a9aaa 50%, #5a7a8a 100%);
-    color: #ffffff;
+.consultation-cta .btn-primary {
+    background: linear-gradient(135deg, #4a5a64 0%, #5a6a74 50%, #4a5a64 100%);
+    color: #fff;
+    padding: 16px 36px;
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    box-shadow:
-        0 6px 24px rgba(90, 122, 138, 0.35),
-        0 2px 8px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 8px;
     border: none;
-    padding: 18px 42px;
+    box-shadow: 0 4px 16px rgba(74, 90, 100, 0.3);
+    transition: all 0.3s ease;
 }
 
-.btn-accent:hover {
-    background: linear-gradient(135deg, #4a6a7a 0%, #6a8a9a 50%, #4a6a7a 100%);
-    transform: translateY(-3px);
-    box-shadow:
-        0 10px 35px rgba(90, 122, 138, 0.45),
-        0 4px 12px rgba(0, 0, 0, 0.15);
+.consultation-cta .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(74, 90, 100, 0.4);
 }
 
-/* Timeline responsive */
-@media (max-width: 900px) {
-    .consultation {
-        padding: 40px 16px;
+/* Mobile Stack Cards */
+@media (max-width: 768px) {
+    .consultation-v2 {
+        padding: 32px 0 40px;
     }
 
-    .consultation .container {
+    .consultation-v2 .container {
         padding: 0 16px;
     }
 
-    .timeline {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 30px 0 20px 50px;
-    }
-
-    .timeline::before {
-        top: 57px;
-        bottom: 47px;
-        left: 50px;  /* center of circle: padding(50) - margin(27) + radius(27) = 50px */
-        transform: translateX(-1px);  /* offset for line width */
-        right: auto;
-        width: 0;
-        height: auto;
-        border-top: none;
-        border-left: 2px dotted rgba(255, 255, 255, 0.7);
-    }
-
-    .timeline-item {
-        flex-direction: row;
-        text-align: left;
-        max-width: 100%;
-        gap: 20px;
+    .consultation-v2 .section-header {
         margin-bottom: 24px;
-        padding-left: 0;
     }
 
-    .timeline-item:last-child {
-        margin-bottom: 0;
+    /* Hide ribbon on mobile */
+    .steps-ribbon {
+        display: none;
     }
 
-    .timeline-circle {
-        width: 54px;
-        height: 54px;
-        flex-shrink: 0;
-        margin-left: -27px;
+    /* Cards stack layout */
+    .steps-cards-wrapper {
+        max-width: 100%;
+        padding: 0 8px;
+        touch-action: pan-x;
+        overflow: visible;
     }
 
-    .timeline-circle svg {
-        width: 22px;
-        height: 22px;
+    .steps-cards {
+        height: 170px;
+        position: relative;
     }
 
-    .timeline-content {
-        margin-top: 0;
-        padding-top: 6px;
+    /* Stack effect - show 3 cards */
+    .step-card {
+        padding: 24px 20px;
+        border-radius: 16px;
+        transform-origin: center bottom;
+        will-change: transform, opacity;
     }
 
-    .timeline-content h3 {
-        font-size: 0.95rem;
+    /* Active card (top) */
+    .step-card.active {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        z-index: 5;
+        box-shadow:
+            0 8px 28px rgba(0, 0, 0, 0.15),
+            0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
-    .timeline-content p {
+    /* Second card (behind) */
+    .step-card.stack-2 {
+        opacity: 0.7;
+        visibility: visible;
+        transform: translateY(10px) scale(0.96);
+        z-index: 4;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Third card (furthest back) */
+    .step-card.stack-3 {
+        opacity: 0.4;
+        visibility: visible;
+        transform: translateY(20px) scale(0.92);
+        z-index: 3;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Hide other cards */
+    .step-card.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(30px) scale(0.88);
+        z-index: 1;
+    }
+
+    .step-ring {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 12px;
+    }
+
+    .ring-num {
+        font-size: 0.8rem;
+    }
+
+    .step-title {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    .step-desc {
         font-size: 0.85rem;
     }
 
-    .timeline-step {
+    .consultation-cta {
+        margin-top: 24px;
+    }
+
+    .consultation-cta .btn-primary {
+        padding: 14px 28px;
+        font-size: 0.8rem;
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .ribbon-step {
+        padding: 10px 14px;
+    }
+
+    .ribbon-label {
         font-size: 0.7rem;
-        margin-bottom: 4px;
     }
 
-    .timeline-cta {
-        margin-top: 30px;
+    .ribbon-connector {
+        width: 24px;
     }
+}
 
-    .btn-accent {
-        padding: 16px 36px;
-        font-size: 0.9rem;
-    }
+/* Swipe animation states */
+.step-card.swipe-left {
+    animation: swipeLeft 0.3s ease-in-out forwards;
+}
+
+.step-card.swipe-right {
+    animation: swipeRight 0.3s ease-in-out forwards;
+}
+
+@keyframes swipeLeft {
+    0% { transform: translateX(0) scale(1); opacity: 1; }
+    100% { transform: translateX(-100%) scale(0.9); opacity: 0; }
+}
+
+@keyframes swipeRight {
+    0% { transform: translateX(0) scale(1); opacity: 1; }
+    100% { transform: translateX(100%) scale(0.9); opacity: 0; }
+}
+
+/* Micro-accent animation on step change */
+.step-card.pulse {
+    animation: cardPulse 0.35s ease-in-out;
+}
+
+@keyframes cardPulse {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(0) scale(1.015); }
+    100% { transform: translateY(0) scale(1); }
 }
 
 /* ========================================
@@ -3844,64 +3961,6 @@ body.modal-open {
     .skill-icon svg {
         width: 18px;
         height: 18px;
-    }
-
-    /* Consultation timeline on small screens */
-    .consultation {
-        padding: 30px 12px;
-    }
-
-    .consultation .container {
-        padding: 0 12px;
-    }
-
-    .timeline {
-        padding: 20px 0 10px 44px;
-    }
-
-    .timeline::before {
-        top: 42px;
-        bottom: 32px;
-        left: 44px;  /* center of circle: padding(44) - margin(22) + radius(22) = 44px */
-        transform: translateX(-1px);
-    }
-
-    .timeline-item {
-        gap: 16px;
-        margin-bottom: 20px;
-    }
-
-    .timeline-circle {
-        width: 44px;
-        height: 44px;
-        margin-left: -22px;
-    }
-
-    .timeline-circle svg {
-        width: 18px;
-        height: 18px;
-    }
-
-    .timeline-content h3 {
-        font-size: 0.85rem;
-    }
-
-    .timeline-content p {
-        font-size: 0.8rem;
-    }
-
-    .timeline-step {
-        font-size: 0.65rem;
-    }
-
-    .timeline-cta {
-        margin-top: 20px;
-    }
-
-    .btn-accent {
-        padding: 14px 28px;
-        font-size: 0.85rem;
-        width: 100%;
     }
 
     /* FAQ small screen styles */

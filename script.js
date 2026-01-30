@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillsCarousel();
     initStatsCarousel();
     initPhotoBanner();
+    initConsultationSteps();
     initShopGallery();
     initCatalogModal();
     initConsultationModal();
@@ -875,6 +876,183 @@ function initPhotoBanner() {
     });
 
     observer.observe(bannerInner);
+}
+
+// ========================================
+// Consultation Steps V2 - Premium Steps
+// ========================================
+function initConsultationSteps() {
+    const section = document.querySelector('.consultation-v2');
+    if (!section) return;
+
+    const ribbonSteps = section.querySelectorAll('.ribbon-step');
+    const cards = section.querySelectorAll('.step-card');
+    const cardsWrapper = section.querySelector('.steps-cards-wrapper');
+
+    if (!cards.length) return;
+
+    let currentStep = 0;
+    let autoplayInterval = null;
+    let pauseTimeout = null;
+    const totalSteps = 5;
+    const autoplayDelay = 4500; // 4.5 seconds
+    const pauseDuration = 12000; // 12 seconds pause after interaction
+
+    // Initialize first step as active
+    function init() {
+        setActiveStep(0, false);
+        startAutoplay();
+        setupEventListeners();
+    }
+
+    // Set active step
+    function setActiveStep(index, animate = true) {
+        if (index < 0) index = totalSteps - 1;
+        if (index >= totalSteps) index = 0;
+
+        currentStep = index;
+
+        // Update ribbon (desktop)
+        ribbonSteps.forEach((step, i) => {
+            step.classList.toggle('active', i === index);
+        });
+
+        // Update cards
+        const isMobile = window.innerWidth <= 768;
+
+        cards.forEach((card, i) => {
+            // Remove all state classes
+            card.classList.remove('active', 'stack-2', 'stack-3', 'hidden', 'pulse');
+
+            if (i === index) {
+                card.classList.add('active');
+                if (animate) {
+                    // Add pulse animation
+                    requestAnimationFrame(() => {
+                        card.classList.add('pulse');
+                    });
+                }
+            } else if (isMobile) {
+                // Mobile stack effect
+                const diff = i - index;
+                if (diff === 1 || (index === totalSteps - 1 && i === 0)) {
+                    card.classList.add('stack-2');
+                } else if (diff === 2 || (index === totalSteps - 2 && i === 0) || (index === totalSteps - 1 && i === 1)) {
+                    card.classList.add('stack-3');
+                } else {
+                    card.classList.add('hidden');
+                }
+            }
+        });
+    }
+
+    // Next step
+    function nextStep() {
+        setActiveStep(currentStep + 1);
+    }
+
+    // Previous step
+    function prevStep() {
+        setActiveStep(currentStep - 1);
+    }
+
+    // Start autoplay
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(nextStep, autoplayDelay);
+    }
+
+    // Stop autoplay
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+    }
+
+    // Pause autoplay temporarily (after user interaction)
+    function pauseAutoplay() {
+        stopAutoplay();
+        if (pauseTimeout) {
+            clearTimeout(pauseTimeout);
+        }
+        pauseTimeout = setTimeout(() => {
+            startAutoplay();
+        }, pauseDuration);
+    }
+
+    // Setup event listeners
+    function setupEventListeners() {
+        // Ribbon step clicks (desktop)
+        ribbonSteps.forEach((step, index) => {
+            step.addEventListener('click', () => {
+                setActiveStep(index);
+                pauseAutoplay();
+            });
+        });
+
+        // Touch/swipe handling for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const swipeThreshold = 50;
+
+        if (cardsWrapper) {
+            cardsWrapper.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            cardsWrapper.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+        }
+
+        function handleSwipe() {
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next
+                    nextStep();
+                } else {
+                    // Swipe right - previous
+                    prevStep();
+                }
+                pauseAutoplay();
+            }
+        }
+
+        // Pause on hover (desktop)
+        section.addEventListener('mouseenter', () => {
+            if (window.innerWidth > 768) {
+                stopAutoplay();
+            }
+        });
+
+        section.addEventListener('mouseleave', () => {
+            if (window.innerWidth > 768) {
+                startAutoplay();
+            }
+        });
+
+        // Card click/tap also pauses
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                pauseAutoplay();
+            });
+        });
+
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                setActiveStep(currentStep, false);
+            }, 100);
+        });
+    }
+
+    // Initialize
+    init();
 }
 
 // ========================================

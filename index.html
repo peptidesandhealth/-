@@ -223,80 +223,113 @@
     </section>
 
     <!-- Consultation Timeline Section -->
-    <section class="consultation" id="portfolio">
+    <section class="consultation-v2" id="portfolio">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header centered">
                 <h2 class="section-title ice-flow" data-i18n="consultation.title">КОНСУЛЬТАЦИЯ</h2>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-circle">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                        </svg>
-                    </div>
-                    <div class="timeline-content">
-                        <span class="timeline-step">01</span>
-                        <h3 data-i18n="consultation.step1.title">Заявка</h3>
-                        <p data-i18n="consultation.step1.desc">Оставляете обращение</p>
-                    </div>
+
+            <!-- SVG Gradient Definition for Ring -->
+            <svg width="0" height="0" style="position: absolute;">
+                <defs>
+                    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color: #5a6a74; stop-opacity: 1" />
+                        <stop offset="50%" style="stop-color: #7a8a94; stop-opacity: 1" />
+                        <stop offset="100%" style="stop-color: #4a5a64; stop-opacity: 1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+
+            <!-- Desktop: Step Ribbon -->
+            <div class="steps-ribbon">
+                <div class="ribbon-step" data-step="0">
+                    <span class="ribbon-num">01</span>
+                    <span class="ribbon-label">Заявка</span>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-circle">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <path d="M14 2v6h6"/>
-                            <path d="M16 13H8"/>
-                            <path d="M16 17H8"/>
-                            <path d="M10 9H8"/>
-                        </svg>
-                    </div>
-                    <div class="timeline-content">
-                        <span class="timeline-step">02</span>
-                        <h3 data-i18n="consultation.step2.title">Сбор данных</h3>
-                        <p data-i18n="consultation.step2.desc">Цель и особенности</p>
-                    </div>
+                <div class="ribbon-connector"></div>
+                <div class="ribbon-step" data-step="1">
+                    <span class="ribbon-num">02</span>
+                    <span class="ribbon-label">Сбор данных</span>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-circle">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="11" cy="11" r="8"/>
-                            <path d="M21 21l-4.35-4.35"/>
-                        </svg>
-                    </div>
-                    <div class="timeline-content">
-                        <span class="timeline-step">03</span>
-                        <h3 data-i18n="consultation.step3.title">Подбор</h3>
-                        <p data-i18n="consultation.step3.desc">Выбор направления</p>
-                    </div>
+                <div class="ribbon-connector"></div>
+                <div class="ribbon-step" data-step="2">
+                    <span class="ribbon-num">03</span>
+                    <span class="ribbon-label">Подбор</span>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-circle">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9 11l3 3L22 4"/>
-                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                        </svg>
-                    </div>
-                    <div class="timeline-content">
-                        <span class="timeline-step">04</span>
-                        <h3 data-i18n="consultation.step4.title">Рекомендации</h3>
-                        <p data-i18n="consultation.step4.desc">Структура курса</p>
-                    </div>
+                <div class="ribbon-connector"></div>
+                <div class="ribbon-step" data-step="3">
+                    <span class="ribbon-num">04</span>
+                    <span class="ribbon-label">Рекомендации</span>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-circle">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                        </svg>
+                <div class="ribbon-connector"></div>
+                <div class="ribbon-step" data-step="4">
+                    <span class="ribbon-num">05</span>
+                    <span class="ribbon-label">Сопровождение</span>
+                </div>
+            </div>
+
+            <!-- Cards Stack (Mobile) / Active Card (Desktop) -->
+            <div class="steps-cards-wrapper">
+                <div class="steps-cards">
+                    <div class="step-card" data-step="0">
+                        <div class="step-ring" data-progress="20">
+                            <svg viewBox="0 0 36 36">
+                                <circle class="ring-bg" cx="18" cy="18" r="16"/>
+                                <circle class="ring-progress" cx="18" cy="18" r="16"/>
+                            </svg>
+                            <span class="ring-num">01</span>
+                        </div>
+                        <h3 class="step-title">ЗАЯВКА</h3>
+                        <p class="step-desc">Оставляете обращение</p>
                     </div>
-                    <div class="timeline-content">
-                        <span class="timeline-step">05</span>
-                        <h3 data-i18n="consultation.step5.title">Сопровождение</h3>
-                        <p data-i18n="consultation.step5.desc">Ответы и поддержка</p>
+                    <div class="step-card" data-step="1">
+                        <div class="step-ring" data-progress="40">
+                            <svg viewBox="0 0 36 36">
+                                <circle class="ring-bg" cx="18" cy="18" r="16"/>
+                                <circle class="ring-progress" cx="18" cy="18" r="16"/>
+                            </svg>
+                            <span class="ring-num">02</span>
+                        </div>
+                        <h3 class="step-title">СБОР ДАННЫХ</h3>
+                        <p class="step-desc">Цель и особенности</p>
+                    </div>
+                    <div class="step-card" data-step="2">
+                        <div class="step-ring" data-progress="60">
+                            <svg viewBox="0 0 36 36">
+                                <circle class="ring-bg" cx="18" cy="18" r="16"/>
+                                <circle class="ring-progress" cx="18" cy="18" r="16"/>
+                            </svg>
+                            <span class="ring-num">03</span>
+                        </div>
+                        <h3 class="step-title">ПОДБОР</h3>
+                        <p class="step-desc">Выбор решения</p>
+                    </div>
+                    <div class="step-card" data-step="3">
+                        <div class="step-ring" data-progress="80">
+                            <svg viewBox="0 0 36 36">
+                                <circle class="ring-bg" cx="18" cy="18" r="16"/>
+                                <circle class="ring-progress" cx="18" cy="18" r="16"/>
+                            </svg>
+                            <span class="ring-num">04</span>
+                        </div>
+                        <h3 class="step-title">РЕКОМЕНДАЦИИ</h3>
+                        <p class="step-desc">План курса</p>
+                    </div>
+                    <div class="step-card" data-step="4">
+                        <div class="step-ring" data-progress="100">
+                            <svg viewBox="0 0 36 36">
+                                <circle class="ring-bg" cx="18" cy="18" r="16"/>
+                                <circle class="ring-progress" cx="18" cy="18" r="16"/>
+                            </svg>
+                            <span class="ring-num">05</span>
+                        </div>
+                        <h3 class="step-title">СОПРОВОЖДЕНИЕ</h3>
+                        <p class="step-desc">Поддержка и ответы</p>
                     </div>
                 </div>
             </div>
-            <div class="timeline-cta">
+
+            <div class="consultation-cta">
                 <button class="btn btn-primary consultation-modal-trigger" data-i18n="consultation.ctaBtn">Получить консультацию</button>
             </div>
         </div>
