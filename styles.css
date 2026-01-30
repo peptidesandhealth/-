@@ -2894,72 +2894,6 @@ body.modal-open {
     transform: translateY(-3px);
 }
 
-/* Centered Contact Content */
-.contact-content-centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px;
-}
-
-.contact-info-only {
-    order: 0;
-    text-align: center;
-}
-
-.contact-telegram-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-}
-
-.telegram-link-large {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 20px 40px;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border: 1px solid rgba(165, 196, 212, 0.3);
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.telegram-link-large:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(74, 90, 100, 0.15);
-}
-
-.telegram-link-large svg {
-    width: 36px;
-    height: 36px;
-    color: #0088cc;
-    transition: transform 0.3s ease;
-}
-
-.telegram-link-large:hover svg {
-    transform: scale(1.1);
-}
-
-.telegram-username {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #2a3a44;
-    letter-spacing: 0.5px;
-}
-
-.contact-hours {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    color: #5a6a74;
-    margin: 0;
-}
-
 /* Contact Form */
 .contact-form {
     order: 1;
@@ -3109,31 +3043,88 @@ body.modal-open {
    Footer
    ======================================== */
 .footer {
-    padding: 30px 0;
+    padding: 40px 0 30px;
     background: var(--snow-white);
     border-top: 1px solid var(--chrome-light);
 }
 
-.footer-content {
+/* Footer Telegram Contact */
+.footer-telegram {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    font-size: 0.875rem;
-    color: var(--text-secondary);
+    gap: 8px;
+    margin-bottom: 24px;
 }
 
-.footer-disclaimer {
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid var(--chrome-light);
+.footer-telegram-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #5a6a74;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.footer-telegram-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2a3a44;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-telegram-link:hover {
+    color: #4a5a64;
+}
+
+.footer-telegram-icon {
+    width: 18px;
+    height: 18px;
+    color: #5a6a74;
+    transition: color 0.3s ease;
+}
+
+.footer-telegram-link:hover .footer-telegram-icon {
+    color: #4a5a64;
+}
+
+.footer-telegram-link span {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.footer-telegram-hours {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #7a8a94;
+}
+
+.footer-divider {
+    width: 60px;
+    height: 1px;
+    background: rgba(90, 106, 116, 0.2);
+    margin: 0 auto 20px;
+}
+
+.footer-bottom {
     text-align: center;
 }
 
-.footer-disclaimer p {
-    font-size: 0.75rem;
+.footer-copyright {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.footer-disclaimer {
+    font-size: 0.7rem;
     color: var(--text-light);
     line-height: 1.6;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -3670,12 +3661,6 @@ body.modal-open {
 
     .contact-form {
         padding: 30px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
     }
 
     /* FAQ mobile styles - minimal design */
