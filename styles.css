@@ -2805,6 +2805,7 @@ body.modal-open {
 .photo-divider-inner {
     width: 100%;
     min-height: 420px;
+    background-color: #1a2025;
     background-image: url('images/photo-divider.jpg');
     background-size: cover;
     background-position: center;
