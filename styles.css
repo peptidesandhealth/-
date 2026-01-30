@@ -1080,54 +1080,100 @@ section {
     padding: 50px 0;
 }
 
-/* Directions List - 2 columns on desktop */
-.directions-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    max-width: 900px;
+/* Directions Accordion - no cards, only text */
+.directions-accordion {
+    max-width: 600px;
     margin: 0 auto;
 }
 
-.direction-item {
-    padding: 24px 20px;
-    border-bottom: 1px solid rgba(200, 210, 220, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 6px;
+.dir-item {
+    border-bottom: 1px solid rgba(200, 210, 220, 0.3);
 }
 
-/* Alternating border for visual separation */
-.direction-item:nth-child(odd) {
-    border-right: 1px solid rgba(200, 210, 220, 0.25);
-}
-
-/* Remove bottom border on last row */
-.direction-item:nth-last-child(-n+2) {
+.dir-item:last-child {
     border-bottom: none;
 }
 
-.direction-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #2a3a44;
-    display: block;
-    text-align: center;
+.dir-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
 }
 
-.direction-tags {
+.dir-header:hover {
+    opacity: 0.7;
+}
+
+.dir-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2a3a44;
+}
+
+.dir-chevron {
+    width: 20px;
+    height: 20px;
+    color: #7a8a94;
+    flex-shrink: 0;
+    transition: transform 0.28s ease-in-out;
+}
+
+.dir-item.open .dir-chevron {
+    transform: rotate(180deg);
+}
+
+.dir-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height 0.28s ease-in-out,
+                opacity 0.28s ease-in-out,
+                transform 0.28s ease-in-out;
+}
+
+.dir-item.open .dir-content {
+    max-height: 80px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dir-tags {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     font-weight: 400;
     color: #5a6a74;
-    line-height: 1.5;
-    display: block;
-    text-align: center;
-    opacity: 0.85;
+    padding: 0 0 20px 0;
+    margin: 0;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .directions-accordion {
+        max-width: 100%;
+    }
+
+    .dir-header {
+        padding: 16px 0;
+    }
+
+    .dir-title {
+        font-size: 0.9rem;
+    }
+
+    .dir-chevron {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dir-tags {
+        font-size: 0.8rem;
+        padding-bottom: 16px;
+    }
 }
 
 .tech-stack {
@@ -3633,43 +3679,6 @@ body.modal-open {
     /* Skills grid on mobile - 2 cards per row */
     .skills-carousel {
         position: relative;
-    }
-
-    /* Directions list - single column on mobile, compact */
-    .directions-list {
-        grid-template-columns: 1fr;
-        gap: 0;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0 16px;
-    }
-
-    .direction-item {
-        padding: 18px 0;
-        border-right: none !important;
-        border-bottom: 1px solid rgba(200, 210, 220, 0.2);
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 8px;
-    }
-
-    .direction-item:last-child {
-        border-bottom: none;
-    }
-
-    .direction-title {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #2a3a44;
-        text-align: center;
-    }
-
-    .direction-tags {
-        font-size: 0.8rem;
-        text-align: center;
-        color: #5a6a74;
-        line-height: 1.5;
     }
 
     /* Legacy skill styles - hidden */
