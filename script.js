@@ -824,7 +824,7 @@ function initConsultationSteps() {
     let autoplayInterval = null;
     let pauseTimeout = null;
     const totalSteps = 5;
-    const autoplayDelay = 3000; // 3 seconds
+    const autoplayDelay = 1500; // 1.5 seconds
     const pauseDuration = 12000; // 12 seconds pause after interaction
 
     // Initialize first step as active
