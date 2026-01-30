@@ -1053,11 +1053,6 @@ section {
     font-weight: 400;
 }
 
-/* Stats carousel dots - hidden on desktop */
-.stats-dots {
-    display: none;
-}
-
 .about-note {
     padding: 20px 28px;
     background: linear-gradient(145deg,
@@ -3297,21 +3292,21 @@ body.modal-open {
         font-weight: 600;
     }
 
-    /* Mobile carousel for stats */
+    /* Mobile carousel for stats - NO arrows, only swipe */
     .about-stats,
     .about-stats.horizontal {
+        display: flex;
         flex-direction: row;
+        flex-wrap: nowrap !important;
         gap: 16px;
-        width: 100%;
+        width: calc(100% + 40px);
         overflow-x: auto;
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-        padding: 8px 0 16px;
+        padding: 8px 20px 16px;
         margin: 0 -20px;
-        padding-left: 20px;
-        padding-right: 20px;
         /* Hide scrollbar */
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -3324,10 +3319,11 @@ body.modal-open {
 
     .stat-item,
     .about-stats.horizontal .stat-item {
-        flex: 0 0 calc(85% - 8px);
-        max-width: calc(85% - 8px);
-        min-height: 200px;
-        padding: 28px 24px 24px;
+        flex: 0 0 80%;
+        max-width: 80%;
+        min-width: 80%;
+        min-height: 180px;
+        padding: 24px 20px 20px;
         border-radius: 16px;
         scroll-snap-align: center;
         scroll-snap-stop: always;
@@ -3345,26 +3341,9 @@ body.modal-open {
         box-shadow: 0 2px 12px rgba(43, 47, 54, 0.08);
     }
 
-    /* Stats dots indicator - visible on mobile */
+    /* Stats dots - removed, swipe only */
     .stats-dots {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
-    }
-
-    .stats-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #C8D4DE;
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
-
-    .stats-dot.active {
-        background: #6B7D8E;
-        transform: scale(1.1);
+        display: none;
     }
 
     /* Mobile icon badge - FIXED size */
