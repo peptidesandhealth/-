@@ -1477,14 +1477,18 @@ section {
 
 .consultation-form-clean {
     width: 100%;
-    max-width: 420px;
-    padding: 48px 44px;
+    max-width: 480px;
+    min-height: 380px;
+    padding: 52px 48px;
     background: rgba(255, 255, 255, 0.68);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-radius: 24px;
+    border-radius: 28px;
     border: 1px solid rgba(160, 180, 200, 0.25);
     box-shadow: 0 20px 60px rgba(20, 35, 50, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .consultation-form-clean .form-group {
@@ -1559,34 +1563,28 @@ section {
     cursor: pointer;
 }
 
-/* Button - filled style like shop CTA */
+/* Button - matching .btn-catalog-premium exactly */
 .btn-consultation-submit {
     display: block;
     width: 100%;
-    padding: 16px 28px;
+    padding: 14px 36px;
     font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #fff;
-    background: linear-gradient(135deg, #5a6a74 0%, #4a5a64 100%);
+    background: linear-gradient(135deg, #4a5a64 0%, #5a6a74 50%, #4a5a64 100%);
     border: none;
-    border-radius: 50px;
+    border-radius: 6px;
     cursor: pointer;
-    box-shadow: 0 4px 16px rgba(74, 90, 100, 0.25);
+    box-shadow: 0 4px 16px rgba(74, 90, 100, 0.3);
     transition: all 0.3s ease;
 }
 
 .btn-consultation-submit:hover {
-    background: linear-gradient(135deg, #4a5a64 0%, #3a4a54 100%);
-    box-shadow: 0 6px 24px rgba(74, 90, 100, 0.35);
     transform: translateY(-2px);
-}
-
-.btn-consultation-submit:active {
-    transform: translateY(0);
-    box-shadow: 0 3px 12px rgba(74, 90, 100, 0.25);
+    box-shadow: 0 6px 24px rgba(74, 90, 100, 0.4);
 }
 
 /* Right Column: Steps List */
@@ -1633,7 +1631,7 @@ section {
 }
 
 /* Mobile Layout */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .consultation-v2 {
         padding: 40px 0 50px;
     }
@@ -1667,9 +1665,9 @@ section {
     .steps-list {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px 18px;
+        gap: 14px 24px;
         width: 100%;
-        max-width: 340px;
+        max-width: 320px;
         margin: 0 auto;
         text-align: center;
     }
@@ -1691,21 +1689,27 @@ section {
     .step-num {
         font-size: 0.7rem;
         font-weight: 600;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.15em;
         min-width: auto;
     }
 
     .step-label {
         font-size: 0.7rem;
         font-weight: 600;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
     }
 
     /* Mobile form */
     .consultation-form-clean {
         max-width: 100%;
+        min-height: auto;
         padding: 36px 28px;
+    }
+
+    .btn-consultation-submit {
+        padding: 12px 28px;
+        font-size: 0.7rem;
     }
 
     .consultation-form-clean .form-group {
