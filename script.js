@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFAQ();
     initSkillsCarousel();
     initStatsCarousel();
+    initPhotoBanner();
     initCatalogModal();
     initConsultationModal();
     initLanguageSwitcher();
@@ -808,6 +809,30 @@ function initStatsCarousel() {
 
     // Initial update
     updateActiveDot();
+}
+
+// ========================================
+// Photo Banner Scroll Animation
+// ========================================
+function initPhotoBanner() {
+    const bannerInner = document.querySelector('.photo-banner-inner');
+    if (!bannerInner) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                bannerInner.classList.add('visible');
+                // Once visible, no need to observe anymore
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    });
+
+    observer.observe(bannerInner);
 }
 
 // ========================================
