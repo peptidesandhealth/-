@@ -1433,6 +1433,7 @@ section {
 .consultation-form-col {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .consultation-form-clean {
@@ -1519,7 +1520,7 @@ section {
     cursor: pointer;
 }
 
-/* Button - outline style like pill */
+/* Button - filled style like shop CTA */
 .btn-consultation-submit {
     display: block;
     width: 100%;
@@ -1529,22 +1530,24 @@ section {
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #4a5a64;
-    background: transparent;
-    border: 1.5px solid #4a5a64;
+    color: #fff;
+    background: linear-gradient(135deg, #5a6a74 0%, #4a5a64 100%);
+    border: none;
     border-radius: 50px;
     cursor: pointer;
+    box-shadow: 0 4px 16px rgba(74, 90, 100, 0.25);
     transition: all 0.3s ease;
 }
 
 .btn-consultation-submit:hover {
-    background: rgba(74, 90, 100, 0.06);
-    border-color: #3a4a54;
-    color: #3a4a54;
+    background: linear-gradient(135deg, #4a5a64 0%, #3a4a54 100%);
+    box-shadow: 0 6px 24px rgba(74, 90, 100, 0.35);
+    transform: translateY(-2px);
 }
 
 .btn-consultation-submit:active {
-    background: rgba(74, 90, 100, 0.1);
+    transform: translateY(0);
+    box-shadow: 0 3px 12px rgba(74, 90, 100, 0.25);
 }
 
 /* Right Column: Steps List */
