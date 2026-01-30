@@ -6,6 +6,10 @@
    ======================================== */
 
 :root {
+    /* === Typography === */
+    --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
     /* === Primary Backgrounds === */
     --bg: #F5F7FA;
     --bg-alt: #EEF2F6;
@@ -95,21 +99,19 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.7;
     color: var(--text);
     background-color: var(--bg);
     overflow-x: hidden;
-    letter-spacing: -0.01em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-display);
     font-weight: 500;
     line-height: 1.25;
     color: var(--text);
-    letter-spacing: -0.02em;
 }
 
 h1 { font-size: clamp(2rem, 5vw, 3rem); }
@@ -187,11 +189,12 @@ section {
 
 /* Logo - light on hero, dark when scrolled */
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.95);
     transition: color 0.2s ease;
+    letter-spacing: 0.04em;
 }
 
 .navbar.scrolled .logo {
@@ -272,13 +275,16 @@ body.menu-open {
 }
 
 .nav-links a {
-    font-size: 1.1rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--text);
     position: relative;
     padding: 16px 0;
     border-bottom: 1px solid var(--border-light);
     display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
 
 .nav-links a:hover {
@@ -494,10 +500,12 @@ body.menu-open {
 }
 
 .hero-title {
+    font-family: var(--font-display);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 600;
     margin-bottom: 24px;
     color: var(--surface);
+    letter-spacing: 0.06em;
 }
 
 .hero-title .name-line {
@@ -787,12 +795,14 @@ section {
 }
 
 .section-title {
+    font-family: var(--font-display);
     font-size: clamp(1.5rem, 3vw, 2rem);
     position: relative;
     display: inline-block;
     color: var(--text);
-    letter-spacing: 0.15em;
+    letter-spacing: 0.22em;
     font-weight: 500;
+    text-transform: uppercase;
     background: linear-gradient(
         135deg,
         var(--text) 0%,
@@ -1575,10 +1585,10 @@ section {
     display: block;
     width: 100%;
     padding: 14px 36px;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-display);
     font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #fff;
     background: linear-gradient(135deg, #4a5a64 0%, #5a6a74 50%, #4a5a64 100%);
@@ -1821,10 +1831,10 @@ section {
 .btn-catalog-premium {
     display: inline-block;
     padding: 14px 36px;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-display);
     font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #fff;
     background: linear-gradient(135deg, #4a5a64 0%, #5a6a74 50%, #4a5a64 100%);
@@ -2853,16 +2863,16 @@ body.modal-open {
 }
 
 .faq-question h3 {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 500;
     margin: 0;
     padding-right: 16px;
     transition: color 0.25s ease;
     color: #3a4a54;
     line-height: 1.5;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
 }
 
 .faq-question:hover h3 {
