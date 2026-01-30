@@ -745,12 +745,12 @@ section {
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -12px;
+    bottom: -10px;
     left: 0;
-    width: 48px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-light));
-    border-radius: 2px;
+    width: 36px;
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--accent-strong), var(--accent-light));
+    border-radius: 1px;
 }
 
 @keyframes lineShimmer {
@@ -768,17 +768,18 @@ section {
 }
 
 /* ========================================
-   About Section
+   About Section - Premium Ice/Chrome B2B
    ======================================== */
 .about {
-    background: linear-gradient(180deg, var(--snow-white) 0%, var(--snow-white-pure) 100%);
+    background: #EEF2F6;
+    padding: 80px 0;
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 48px;
 }
 
 .about-content.centered {
@@ -795,15 +796,15 @@ section {
 }
 
 .about-lead {
-    font-size: 1.15rem;
-    font-weight: 300;
+    font-size: 1.1rem;
+    font-weight: 400;
     margin-bottom: 0;
-    line-height: 1.6;
-    max-width: 700px;
-    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 600px;
+    color: var(--text-2);
     background: none;
     -webkit-background-clip: unset;
-    -webkit-text-fill-color: var(--text-secondary);
+    -webkit-text-fill-color: var(--text-2);
     background-clip: unset;
     animation: none;
 }
@@ -813,7 +814,7 @@ section {
 }
 
 .about-text p {
-    color: var(--text-secondary);
+    color: var(--text-2);
     margin-bottom: 20px;
     line-height: 1.8;
     font-size: 1rem;
@@ -821,13 +822,13 @@ section {
 
 .about-quote {
     font-style: italic;
-    border-left: 3px solid var(--ice-flow);
+    border-left: 3px solid var(--accent);
     padding-left: 20px;
     margin: 24px 0;
 }
 
 .about-quote p {
-    color: var(--text-secondary);
+    color: var(--text-2);
     line-height: 1.8;
     font-size: 0.95rem;
     margin: 0;
@@ -842,36 +843,69 @@ section {
 .about-stats.horizontal {
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
     width: 100%;
 }
 
+/* Icy Panel Cards */
 .stat-item {
-    padding: 20px 24px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.95) 100%);
-    border-radius: 20px;
+    padding: 28px 24px 24px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(250, 252, 254, 0.9) 100%
+    );
+    border-radius: 16px;
     text-align: center;
-    transition: all var(--transition-normal);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border: 1px solid #D7DEE6;
+    box-shadow: 0 4px 20px rgba(43, 47, 54, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .about-stats.horizontal .stat-item {
     flex: 1;
-    max-width: 280px;
-    padding: 18px 16px;
+    max-width: 300px;
+    padding: 32px 24px 28px;
 }
 
 .stat-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(43, 47, 54, 0.1);
 }
 
+/* Icon Badge - circular icy background */
+.stat-icon-badge {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        145deg,
+        rgba(238, 242, 246, 0.9) 0%,
+        rgba(215, 222, 230, 0.6) 100%
+    );
+    border-radius: 50%;
+    border: 1px solid rgba(215, 222, 230, 0.5);
+}
+
+.stat-icon-badge svg {
+    width: 24px;
+    height: 24px;
+    color: #7E96AA;
+    stroke-width: 1.5;
+}
+
+/* Legacy icon styling */
 .stat-icon {
-    width: 28px;
-    height: 28px;
-    margin: 0 auto 10px;
-    color: var(--ice-flow-dark);
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 12px;
+    color: #7E96AA;
 }
 
 .stat-icon svg {
@@ -884,45 +918,44 @@ section {
     font-size: 3rem;
     font-weight: 600;
     display: block;
-    background: linear-gradient(135deg, var(--ice-flow-dark) 0%, var(--text-primary) 100%);
+    background: linear-gradient(135deg, var(--accent-strong) 0%, var(--text) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
+/* Card Title - more contrast, compact */
 .stat-title {
     font-family: 'Inter', sans-serif;
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     font-weight: 600;
     display: block;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-    background: linear-gradient(
-        90deg,
-        #3a4a54 0%,
-        #5a6a74 25%,
-        #7a8a94 50%,
-        #5a6a74 75%,
-        #3a4a54 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: statShimmer 3s ease-in-out infinite;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    color: var(--text);
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: var(--text);
+    animation: none;
 }
 
-@keyframes statShimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+/* Thin divider between title and bullets */
+.stat-divider {
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C5CED8, transparent);
+    margin: 12px auto;
 }
 
+/* Bullet labels - smaller, readable */
 .stat-label {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    letter-spacing: 0.3px;
-    line-height: 1.4;
+    font-size: 0.75rem;
+    color: var(--text-2);
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 .about-note {
@@ -2992,10 +3025,6 @@ body.modal-open {
         padding: 0 20px;
     }
 
-    .about {
-        padding: 40px 0;
-    }
-
     .desktop-only {
         display: none;
     }
@@ -3092,16 +3121,24 @@ body.modal-open {
         height: 220px;
     }
 
+    /* About section mobile */
+    .about {
+        padding: 60px 0;
+    }
+
     .about-lead {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 0.95rem;
+        line-height: 1.65;
         margin-bottom: 0;
+        color: var(--text-2);
+        padding: 0 8px;
     }
 
     .about-stats,
     .about-stats.horizontal {
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
+        width: 100%;
     }
 
     .stat-item,
@@ -3109,21 +3146,51 @@ body.modal-open {
         flex: none;
         max-width: 100%;
         width: 100%;
-        padding: 12px 16px;
+        padding: 24px 20px 20px;
+        border-radius: 14px;
+    }
+
+    /* Mobile: subtle press effect instead of hover lift */
+    .stat-item:hover {
+        transform: none;
+        box-shadow: 0 4px 20px rgba(43, 47, 54, 0.06);
+    }
+
+    .stat-item:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 12px rgba(43, 47, 54, 0.08);
+    }
+
+    .stat-icon-badge {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 14px;
+    }
+
+    .stat-icon-badge svg {
+        width: 22px;
+        height: 22px;
     }
 
     .stat-icon {
-        width: 22px;
-        height: 22px;
-        margin-bottom: 6px;
+        width: 24px;
+        height: 24px;
+        margin-bottom: 8px;
     }
 
     .stat-title {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.8px;
+    }
+
+    .stat-divider {
+        width: 28px;
+        margin: 10px auto;
     }
 
     .stat-label {
-        font-size: 0.7rem;
+        font-size: 0.72rem;
+        line-height: 1.45;
     }
 
     .shop-lead {
@@ -3445,21 +3512,44 @@ body.modal-open {
         font-size: 0.9rem;
     }
 
+    /* About section - small screens */
+    .about {
+        padding: 50px 0;
+    }
+
     .about-stats {
-        gap: 10px;
+        gap: 12px;
     }
 
     .stat-item {
         flex: 1 1 100%;
-        padding: 16px 20px;
+        padding: 20px 16px 18px;
+        border-radius: 12px;
+    }
+
+    .stat-icon-badge {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 12px;
+    }
+
+    .stat-icon-badge svg {
+        width: 20px;
+        height: 20px;
     }
 
     .stat-title {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.6px;
+    }
+
+    .stat-divider {
+        width: 24px;
+        margin: 8px auto;
     }
 
     .stat-label {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     .stat-number {
