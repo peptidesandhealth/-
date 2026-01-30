@@ -164,45 +164,66 @@
     <!-- Shop Section -->
     <section class="shop" id="shop">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title ice-flow" data-i18n="shop.title">МАГАЗИН</h2>
-                <p class="shop-subtitle"><em data-i18n="shop.subtitle">Подбор и оформление заказа — в рамках консультационного сопровождения.</em></p>
-            </div>
+            <div class="shop-layout">
+                <!-- Left Column: Text + Button -->
+                <div class="shop-info">
+                    <h2 class="shop-title" data-i18n="shop.title">МАГАЗИН</h2>
+                    <ul class="shop-list">
+                        <li>Консультация</li>
+                        <li>Рекомендации</li>
+                        <li>Оформление</li>
+                    </ul>
+                    <button class="btn-catalog-premium" id="openCatalogBtn" data-i18n="shop.catalogBtn">ОТКРЫТЬ КАТАЛОГ</button>
+                </div>
 
-            <!-- Mini Showcase - 3 Featured Products -->
-            <div class="shop-showcase">
-                <div class="showcase-card">
-                    <img src="images/1.png" alt="BPC-157" class="showcase-image">
-                    <div class="showcase-content">
-                        <div class="showcase-badge" data-i18n="shop.badge.recovery">Восстановление</div>
-                        <h3 class="showcase-title">BPC-157</h3>
-                        <p class="showcase-desc" data-i18n="shop.bpc157.desc">Поддержка регенеративных процессов</p>
-                        <button class="btn-showcase" data-product="bpc-157" data-i18n="shop.detailsBtn">Подробнее</button>
+                <!-- Right Column: Gallery Carousel -->
+                <div class="shop-gallery">
+                    <div class="gallery-container">
+                        <div class="gallery-track">
+                            <div class="gallery-slide active">
+                                <img src="images/1.png" alt="BPC-157" class="gallery-image">
+                                <div class="gallery-content">
+                                    <span class="gallery-badge" data-i18n="shop.badge.recovery">Восстановление</span>
+                                    <h3 class="gallery-title">BPC-157</h3>
+                                    <p class="gallery-desc" data-i18n="shop.bpc157.desc">Поддержка регенеративных процессов</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/2.png" alt="GHK-Cu" class="gallery-image">
+                                <div class="gallery-content">
+                                    <span class="gallery-badge" data-i18n="shop.badge.skin">Кожа</span>
+                                    <h3 class="gallery-title">GHK-Cu</h3>
+                                    <p class="gallery-desc" data-i18n="shop.ghkcu.desc">Комплексное омоложение и качество кожи</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/3.png" alt="MOTS-C" class="gallery-image">
+                                <div class="gallery-content">
+                                    <span class="gallery-badge" data-i18n="shop.badge.metabolism">Метаболизм</span>
+                                    <h3 class="gallery-title">MOTS-C</h3>
+                                    <p class="gallery-desc" data-i18n="shop.motsc.desc">Метаболический профиль и энергия</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Navigation Arrows -->
+                        <button class="gallery-arrow gallery-prev" aria-label="Предыдущий">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 18l-6-6 6-6"/>
+                            </svg>
+                        </button>
+                        <button class="gallery-arrow gallery-next" aria-label="Следующий">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Dots Indicator -->
+                    <div class="gallery-dots">
+                        <span class="gallery-dot active" data-index="0"></span>
+                        <span class="gallery-dot" data-index="1"></span>
+                        <span class="gallery-dot" data-index="2"></span>
                     </div>
                 </div>
-                <div class="showcase-card">
-                    <img src="images/2.png" alt="GHK-Cu" class="showcase-image">
-                    <div class="showcase-content">
-                        <div class="showcase-badge" data-i18n="shop.badge.skin">Кожа</div>
-                        <h3 class="showcase-title">GHK-Cu</h3>
-                        <p class="showcase-desc" data-i18n="shop.ghkcu.desc">Комплексное омоложение и качество кожи</p>
-                        <button class="btn-showcase" data-product="ghk-cu" data-i18n="shop.detailsBtn">Подробнее</button>
-                    </div>
-                </div>
-                <div class="showcase-card">
-                    <img src="images/3.png" alt="MOTS-C" class="showcase-image">
-                    <div class="showcase-content">
-                        <div class="showcase-badge" data-i18n="shop.badge.metabolism">Метаболизм</div>
-                        <h3 class="showcase-title">MOTS-C</h3>
-                        <p class="showcase-desc" data-i18n="shop.motsc.desc">Метаболический профиль и энергия</p>
-                        <button class="btn-showcase" data-product="mots-c" data-i18n="shop.detailsBtn">Подробнее</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Button -->
-            <div class="shop-cta shop-cta-single">
-                <button class="btn btn-catalog-wide" id="openCatalogBtn" data-i18n="shop.catalogBtn">Открыть каталог</button>
             </div>
         </div>
     </section>

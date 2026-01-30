@@ -1624,190 +1624,259 @@ section {
 }
 
 /* ========================================
-   Shop Section
+   Shop Section - iPeptides Gallery Style
    ======================================== */
 .shop {
     background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 100%);
+    padding: 50px 0;
 }
 
-.shop-subtitle {
-    font-size: 1.1rem;
-    color: var(--text-2);
-    margin-top: 16px;
-    font-weight: 400;
-    text-align: center;
-}
-
-.shop-subtitle em {
-    font-style: italic;
-    color: var(--text-3);
-}
-
-/* Shop Showcase - 3 Featured Products */
-.shop-showcase {
+/* Two-column layout */
+.shop-layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin: 48px 0;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 48px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.showcase-card {
-    position: relative;
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    min-height: 420px;
+/* Left column: Text + Button */
+.shop-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: linear-gradient(180deg,
-        var(--bg-alt) 0%,
-        var(--surface-2) 40%,
-        var(--surface) 100%);
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-normal);
+    align-items: flex-start;
 }
 
-.showcase-card::before {
-    content: '';
+.shop-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--text);
+    margin-bottom: 28px;
+    text-transform: uppercase;
+}
+
+.shop-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px 0;
+}
+
+.shop-list li {
+    font-size: 1rem;
+    color: var(--text-2);
+    font-weight: 400;
+    line-height: 2;
+    padding-left: 20px;
+    position: relative;
+}
+
+.shop-list li::before {
+    content: '•';
     position: absolute;
-    top: 0;
     left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
+    color: var(--accent-strong);
+    font-weight: 600;
 }
 
-.showcase-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+/* Premium Catalog Button */
+.btn-catalog-premium {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(248, 250, 252, 0.9) 100%
+    );
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.btn-catalog-premium:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
     border-color: var(--accent-light);
 }
 
-/* Product image - directly on card, no wrapper */
-.showcase-image {
-    display: block;
-    width: 75%;
-    max-width: 180px;
-    height: auto;
-    margin: 24px auto 0;
-    object-fit: contain;
-    transition: transform 0.4s ease;
-    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
-    flex-shrink: 0;
-}
-
-.showcase-card:hover .showcase-image {
-    transform: scale(1.08) translateY(-8px);
-}
-
-/* Text content area */
-.showcase-content {
+/* Right column: Gallery Carousel */
+.shop-gallery {
     position: relative;
-    z-index: 3;
-    padding: 0 24px 28px;
+}
+
+.gallery-container {
+    position: relative;
+    background: linear-gradient(
+        145deg,
+        rgba(238, 242, 246, 0.6) 0%,
+        rgba(248, 250, 252, 0.8) 100%
+    );
+    border-radius: 32px;
+    border: 1px solid rgba(215, 222, 230, 0.5);
+    overflow: hidden;
+    box-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.gallery-track {
+    position: relative;
+    width: 100%;
+    min-height: 380px;
+}
+
+.gallery-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    background: linear-gradient(
-        to bottom,
-        rgba(250, 252, 253, 0.95) 0%,
-        rgba(255, 255, 255, 1) 30%
-    );
+    justify-content: center;
+    padding: 32px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.showcase-badge {
+.gallery-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-image {
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12));
+    transition: transform 0.4s ease;
+}
+
+.gallery-slide.active .gallery-image {
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.gallery-content {
+    text-align: center;
+}
+
+.gallery-badge {
     display: inline-block;
     padding: 5px 14px;
     font-size: 0.65rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--ice-flow-dark);
-    background: linear-gradient(135deg, rgba(165, 196, 212, 0.2) 0%, rgba(165, 196, 212, 0.1) 100%);
-    border: 1px solid rgba(165, 196, 212, 0.25);
+    color: var(--accent-strong);
+    background: rgba(159, 182, 201, 0.15);
+    border: 1px solid rgba(159, 182, 201, 0.25);
     border-radius: 20px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
-.showcase-title {
+.gallery-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text);
     margin-bottom: 8px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.02em;
 }
 
-.showcase-desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
-    margin-bottom: 20px;
+.gallery-desc {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    line-height: 1.5;
+    max-width: 280px;
+    margin: 0 auto;
 }
 
-.btn-showcase {
-    display: inline-block;
-    padding: 12px 28px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text-primary);
+/* Navigation Arrows */
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(165, 196, 212, 0.4);
-    border-radius: 50px;
+    border: 1px solid var(--border-light);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 10;
 }
 
-.btn-showcase:hover {
-    background: var(--gradient-mixed);
-    border-color: var(--ice-flow);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(165, 196, 212, 0.3);
+.gallery-arrow:hover {
+    background: var(--surface);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    border-color: var(--accent-light);
 }
 
-/* Shop CTA Buttons */
-.shop-cta {
+.gallery-arrow svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--text-2);
+}
+
+.gallery-prev {
+    left: 16px;
+}
+
+.gallery-next {
+    right: 16px;
+}
+
+/* Dots Indicator */
+.gallery-dots {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 10px;
     margin-top: 20px;
 }
 
-.shop-cta .btn-secondary {
-    background: var(--gradient-mixed);
-    color: var(--text-primary);
-    border: none;
-    box-shadow: 0 4px 20px rgba(165, 196, 212, 0.3);
+.gallery-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.shop-cta .btn-secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(165, 196, 212, 0.4);
-    background: var(--gradient-mixed);
-}
-
-/* Wide Catalog Button */
-.btn-catalog-wide {
-    width: 100%;
-    max-width: 500px;
-    padding: 18px 48px;
-    font-size: 1rem;
-    font-weight: 600;
-    background: var(--gradient-mixed);
-    color: var(--text-primary);
-    border: none;
-    box-shadow: 0 4px 20px rgba(165, 196, 212, 0.3);
-}
-
-.btn-catalog-wide:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(165, 196, 212, 0.4);
+.gallery-dot.active {
+    background: var(--accent-strong);
+    transform: scale(1.2);
 }
 
 /* ========================================
@@ -3590,6 +3659,82 @@ body.modal-open {
         width: 26px;
         height: 26px;
         font-size: 1.3rem;
+    }
+
+    /* Shop Section Mobile */
+    .shop {
+        padding: 40px 0;
+    }
+
+    .shop-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .shop-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .shop-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .shop-list {
+        margin-bottom: 28px;
+    }
+
+    .shop-list li {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .btn-catalog-premium {
+        padding: 14px 32px;
+        font-size: 0.8rem;
+    }
+
+    .gallery-container {
+        border-radius: 24px;
+    }
+
+    .gallery-track {
+        min-height: 340px;
+    }
+
+    .gallery-slide {
+        padding: 24px 20px;
+    }
+
+    .gallery-image {
+        width: 130px;
+    }
+
+    .gallery-title {
+        font-size: 1.3rem;
+    }
+
+    .gallery-desc {
+        font-size: 0.85rem;
+    }
+
+    .gallery-arrow {
+        width: 38px;
+        height: 38px;
+    }
+
+    .gallery-arrow svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .gallery-prev {
+        left: 10px;
+    }
+
+    .gallery-next {
+        right: 10px;
     }
 }
 
