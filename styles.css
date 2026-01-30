@@ -1472,7 +1472,7 @@ section {
     height: 180px;
 }
 
-/* Individual Step Card */
+/* Individual Step Card - smooth crossfade + micro-slide only */
 .step-card {
     position: absolute;
     top: 0;
@@ -1484,23 +1484,34 @@ section {
     padding: 28px 32px;
     text-align: center;
     box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        0 6px 24px rgba(0, 0, 0, 0.1),
+        0 2px 6px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.6);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(8px) translateX(6px) scale(0.97);
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.3s;
+    transform: translateY(8px);
+    will-change: opacity, transform;
+    transition: opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                visibility 0.28s;
 }
 
 .step-card.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0) translateX(0) scale(1);
+    transform: translateY(0);
     z-index: 3;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .step-card {
+        transition: none;
+        transform: none;
+    }
+    .step-card.active {
+        transform: none;
+    }
 }
 
 /* Ring Progress Indicator */
@@ -1629,47 +1640,44 @@ section {
         position: relative;
     }
 
-    /* Stack effect - show 3 cards */
+    /* Stack effect - show 3 cards, NO scale */
     .step-card {
         padding: 24px 20px;
         border-radius: 16px;
-        transform-origin: center bottom;
-        will-change: transform, opacity;
+        will-change: opacity, transform;
     }
 
-    /* Active card (top) */
+    /* Active card (top) - smooth crossfade only */
     .step-card.active {
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
         opacity: 1;
         z-index: 5;
-        box-shadow:
-            0 8px 28px rgba(0, 0, 0, 0.15),
-            0 2px 8px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
     }
 
-    /* Second card (behind) */
+    /* Second card (behind) - translateY only */
     .step-card.stack-2 {
-        opacity: 0.7;
+        opacity: 0.5;
         visibility: visible;
-        transform: translateY(10px) scale(0.96);
+        transform: translateY(8px);
         z-index: 4;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
 
     /* Third card (furthest back) */
     .step-card.stack-3 {
-        opacity: 0.4;
+        opacity: 0.25;
         visibility: visible;
-        transform: translateY(20px) scale(0.92);
+        transform: translateY(16px);
         z-index: 3;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     /* Hide other cards */
     .step-card.hidden {
         opacity: 0;
         visibility: hidden;
-        transform: translateY(30px) scale(0.88);
+        transform: translateY(24px);
         z-index: 1;
     }
 
@@ -1739,15 +1747,7 @@ section {
 }
 
 /* Micro-accent animation on step change */
-.step-card.pulse {
-    animation: cardPulse 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes cardPulse {
-    0% { transform: translateY(0) translateX(0) scale(1); }
-    40% { transform: translateY(-2px) translateX(0) scale(1.01); }
-    100% { transform: translateY(0) translateX(0) scale(1); }
-}
+/* Pulse animation removed - smooth crossfade only */
 
 /* ========================================
    Shop Section - Premium Gallery Style
