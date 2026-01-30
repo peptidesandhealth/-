@@ -36,10 +36,10 @@ const translations = {
         'hero.consultBtn': 'Получить консультацию',
 
         // About
-        'about.title': 'Стандарты iPeptides',
-        'about.lead': 'Консультация и сопровождение по вопросам выбора и применения пептидов — под вашу цель и задачу.',
-        'about.stat1.title': 'Стандарты<br class="desktop-only"> качества',
-        'about.stat1.label': 'чистота состава • контроль качества',
+        'about.title': 'Стандарты iPeptidesPlus',
+        'about.lead': 'Оценка • Подбор • Поддержка',
+        'about.stat1.title': 'Стандарты качества',
+        'about.stat1.label': 'чистота состава • контроль партии • верификация',
         'about.stat2.title': 'Комплексный подход',
         'about.stat2.label': 'сон • стресс • восстановление • метаболизм',
         'about.stat3.title': 'Полное сопровождение',
@@ -137,10 +137,10 @@ const translations = {
         'hero.consultBtn': 'Get Consultation',
 
         // About
-        'about.title': 'iPeptides Standards',
-        'about.lead': 'Consultation and support on peptide selection and application — tailored to your goals and needs.',
-        'about.stat1.title': 'Quality<br class="desktop-only"> Standards',
-        'about.stat1.label': 'purity of composition • quality control',
+        'about.title': 'iPeptidesPlus Standards',
+        'about.lead': 'Assessment • Selection • Support',
+        'about.stat1.title': 'Quality Standards',
+        'about.stat1.label': 'composition purity • batch control • verification',
         'about.stat2.title': 'Comprehensive Approach',
         'about.stat2.label': 'sleep • stress • recovery • metabolism',
         'about.stat3.title': 'Full Support',
