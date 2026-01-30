@@ -1621,14 +1621,14 @@ section {
         width: 100%;
     }
 
-    /* Mobile steps - 3 rows grid like shop style */
+    /* Mobile steps - 3 rows grid, centered */
     .steps-list {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px 24px;
-        width: 100%;
+        grid-template-columns: auto auto;
+        gap: 8px 32px;
+        width: auto;
         text-align: center;
-        justify-items: center;
+        justify-content: center;
     }
 
     .step-item {
