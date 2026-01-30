@@ -2,13 +2,21 @@
 // Portfolio Website - JavaScript
 // ========================================
 
+// Prevent browser from restoring scroll position
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Force scroll to top immediately (before DOMContentLoaded)
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Always scroll to top on page load (ignore URL hash)
+    // Clear hash from URL without triggering scroll
     if (window.location.hash) {
-        // Clear the hash without triggering scroll
         history.replaceState(null, null, window.location.pathname + window.location.search);
     }
-    // Scroll to top immediately
+
+    // Force scroll to top
     window.scrollTo(0, 0);
 
     // Initialize all components
@@ -28,6 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initCatalogModal();
     initConsultationModal();
     initLanguageSwitcher();
+});
+
+// Also scroll to top after full page load (images, etc.)
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
 });
 
 // ========================================
