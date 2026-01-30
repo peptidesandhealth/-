@@ -38,7 +38,7 @@ const translations = {
         'hero.consultBtn': 'Получить консультацию',
 
         // About
-        'about.title': 'Стандарты iPeptidesPlus',
+        'about.title': 'СТАНДАРТЫ',
         'about.lead': 'Оценка • Подбор • Поддержка',
         'about.stat1.title': 'Стандарты качества',
         'about.stat1.label': 'чистота состава • контроль партии • верификация',
@@ -48,7 +48,7 @@ const translations = {
         'about.stat3.label': 'рекомендации • поддержка • обратная связь',
 
         // Skills - Directions List
-        'skills.title': 'Направления iPeptidesPlus',
+        'skills.title': 'НАПРАВЛЕНИЯ',
         'skills.item1.title': 'Восстановление и регенерация',
         'skills.item1.tags': 'травмы • регенерация • восстановление • адаптация',
         'skills.item2.title': 'Опорно-двигательный аппарат',
@@ -63,7 +63,7 @@ const translations = {
         'skills.item6.tags': 'метаболизм • энергия • чувствительность • контроль',
 
         // Consultation
-        'consultation.title': 'Консультация iPeptides',
+        'consultation.title': 'КОНСУЛЬТАЦИЯ',
         'consultation.step1.title': 'Заявка',
         'consultation.step1.desc': 'Оставляете обращение',
         'consultation.step2.title': 'Сбор данных',
@@ -77,7 +77,7 @@ const translations = {
         'consultation.ctaBtn': 'Получить консультацию',
 
         // Shop
-        'shop.title': 'Магазин iPeptides',
+        'shop.title': 'МАГАЗИН',
         'shop.subtitle': 'Подбор и оформление заказа — в рамках консультационного сопровождения.',
         'shop.badge.recovery': 'Восстановление',
         'shop.badge.skin': 'Кожа',
@@ -105,7 +105,7 @@ const translations = {
         'faq.ctaBtn': 'Получить консультацию',
 
         // Contact
-        'contact.title': 'Контакты iPeptides',
+        'contact.title': 'КОНТАКТЫ',
         'contact.telegram': 'TELEGRAM-ЧАТ',
         'contact.hours': 'РЕЖИМ СВЯЗИ',
         'contact.hoursValue': 'Ежедневно 10:00–20:00',
@@ -133,7 +133,7 @@ const translations = {
         'hero.consultBtn': 'Get Consultation',
 
         // About
-        'about.title': 'iPeptidesPlus Standards',
+        'about.title': 'STANDARDS',
         'about.lead': 'Assessment • Selection • Support',
         'about.stat1.title': 'Quality Standards',
         'about.stat1.label': 'composition purity • batch control • verification',
@@ -143,7 +143,7 @@ const translations = {
         'about.stat3.label': 'recommendations • support • feedback',
 
         // Skills - Directions List
-        'skills.title': 'iPeptidesPlus Directions',
+        'skills.title': 'DIRECTIONS',
         'skills.item1.title': 'Recovery & Regeneration',
         'skills.item1.tags': 'injuries • regeneration • recovery • adaptation',
         'skills.item2.title': 'Musculoskeletal System',
@@ -158,7 +158,7 @@ const translations = {
         'skills.item6.tags': 'metabolism • energy • sensitivity • control',
 
         // Consultation
-        'consultation.title': 'iPeptides Consultation',
+        'consultation.title': 'CONSULTATION',
         'consultation.step1.title': 'Request',
         'consultation.step1.desc': 'Submit your inquiry',
         'consultation.step2.title': 'Data Collection',
@@ -172,7 +172,7 @@ const translations = {
         'consultation.ctaBtn': 'Get Consultation',
 
         // Shop
-        'shop.title': 'iPeptides Shop',
+        'shop.title': 'SHOP',
         'shop.subtitle': 'Product selection and ordering — as part of consultation support.',
         'shop.badge.recovery': 'Recovery',
         'shop.badge.skin': 'Skin',
@@ -200,7 +200,7 @@ const translations = {
         'faq.ctaBtn': 'Get Consultation',
 
         // Contact
-        'contact.title': 'iPeptides Contacts',
+        'contact.title': 'CONTACTS',
         'contact.telegram': 'TELEGRAM CHAT',
         'contact.hours': 'CONTACT HOURS',
         'contact.hoursValue': 'Daily 10:00–20:00',
