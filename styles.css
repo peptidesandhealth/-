@@ -1368,7 +1368,7 @@ section {
 
 .consultation-v2 .container {
     padding: 0 24px;
-    max-width: 1000px;
+    max-width: 1100px;
 }
 
 .consultation-v2 .section-header {
@@ -1379,7 +1379,7 @@ section {
 .consultation-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 48px;
     align-items: center;
 }
 
@@ -1391,31 +1391,31 @@ section {
 
 .consultation-form-clean {
     width: 100%;
-    max-width: 360px;
-    padding: 40px 36px;
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 20px;
-    border: 1px solid rgba(160, 180, 200, 0.3);
-    box-shadow: 0 16px 48px rgba(20, 35, 50, 0.1);
+    max-width: 420px;
+    padding: 48px 44px;
+    background: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 24px;
+    border: 1px solid rgba(160, 180, 200, 0.25);
+    box-shadow: 0 20px 60px rgba(20, 35, 50, 0.08);
 }
 
 .consultation-form-clean .form-group {
     position: relative;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
 }
 
 .consultation-form-clean .form-group input[type="text"],
 .consultation-form-clean .form-group input[type="tel"] {
     width: 100%;
-    padding: 16px 0;
+    padding: 18px 0;
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #2a3a44;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(42, 58, 68, 0.2);
+    border-bottom: 1px solid rgba(42, 58, 68, 0.18);
     outline: none;
     transition: border-color 0.3s ease;
 }
@@ -1427,9 +1427,9 @@ section {
 .consultation-form-clean .form-group label {
     position: absolute;
     left: 0;
-    top: 16px;
+    top: 18px;
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: rgba(42, 58, 68, 0.5);
     pointer-events: none;
     transition: all 0.25s ease;
@@ -1452,13 +1452,13 @@ section {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
 }
 
 .consultation-form-clean .checkbox-group input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    margin-top: 2px;
+    margin-top: 3px;
     accent-color: #4a5a64;
     flex-shrink: 0;
     cursor: pointer;
@@ -1468,38 +1468,37 @@ section {
     position: static;
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
-    color: rgba(42, 58, 68, 0.65);
+    color: rgba(42, 58, 68, 0.6);
     line-height: 1.5;
     cursor: pointer;
 }
 
-/* Button - same style as ОТКРЫТЬ КАТАЛОГ */
+/* Button - outline style like pill */
 .btn-consultation-submit {
     display: block;
     width: 100%;
-    padding: 16px 24px;
+    padding: 16px 28px;
     font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #fff;
-    background: linear-gradient(135deg, #4a5a64 0%, #5a6a74 50%, #4a5a64 100%);
-    border: none;
-    border-radius: 6px;
+    color: #4a5a64;
+    background: transparent;
+    border: 1.5px solid #4a5a64;
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(74, 90, 100, 0.3);
 }
 
 .btn-consultation-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(74, 90, 100, 0.4);
+    background: rgba(74, 90, 100, 0.06);
+    border-color: #3a4a54;
+    color: #3a4a54;
 }
 
 .btn-consultation-submit:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(74, 90, 100, 0.3);
+    background: rgba(74, 90, 100, 0.1);
 }
 
 /* Right Column: Steps List */
@@ -1518,9 +1517,9 @@ section {
 .step-item {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(90, 106, 116, 0.12);
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(90, 106, 116, 0.1);
 }
 
 .step-item:last-child {
@@ -1529,20 +1528,20 @@ section {
 
 .step-num {
     font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #7a8a94;
-    letter-spacing: 1px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-2, #5a6a74);
+    letter-spacing: 0.15em;
     min-width: 24px;
 }
 
 .step-label {
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #2a3a44;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-2, #5a6a74);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.15em;
 }
 
 /* Mobile Layout */
@@ -1556,50 +1555,84 @@ section {
     }
 
     .consultation-v2 .section-header {
-        margin-bottom: 32px;
+        margin-bottom: 28px;
     }
 
     .consultation-grid {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 32px;
     }
 
-    .consultation-form-col {
+    /* Mobile: Steps first, form second */
+    .consultation-steps-col {
         order: 1;
         width: 100%;
     }
 
-    .consultation-form-clean {
-        max-width: 100%;
-        padding: 32px 28px;
-    }
-
-    .consultation-steps-col {
+    .consultation-form-col {
         order: 2;
         width: 100%;
-        justify-content: flex-start;
     }
 
+    /* Mobile steps - 3 rows grid like shop style */
     .steps-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 24px;
         width: 100%;
+        text-align: center;
+        justify-items: center;
     }
 
     .step-item {
-        padding: 14px 0;
+        padding: 6px 0;
+        border-bottom: none;
+        gap: 6px;
+        justify-content: center;
+    }
+
+    /* 5th item spans full width */
+    .step-item:last-child {
+        grid-column: 1 / -1;
     }
 
     .step-num {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        min-width: auto;
     }
 
     .step-label {
-        font-size: 0.8rem;
-        letter-spacing: 1px;
+        font-size: 0.7rem;
+    }
+
+    /* Mobile form */
+    .consultation-form-clean {
+        max-width: 100%;
+        padding: 36px 28px;
+    }
+
+    .consultation-form-clean .form-group {
+        margin-bottom: 28px;
+    }
+
+    .consultation-form-clean .form-group input[type="text"],
+    .consultation-form-clean .form-group input[type="tel"] {
+        padding: 16px 0;
+        font-size: 1rem;
+    }
+
+    .consultation-form-clean .form-group label {
+        top: 16px;
+        font-size: 0.9rem;
+    }
+
+    .consultation-form-clean .checkbox-group {
+        margin-bottom: 32px;
     }
 
     .btn-consultation-submit {
-        padding: 14px 20px;
+        padding: 14px 24px;
         font-size: 0.7rem;
     }
 }
