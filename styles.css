@@ -1780,15 +1780,13 @@ section {
     justify-content: center;
 }
 
-/* Title - matching СТАНДАРТЫ style */
-.shop-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    color: var(--text);
+/* Title - same style as КОНСУЛЬТАЦИЯ */
+.shop-info .section-title {
     margin-bottom: 24px;
-    text-transform: uppercase;
+}
+
+.shop-info .section-title::after {
+    display: none;
 }
 
 /* Desktop list - vertical with thin bullets */
@@ -3823,10 +3821,9 @@ body.modal-open {
         text-align: center;
     }
 
-    .shop-title {
+    .shop-info .section-title {
         font-size: 1.4rem;
         margin-bottom: 16px;
-        letter-spacing: 0.15em;
     }
 
     /* Hide desktop list on mobile */
