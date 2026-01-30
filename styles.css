@@ -1504,7 +1504,7 @@ section {
 /* Right Column: Steps List */
 .consultation-steps-col {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
