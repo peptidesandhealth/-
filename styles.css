@@ -10,6 +10,12 @@
     --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
+    /* === Title Sizes (Desktop) === */
+    --title-xl: clamp(2rem, 4vw, 2.8rem);      /* HERO */
+    --title-lg: clamp(1.25rem, 2.5vw, 1.65rem); /* Section titles */
+    --title-md: 1.1rem;                         /* Subsection titles */
+    --title-sm: 0.85rem;                        /* Small titles */
+
     /* === Letter Spacing === */
     --ls-display: 0.06em;      /* HERO title style */
     --ls-caps: 0.12em;         /* Uppercase labels/menu */
@@ -510,7 +516,7 @@ body.menu-open {
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: var(--title-xl);
     font-weight: 600;
     margin-bottom: 24px;
     color: var(--surface);
@@ -805,7 +811,7 @@ section {
 
 .section-title {
     font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: var(--title-lg);
     position: relative;
     display: inline-block;
     color: var(--text);
@@ -895,10 +901,11 @@ section {
 /* Caps + letter-spacing style for subtitle */
 .about-lead.caps-spaced {
     text-transform: uppercase;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     color: var(--text-2);
+    line-height: 1.6;
 }
 
 .about-text p {
@@ -1228,6 +1235,13 @@ section {
 
     .directions-mobile {
         display: block;
+    }
+
+    /* Match НАПРАВЛЕНИЯ accordion titles to FAQ style */
+    .dir-title {
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
     }
 }
 
@@ -3372,6 +3386,11 @@ body.modal-open {
 @media (max-width: 768px) {
     :root {
         --section-padding: 50px 0;
+        /* Mobile title sizes */
+        --title-xl: 1.75rem;
+        --title-lg: 1.15rem;
+        --title-md: 0.95rem;
+        --title-sm: 0.75rem;
     }
 
     .container {
@@ -3429,7 +3448,7 @@ body.modal-open {
     }
 
     .hero-card .hero-title {
-        font-size: 2.25rem;
+        font-size: 1.85rem;
         margin-bottom: 14px;
     }
 
@@ -3502,10 +3521,11 @@ body.modal-open {
 
     /* Caps-spaced mobile - more contrast and letter-spacing */
     .about-lead.caps-spaced {
-        font-size: 0.75rem;
-        letter-spacing: 0.18em;
+        font-size: 0.65rem;
+        letter-spacing: 0.16em;
         color: #5A6A7A;
         font-weight: 600;
+        line-height: 1.5;
     }
 
     /* Mobile carousel for stats - NO arrows, only swipe */
@@ -3851,7 +3871,7 @@ body.modal-open {
     }
 
     .shop-info .section-title {
-        font-size: 1.4rem;
+        font-size: 1.15rem;
         margin-bottom: 16px;
     }
 
@@ -3864,13 +3884,13 @@ body.modal-open {
     .shop-list-mobile {
         display: block;
         font-family: var(--font-body);
-        font-size: 0.7rem;
+        font-size: 0.58rem;
         font-weight: 500;
         color: var(--text-2);
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.12em;
         margin: 0 0 24px 0;
-        line-height: 1.6;
+        line-height: 1.7;
     }
 
     .btn-catalog-premium {
@@ -3953,12 +3973,12 @@ body.modal-open {
     }
 
     .hero-card .hero-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         margin-bottom: 12px;
     }
 
     .hero-card .hero-subtitle {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         letter-spacing: 2px;
         margin-bottom: 12px;
     }
