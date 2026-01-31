@@ -1638,13 +1638,13 @@ section {
 }
 
 /* Desktop steps - vertical list */
-.consult-steps {
+.consult-steps-desktop {
     display: flex;
     flex-direction: column;
     gap: 0;
 }
 
-.consult-steps .step {
+.consult-steps-desktop .step {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1652,11 +1652,11 @@ section {
     border-bottom: 1px solid rgba(90, 106, 116, 0.1);
 }
 
-.consult-steps .step:last-child {
+.consult-steps-desktop .step:last-child {
     border-bottom: none;
 }
 
-.consult-steps .n {
+.consult-steps-desktop .n {
     font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 500;
@@ -1665,13 +1665,18 @@ section {
     min-width: 24px;
 }
 
-.consult-steps .t {
+.consult-steps-desktop .t {
     font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 500;
     color: var(--text-2, #5a6a74);
     text-transform: uppercase;
     letter-spacing: 0.15em;
+}
+
+/* Mobile steps - hidden on desktop */
+.consult-steps-mobile {
+    display: none;
 }
 
 /* Mobile Layout */
@@ -1705,46 +1710,30 @@ section {
         width: 100%;
     }
 
-    /* Mobile steps - compact centered grid */
-    .consult-steps {
-        width: auto;
-        max-width: none;
-        margin: 18px auto 22px;
-        display: grid;
-        grid-template-columns: auto auto;
-        gap: 14px 32px;
-        justify-content: center;
+    /* Hide desktop steps on mobile */
+    .consult-steps-desktop {
+        display: none;
+    }
+
+    /* Show mobile steps - slash-separated in 2 lines */
+    .consult-steps-mobile {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-    }
-
-    .consult-steps .step {
-        display: inline-flex;
-        align-items: baseline;
         gap: 8px;
-        white-space: nowrap;
-        padding: 0;
-        border-bottom: none;
+        margin: 18px auto 22px;
     }
 
-    .consult-steps .n {
-        font-size: 0.7rem;
+    .consult-steps-mobile p {
+        font-family: var(--font-body);
+        font-size: 0.58rem;
         font-weight: 500;
-        opacity: 0.7;
-        letter-spacing: 0.15em;
-        min-width: auto;
-    }
-
-    .consult-steps .t {
-        font-size: 0.7rem;
-        font-weight: 500;
+        color: var(--text-2);
         text-transform: uppercase;
-        letter-spacing: 0.15em;
-    }
-
-    /* 05 centered on third row */
-    .consult-steps .step--wide {
-        grid-column: 1 / -1;
-        justify-self: center;
+        letter-spacing: 0.12em;
+        line-height: 1.6;
+        margin: 0;
+        text-align: center;
     }
 
     /* Mobile form */
@@ -1812,8 +1801,9 @@ section {
 .shop-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 /* Title - same style as КОНСУЛЬТАЦИЯ */
@@ -1825,32 +1815,29 @@ section {
     display: none;
 }
 
-/* Desktop list - vertical with thin bullets */
+/* Desktop list - vertical with dividers (like КОНСУЛЬТАЦИЯ steps) */
 .shop-list-desktop {
     list-style: none;
     padding: 0;
     margin: 0 0 32px 0;
+    width: 100%;
+    max-width: 200px;
 }
 
 .shop-list-desktop li {
     font-family: var(--font-body);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--text-2);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    line-height: 2.4;
-    padding-left: 16px;
-    position: relative;
+    letter-spacing: 0.15em;
+    padding: 14px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(90, 106, 116, 0.1);
 }
 
-.shop-list-desktop li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--text-2);
-    font-weight: 400;
-    font-size: 0.6rem;
+.shop-list-desktop li:last-child {
+    border-bottom: none;
 }
 
 /* Mobile list - single line with dots (hidden on desktop) */
