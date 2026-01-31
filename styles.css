@@ -427,7 +427,7 @@ body.menu-open {
     padding: 120px 24px 60px;
     position: relative;
     background-color: #1a2025;
-    background-image: url('./images/фон.jpeg');
+    background-image: url('./fonhero.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3228,7 +3228,7 @@ body.modal-open {
     padding: 40px 0 30px;
     position: relative;
     background-color: #1a2025;
-    background-image: url('./images/фонблокконсультауция.jpeg');
+    background-image: url('./fonbottom.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
