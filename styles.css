@@ -1678,47 +1678,46 @@ section {
         width: 100%;
     }
 
-    /* Mobile steps - CSS grid, even spacing */
+    /* Mobile steps - compact centered grid */
     .consult-steps {
-        width: 100%;
-        max-width: 520px;
+        width: auto;
+        max-width: none;
         margin: 18px auto 22px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px 22px;
-        justify-items: center;
+        grid-template-columns: auto auto;
+        gap: 14px 32px;
+        justify-content: center;
         align-items: center;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
     }
 
     .consult-steps .step {
-        width: 100%;
         display: inline-flex;
         align-items: baseline;
-        justify-content: center;
-        gap: 10px;
+        gap: 8px;
         white-space: nowrap;
         padding: 0;
         border-bottom: none;
     }
 
     .consult-steps .n {
-        opacity: 0.75;
+        font-size: 0.7rem;
         font-weight: 500;
-        font-size: 12px;
+        opacity: 0.7;
+        letter-spacing: 0.15em;
         min-width: auto;
     }
 
     .consult-steps .t {
+        font-size: 0.7rem;
         font-weight: 500;
-        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
     }
 
     /* 05 centered on third row */
     .consult-steps .step--wide {
         grid-column: 1 / -1;
-        justify-content: center;
+        justify-self: center;
     }
 
     /* Mobile form */
