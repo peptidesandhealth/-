@@ -1686,7 +1686,7 @@ section {
 /* Mobile Layout */
 @media (max-width: 767px) {
     .consultation-v2 {
-        padding: var(--section-pad) 0;
+        padding: 32px 0;
     }
 
     .consultation-v2 .container {
@@ -1694,13 +1694,13 @@ section {
     }
 
     .consultation-v2 .section-header {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .consultation-grid {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 16px;
     }
 
     /* Mobile: Steps first, form second */
@@ -1724,8 +1724,8 @@ section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
-        margin: 18px auto 22px;
+        gap: 6px;
+        margin: 0 auto 0;
     }
 
     .consult-steps-mobile p {
