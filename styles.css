@@ -82,6 +82,9 @@
     --gradient-overlay-soft: linear-gradient(180deg, rgba(245, 247, 250, 0) 0%, rgba(245, 247, 250, 0.95) 100%);
 
     /* === Spacing === */
+    --section-pad: 56px;
+    --section-pad-mobile: 40px;
+    --title-gap: 12px;
     --section-padding: 70px 0;
     --section-padding-mobile: 50px 0;
     --container-width: 1200px;
@@ -125,7 +128,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 500;
-    line-height: 1.25;
+    line-height: 1.05;
     color: var(--text);
 }
 
@@ -796,7 +799,7 @@ section {
 }
 
 .section-header {
-    margin-bottom: 36px;
+    margin-bottom: 24px;
 }
 
 .section-number {
@@ -812,6 +815,7 @@ section {
 .section-title {
     font-family: var(--font-display);
     font-size: var(--title-lg);
+    line-height: 1.0;
     position: relative;
     display: inline-block;
     color: var(--text);
@@ -860,14 +864,14 @@ section {
    ======================================== */
 .about {
     background: #EEF2F6;
-    padding: 60px 0;
+    padding: var(--section-pad) 0;
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 20px;
 }
 
 .about-content.centered {
@@ -1093,7 +1097,7 @@ section {
    ======================================== */
 .skills {
     background: var(--snow-white-pure);
-    padding: 50px 0;
+    padding: var(--section-pad) 0;
 }
 
 /* ========================================
@@ -1478,7 +1482,7 @@ section {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 60px 0 70px;
+    padding: var(--section-pad) 0;
 }
 
 .consultation-v2 .container {
@@ -1487,7 +1491,7 @@ section {
 }
 
 .consultation-v2 .section-header {
-    margin-bottom: 48px;
+    margin-bottom: 32px;
 }
 
 /* 2-Column Grid: Form Left, Steps Right */
@@ -1682,7 +1686,7 @@ section {
 /* Mobile Layout */
 @media (max-width: 767px) {
     .consultation-v2 {
-        padding: 40px 0 50px;
+        padding: var(--section-pad) 0;
     }
 
     .consultation-v2 .container {
@@ -1690,13 +1694,13 @@ section {
     }
 
     .consultation-v2 .section-header {
-        margin-bottom: 28px;
+        margin-bottom: 20px;
     }
 
     .consultation-grid {
         display: flex;
         flex-direction: column;
-        gap: 32px;
+        gap: 24px;
     }
 
     /* Mobile: Steps first, form second */
@@ -1784,7 +1788,7 @@ section {
    ======================================== */
 .shop {
     background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 100%);
-    padding: 50px 0;
+    padding: var(--section-pad) 0;
 }
 
 /* Two-column layout */
@@ -2829,7 +2833,7 @@ body.modal-open {
    ======================================== */
 .faq {
     background: linear-gradient(180deg, #f4f7fa 0%, #eef2f6 100%);
-    padding: 40px 0 50px;
+    padding: var(--section-pad) 0;
     position: relative;
 }
 
@@ -2838,7 +2842,7 @@ body.modal-open {
 }
 
 .faq .section-header {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 
 .faq-list {
@@ -3392,6 +3396,8 @@ body.modal-open {
 @media (max-width: 768px) {
     :root {
         --section-padding: 50px 0;
+        --section-pad: 40px;
+        --title-gap: 10px;
         /* Mobile title sizes */
         --title-xl: 1.75rem;
         --title-lg: 1.15rem;
@@ -3514,7 +3520,11 @@ body.modal-open {
 
     /* About section mobile */
     .about {
-        padding: 50px 0;
+        padding: var(--section-pad) 0;
+    }
+
+    .about-content {
+        gap: 14px;
     }
 
     .about-lead {
@@ -3822,7 +3832,7 @@ body.modal-open {
     }
 
     .faq .section-header {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
 
     .faq-question {
