@@ -1521,6 +1521,19 @@ section {
     justify-content: center;
 }
 
+/* Form caption - premium hint text */
+.form-caption {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-2);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 0 24px 0;
+}
+
 .consultation-form-clean .form-group {
     position: relative;
     margin-bottom: 32px;
@@ -1739,6 +1752,12 @@ section {
         max-width: 100%;
         min-height: auto;
         padding: 36px 28px;
+    }
+
+    .form-caption {
+        font-size: 0.68rem;
+        letter-spacing: 0.15em;
+        margin-bottom: 20px;
     }
 
     .btn-consultation-submit {
