@@ -10,6 +10,15 @@
     --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
+    /* === Letter Spacing === */
+    --ls-display: 0.06em;      /* HERO title style */
+    --ls-caps: 0.12em;         /* Uppercase labels/menu */
+    --ls-wide: 0.22em;         /* Section titles */
+
+    /* === Text Colors === */
+    --text-color: #3A3F47;
+    --muted-color: #5F6B78;
+
     /* === Primary Backgrounds === */
     --bg: #F5F7FA;
     --bg-alt: #EEF2F6;
@@ -823,14 +832,7 @@ section {
 }
 
 .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 36px;
-    height: 1.5px;
-    background: linear-gradient(90deg, var(--accent-strong), var(--accent-light));
-    border-radius: 1px;
+    display: none;
 }
 
 @keyframes lineShimmer {
@@ -870,10 +872,7 @@ section {
     text-align: center;
 }
 
-.section-header.centered .section-title::after {
-    left: 50%;
-    transform: translateX(-50%);
-}
+/* Underline removed - unified typography */
 
 .about-lead {
     font-size: 1.1rem;
@@ -1019,7 +1018,7 @@ section {
 }
 
 .stat-number {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 3rem;
     font-weight: 600;
     display: block;
@@ -1031,7 +1030,7 @@ section {
 
 /* Card Title - more contrast, compact */
 .stat-title {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 600;
     display: block;
@@ -1123,7 +1122,7 @@ section {
 }
 
 .direction-title {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.9rem;
     font-weight: 600;
     color: #2a3a44;
@@ -1134,7 +1133,7 @@ section {
 }
 
 .direction-tags {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 400;
     color: #5a6a74;
@@ -1173,7 +1172,7 @@ section {
 }
 
 .dir-title {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 600;
     color: #2a3a44;
@@ -1213,7 +1212,7 @@ section {
 }
 
 .dir-tags {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 400;
     color: #5a6a74;
@@ -1239,7 +1238,7 @@ section {
 }
 
 .tech-stack h4 {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 500;
     color: var(--text-secondary);
@@ -1410,7 +1409,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.5rem;
     color: var(--text-secondary);
     transition: all var(--transition-normal);
@@ -1447,7 +1446,7 @@ section {
 .portfolio-info h3 {
     font-size: 1.25rem;
     margin-bottom: 8px;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-weight: 600;
 }
 
@@ -1517,7 +1516,7 @@ section {
 .consultation-form-clean .form-group input[type="tel"] {
     width: 100%;
     padding: 18px 0;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 1rem;
     color: #2a3a44;
     background: transparent;
@@ -1535,7 +1534,7 @@ section {
     position: absolute;
     left: 0;
     top: 18px;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.95rem;
     color: rgba(42, 58, 68, 0.5);
     pointer-events: none;
@@ -1573,7 +1572,7 @@ section {
 
 .consultation-form-clean .checkbox-group label {
     position: static;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.8rem;
     color: rgba(42, 58, 68, 0.6);
     line-height: 1.5;
@@ -1631,7 +1630,7 @@ section {
 }
 
 .consult-steps .n {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 500;
     color: var(--text-2, #5a6a74);
@@ -1640,7 +1639,7 @@ section {
 }
 
 .consult-steps .t {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 500;
     color: var(--text-2, #5a6a74);
@@ -1802,7 +1801,7 @@ section {
 }
 
 .shop-list-desktop li {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--text-2);
@@ -1930,7 +1929,7 @@ section {
 .gallery-badge {
     display: inline-block;
     padding: 4px 12px;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1944,7 +1943,7 @@ section {
 
 /* Title - cleaner, compact */
 .gallery-title {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text);
@@ -1954,7 +1953,7 @@ section {
 
 /* Description - lighter, smaller */
 .gallery-desc {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.8rem;
     color: var(--text-2);
     line-height: 1.4;
@@ -2095,7 +2094,7 @@ section {
 }
 
 .catalog-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--text);
@@ -2154,7 +2153,7 @@ section {
     width: 100%;
     padding: 14px 16px 14px 48px;
     font-size: 0.95rem;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     color: var(--text-primary);
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(165, 196, 212, 0.3);
@@ -2266,7 +2265,7 @@ section {
 }
 
 .card-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.15rem;
     font-weight: 600;
     color: var(--text);
@@ -2451,7 +2450,7 @@ body.modal-open {
 }
 
 .product-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.85rem;
     font-weight: 600;
     color: var(--text);
@@ -2677,7 +2676,7 @@ body.modal-open {
 }
 
 .consultation-modal-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.75rem;
     font-weight: 600;
     text-align: center;
@@ -2917,7 +2916,7 @@ body.modal-open {
 }
 
 .faq-answer p {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.9rem;
     color: #5a6a74;
     line-height: 1.7;
@@ -3134,7 +3133,7 @@ body.modal-open {
     width: 100%;
     padding: 20px 0 10px;
     font-size: 1rem;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     color: var(--text-primary);
     background: transparent;
     border: none;
@@ -3217,7 +3216,7 @@ body.modal-open {
 }
 
 .footer-telegram-label {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.7rem;
     font-weight: 600;
     color: #5a6a74;
@@ -3250,14 +3249,14 @@ body.modal-open {
 }
 
 .footer-telegram-link span {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-display);
     font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
+    font-weight: 600;
+    letter-spacing: var(--ls-display);
 }
 
 .footer-telegram-hours {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.75rem;
     color: #7a8a94;
 }
@@ -3865,7 +3864,7 @@ body.modal-open {
     /* Show mobile single-line list */
     .shop-list-mobile {
         display: block;
-        font-family: 'Inter', sans-serif;
+        font-family: var(--font-body);
         font-size: 0.7rem;
         font-weight: 500;
         color: var(--text-2);
