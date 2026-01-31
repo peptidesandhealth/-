@@ -427,7 +427,7 @@ body.menu-open {
     padding: 120px 24px 60px;
     position: relative;
     background-color: #1a2025;
-    background-image: url('./images/hero-bg.jpeg');
+    background-image: url('./images/фон.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3226,8 +3226,34 @@ body.modal-open {
    ======================================== */
 .footer {
     padding: 40px 0 30px;
-    background: var(--snow-white);
-    border-top: 1px solid var(--chrome-light);
+    position: relative;
+    background-color: #1a2025;
+    background-image: url('./images/фонблокконсультауция.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: none;
+}
+
+/* Dark overlay for footer readability */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(26, 32, 37, 0.8) 0%,
+        rgba(26, 32, 37, 0.7) 100%
+    );
+    z-index: 0;
+}
+
+.footer > .container {
+    position: relative;
+    z-index: 1;
 }
 
 /* Footer Telegram Contact */
@@ -3243,7 +3269,7 @@ body.modal-open {
     font-family: var(--font-body);
     font-size: 0.7rem;
     font-weight: 600;
-    color: #5a6a74;
+    color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
@@ -3252,24 +3278,24 @@ body.modal-open {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #2a3a44;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .footer-telegram-link:hover {
-    color: #4a5a64;
+    color: #ffffff;
 }
 
 .footer-telegram-icon {
     width: 18px;
     height: 18px;
-    color: #5a6a74;
+    color: rgba(255, 255, 255, 0.7);
     transition: color 0.3s ease;
 }
 
 .footer-telegram-link:hover .footer-telegram-icon {
-    color: #4a5a64;
+    color: #ffffff;
 }
 
 .footer-telegram-link span {
@@ -3282,13 +3308,13 @@ body.modal-open {
 .footer-telegram-hours {
     font-family: var(--font-body);
     font-size: 0.75rem;
-    color: #7a8a94;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-divider {
     width: 60px;
     height: 1px;
-    background: rgba(90, 106, 116, 0.2);
+    background: rgba(255, 255, 255, 0.2);
     margin: 0 auto 20px;
 }
 
@@ -3298,7 +3324,7 @@ body.modal-open {
 
 .footer-copyright {
     font-size: 0.8rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.7);
     margin: 0 auto 12px;
     text-align: center;
     display: block;
@@ -3307,7 +3333,7 @@ body.modal-open {
 
 .footer-disclaimer {
     font-size: 0.7rem;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.5);
     line-height: 1.6;
     max-width: 700px;
     margin: 0 auto;
