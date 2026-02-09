@@ -239,6 +239,33 @@ section {
     100% { background-position: 100% 50%; }
 }
 
+/* Brand name split colors */
+.brand-i { color: #FFFFFF; }
+.brand-rest { color: #E2EEF4; }
+
+.navbar.scrolled .brand-i,
+.navbar.scrolled .brand-rest {
+    background: inherit;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hero brand overrides (over gradient text) */
+.hero-title .accent .brand-i {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+.hero-title .accent .brand-rest {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #E2EEF4;
+    color: #E2EEF4;
+}
+
 /* Hide nav-links by default (burger menu on all screens) */
 .nav-links {
     display: none;
@@ -441,12 +468,8 @@ body.menu-open {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(26, 32, 37, 0.75) 0%,
-        rgba(26, 32, 37, 0.55) 40%,
-        rgba(26, 32, 37, 0.45) 100%
-    );
+    background: #2D3237;
+    opacity: 0.25;
     z-index: 1;
 }
 
@@ -494,7 +517,7 @@ body.menu-open {
 }
 
 .hero-card .hero-subtitle {
-    color: var(--accent-light);
+    color: #FFFFFF;
     font-weight: 500;
 }
 
@@ -512,9 +535,9 @@ body.menu-open {
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-bottom: 20px;
-    color: var(--accent-light);
+    color: #FFFFFF;
     background: none;
-    -webkit-text-fill-color: var(--accent-light);
+    -webkit-text-fill-color: #FFFFFF;
 }
 
 .hero-title {
@@ -580,6 +603,7 @@ body.menu-open {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
 }
 
 .hero-cta:hover {
