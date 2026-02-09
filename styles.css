@@ -215,6 +215,10 @@ section {
     letter-spacing: 0.04em;
 }
 
+/* Brand split colors: "i" white, "Peptides+" ice */
+.brand-i { color: #FFFFFF; }
+.brand-rest { color: #E2EEF4; }
+
 .navbar.scrolled .logo {
     background: linear-gradient(
         90deg,
@@ -231,6 +235,10 @@ section {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: logoShimmer 3s ease-in-out infinite;
+}
+.navbar.scrolled .logo .brand-i,
+.navbar.scrolled .logo .brand-rest {
+    -webkit-text-fill-color: transparent;
 }
 
 @keyframes logoShimmer {
@@ -441,12 +449,8 @@ body.menu-open {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(26, 32, 37, 0.75) 0%,
-        rgba(26, 32, 37, 0.55) 40%,
-        rgba(26, 32, 37, 0.45) 100%
-    );
+    background: #2D3237;
+    opacity: 0.25;
     z-index: 1;
 }
 
@@ -485,16 +489,17 @@ body.menu-open {
 }
 
 .hero-card .hero-title .accent {
-    background: linear-gradient(135deg, #FFFFFF 0%, #E8EEF4 25%, #FFFFFF 50%, #D8E4EC 75%, #FFFFFF 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% 200%;
-    animation: iceFlow 6s ease infinite;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    animation: none;
 }
+.hero-card .hero-title .accent .brand-i { color: #FFFFFF; }
+.hero-card .hero-title .accent .brand-rest { color: #E2EEF4; }
 
 .hero-card .hero-subtitle {
-    color: var(--accent-light);
+    color: #FFFFFF;
     font-weight: 500;
 }
 
@@ -512,9 +517,9 @@ body.menu-open {
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-bottom: 20px;
-    color: var(--accent-light);
+    color: #FFFFFF;
     background: none;
-    -webkit-text-fill-color: var(--accent-light);
+    -webkit-text-fill-color: #FFFFFF;
 }
 
 .hero-title {
@@ -531,12 +536,11 @@ body.menu-open {
 }
 
 .hero-title .accent {
-    background: linear-gradient(135deg, #FFFFFF 0%, #D8E4EC 25%, #FFFFFF 50%, #E8EEF4 75%, #FFFFFF 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% 200%;
-    animation: iceFlow 6s ease infinite;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    animation: none;
 }
 
 @keyframes iceFlow {
@@ -580,6 +584,7 @@ body.menu-open {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
 }
 
 .hero-cta:hover {
