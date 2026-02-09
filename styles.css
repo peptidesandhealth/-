@@ -3326,7 +3326,7 @@ body.modal-open {
 @media (max-width: 1024px) {
     .hero-content {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
     }
 
     .hero-text {
@@ -3339,11 +3339,11 @@ body.modal-open {
     }
 
     .hero-description {
-        margin: 0 auto 40px;
+        margin: 0 0 40px;
     }
 
     .hero-buttons {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .about-stats.horizontal {
@@ -3456,15 +3456,15 @@ body.modal-open {
 
     .hero-content {
         justify-content: center;
-        padding-left: 0;
-        text-align: center;
+        padding-left: 20px;
+        text-align: left;
     }
 
     .hero-card {
         max-width: 100%;
         padding: 0;
         margin: 0;
-        text-align: center;
+        text-align: left;
     }
 
     .hero-card .hero-title {
@@ -3493,14 +3493,14 @@ body.modal-open {
     .hero-tagline,
     .hero-card .hero-tagline {
         max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     /* Hero button - single CTA on mobile */
     .hero-buttons {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 12px;
     }
 
