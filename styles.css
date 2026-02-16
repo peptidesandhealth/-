@@ -3686,18 +3686,16 @@ body.modal-open {
         min-height: 140px;
     }
 
-    .about-statement-title {
-        font-size: 0.78rem;
-        letter-spacing: 0.14em;
-        margin-bottom: 20px;
-    }
-
     .about-statement-text {
         font-size: 0.6rem;
         letter-spacing: 0.12em;
-        line-height: 1.4;
+        line-height: 1.9;
         max-width: 90%;
         padding: 0 12px;
+    }
+
+    .desktop-br {
+        display: none;
     }
 
     .shop-lead {
