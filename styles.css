@@ -918,6 +918,28 @@ section {
     line-height: 1.6;
 }
 
+/* About statement — central text block replacing cards */
+.about-statement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 200px;
+}
+
+.about-statement-text {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #2D3237;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    line-height: 2;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .about-text p {
     color: var(--text-2);
     margin-bottom: 20px;
@@ -3645,6 +3667,19 @@ body.modal-open {
     .stat-label {
         font-size: 0.72rem;
         line-height: 1.45;
+    }
+
+    /* About statement mobile */
+    .about-statement {
+        min-height: 140px;
+    }
+
+    .about-statement-text {
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+        line-height: 1.9;
+        max-width: 90%;
+        padding: 0 12px;
     }
 
     .shop-lead {
