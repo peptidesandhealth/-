@@ -921,10 +921,22 @@ section {
 /* About statement — central text block replacing cards */
 .about-statement {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     min-height: 200px;
+}
+
+.about-statement-title {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #2D3237;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    line-height: 1.45;
+    margin: 0 0 28px 0;
 }
 
 .about-statement-text {
@@ -934,7 +946,7 @@ section {
     color: #2D3237;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    line-height: 2;
+    line-height: 1.45;
     max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
@@ -3674,10 +3686,16 @@ body.modal-open {
         min-height: 140px;
     }
 
+    .about-statement-title {
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        margin-bottom: 20px;
+    }
+
     .about-statement-text {
         font-size: 0.6rem;
         letter-spacing: 0.12em;
-        line-height: 1.9;
+        line-height: 1.4;
         max-width: 90%;
         padding: 0 12px;
     }
